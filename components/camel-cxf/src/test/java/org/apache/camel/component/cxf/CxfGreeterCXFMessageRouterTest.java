@@ -15,6 +15,10 @@
  * limitations under the License.
  */
 package org.apache.camel.component.cxf;
+<<<<<<< HEAD
+=======
+
+>>>>>>> b34673a917b... Remove some deprecated stuff
 import javax.xml.ws.Endpoint;
 
 import org.apache.camel.builder.NoErrorHandlerBuilder;
@@ -47,7 +51,7 @@ public class CxfGreeterCXFMessageRouterTest extends AbstractCXFGreeterRouterTest
     protected RouteBuilder createRouteBuilder() {
         return new RouteBuilder() {
             public void configure() {
-                context.setErrorHandlerBuilder(new NoErrorHandlerBuilder());
+                context.setErrorHandlerFactory(new NoErrorHandlerBuilder());
                 from("cxf:bean:routerEndpoint?dataFormat=CXF_MESSAGE&publishedEndpointUrl=http://www.simple.com/services/test")
                     .to("cxf:bean:serviceEndpoint?dataFormat=CXF_MESSAGE");
             }

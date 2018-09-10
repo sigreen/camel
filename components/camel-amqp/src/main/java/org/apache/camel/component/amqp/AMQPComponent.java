@@ -67,16 +67,6 @@ public class AMQPComponent extends JmsComponent {
 
     // Factory methods
 
-    /**
-     * Use {@code amqpComponent(String uri)} instead.
-     */
-    @Deprecated
-    public static AMQPComponent amqp10Component(String uri) throws MalformedURLException {
-        JmsConnectionFactory connectionFactory = new JmsConnectionFactory(uri);
-        connectionFactory.setTopicPrefix("topic://");
-        return new AMQPComponent(connectionFactory);
-    }
-
     public static AMQPComponent amqpComponent(String uri) {
         JmsConnectionFactory connectionFactory = new JmsConnectionFactory(uri);
         connectionFactory.setTopicPrefix("topic://");

@@ -305,7 +305,7 @@ public class JmsEndpoint extends DefaultEndpoint implements AsyncEndpoint, Heade
 
     public Exchange createExchange(Message message, Session session) {
         Exchange exchange = createExchange(getExchangePattern());
-        exchange.setIn(new JmsMessage(message, session, getBinding()));
+        exchange.setIn(new JmsMessage(exchange, message, session, getBinding()));
         return exchange;
     }
 

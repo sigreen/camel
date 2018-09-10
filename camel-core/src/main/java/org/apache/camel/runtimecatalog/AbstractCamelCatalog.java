@@ -34,6 +34,9 @@ import java.util.TreeMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import org.apache.camel.language.simple.types.SimpleIllegalSyntaxException;
+import org.apache.camel.language.simple.types.SimpleParserException;
+
 import static org.apache.camel.runtimecatalog.CatalogHelper.after;
 import static org.apache.camel.runtimecatalog.JSonSchemaHelper.getNames;
 import static org.apache.camel.runtimecatalog.JSonSchemaHelper.getPropertyDefaultValue;
@@ -1047,34 +1050,6 @@ public abstract class AbstractCamelCatalog {
         }
     }
 
-    @Deprecated
-    private static String[] syntaxTokens(String syntax) {
-        // build tokens between the words
-        List<String> tokens = new ArrayList<>();
-        // preserve backwards behavior which had an empty token first
-        tokens.add("");
-
-        String current = "";
-        for (int i = 0; i < syntax.length(); i++) {
-            char ch = syntax.charAt(i);
-            if (Character.isLetterOrDigit(ch)) {
-                // reset for new current tokens
-                if (current.length() > 0) {
-                    tokens.add(current);
-                    current = "";
-                }
-            } else {
-                current += ch;
-            }
-        }
-        // anything left over?
-        if (current.length() > 0) {
-            tokens.add(current);
-        }
-
-        return tokens.toArray(new String[tokens.size()]);
-    }
-
     private static String[] syntaxKeys(String syntax) {
         // build tokens between the separators
         List<String> tokens = new ArrayList<>();
@@ -1102,23 +1077,7 @@ public abstract class AbstractCamelCatalog {
         return tokens.toArray(new String[tokens.size()]);
     }
 
-    public SimpleValidationResult validateSimpleExpression(String simple) {
-        return doValidateSimple(null, simple, false);
-    }
-
-    public SimpleValidationResult validateSimpleExpression(ClassLoader classLoader, String simple) {
-        return doValidateSimple(classLoader, simple, false);
-    }
-
-    public SimpleValidationResult validateSimplePredicate(String simple) {
-        return doValidateSimple(null, simple, true);
-    }
-
-    public SimpleValidationResult validateSimplePredicate(ClassLoader classLoader, String simple) {
-        return doValidateSimple(classLoader, simple, true);
-    }
-
-    private SimpleValidationResult doValidateSimple(ClassLoader classLoader, String simple, boolean predicate) {
+    private LanguageValidationResult doValidateSimple(ClassLoader classLoader, String simple, boolean predicate) {
         if (classLoader == null) {
             classLoader = getClass().getClassLoader();
         }
@@ -1129,7 +1088,7 @@ public abstract class AbstractCamelCatalog {
         // therefore we use an more unlikely character: {{XXX}} to ~^XXX^~
         String resolved = simple.replaceAll("\\{\\{(.+)\\}\\}", "~^$1^~");
 
-        SimpleValidationResult answer = new SimpleValidationResult(simple);
+        LanguageValidationResult answer = new LanguageValidationResult(simple);
 
         Object instance = null;
         Class clazz = null;
@@ -1163,44 +1122,22 @@ public abstract class AbstractCamelCatalog {
                 answer.setError(errMsg);
 
                 // is it simple parser exception then we can grab the index where the problem is
-                if (cause.getClass().getName().equals("org.apache.camel.language.simple.types.SimpleIllegalSyntaxException")
-                    || cause.getClass().getName().equals("org.apache.camel.language.simple.types.SimpleParserException")) {
-                    try {
-                        // we need to grab the index field from those simple parser exceptions
-                        Method method = cause.getClass().getMethod("getIndex");
-                        Object result = method.invoke(cause);
-                        if (result != null) {
-                            int index = (int) result;
-                            answer.setIndex(index);
-                        }
-                    } catch (Throwable i) {
-                        // ignore
-                    }
-                }
-
-                // we need to grab the short message field from this simple syntax exception
-                if (cause.getClass().getName().equals("org.apache.camel.language.simple.types.SimpleIllegalSyntaxException")) {
-                    try {
-                        Method method = cause.getClass().getMethod("getShortMessage");
-                        Object result = method.invoke(cause);
-                        if (result != null) {
-                            String msg = (String) result;
-                            answer.setShortError(msg);
-                        }
-                    } catch (Throwable i) {
-                        // ignore
-                    }
-
-                    if (answer.getShortError() == null) {
+                if (cause instanceof SimpleIllegalSyntaxException) {
+                    answer.setIndex(((SimpleIllegalSyntaxException) cause).getIndex());
+                    // we need to grab the short message field from this simple syntax exception
+                    String error = ((SimpleIllegalSyntaxException) cause).getShortMessage();
+                    if (error == null) {
                         // fallback and try to make existing message short instead
-                        String msg = answer.getError();
+                        error = answer.getError();
                         // grab everything before " at location " which would be regarded as the short message
-                        int idx = msg.indexOf(" at location ");
+                        int idx = error.indexOf(" at location ");
                         if (idx > 0) {
-                            msg = msg.substring(0, idx);
-                            answer.setShortError(msg);
+                            error = error.substring(0, idx);
                         }
                     }
+                    answer.setShortError(error);
+                } else if (cause instanceof SimpleParserException) {
+                    answer.setIndex(((SimpleParserException) cause).getIndex());
                 }
             }
         }
@@ -1209,11 +1146,19 @@ public abstract class AbstractCamelCatalog {
     }
 
     public LanguageValidationResult validateLanguagePredicate(ClassLoader classLoader, String language, String text) {
-        return doValidateLanguage(classLoader, language, text, true);
+        if ("simple".equals(language)) {
+            return doValidateSimple(classLoader, text, true);
+        } else {
+            return doValidateLanguage(classLoader, language, text, true);
+        }
     }
 
     public LanguageValidationResult validateLanguageExpression(ClassLoader classLoader, String language, String text) {
-        return doValidateLanguage(classLoader, language, text, false);
+        if ("simple".equals(language)) {
+            return doValidateSimple(classLoader, text, false);
+        } else {
+            return doValidateLanguage(classLoader, language, text, false);
+        }
     }
 
     private LanguageValidationResult doValidateLanguage(ClassLoader classLoader, String language, String text, boolean predicate) {
@@ -1221,7 +1166,7 @@ public abstract class AbstractCamelCatalog {
             classLoader = getClass().getClassLoader();
         }
 
-        SimpleValidationResult answer = new SimpleValidationResult(text);
+        LanguageValidationResult answer = new LanguageValidationResult(text);
 
         String json = jsonSchemaResolver.getLanguageJSonSchema(language);
         if (json == null) {
