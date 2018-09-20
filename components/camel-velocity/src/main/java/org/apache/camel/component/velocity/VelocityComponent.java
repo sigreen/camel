@@ -33,7 +33,6 @@ public class VelocityComponent extends DefaultComponent {
     private VelocityEngine velocityEngine;
     
     public VelocityComponent() {
-        super();
     }
 
     public VelocityEngine getVelocityEngine() {

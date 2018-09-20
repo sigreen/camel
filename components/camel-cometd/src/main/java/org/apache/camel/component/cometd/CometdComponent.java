@@ -95,7 +95,6 @@ public class CometdComponent extends DefaultComponent implements SSLContextParam
     }
 
     public CometdComponent() {
-        super();
     }
 
     @Override

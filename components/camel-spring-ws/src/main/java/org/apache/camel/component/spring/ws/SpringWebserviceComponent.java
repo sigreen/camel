@@ -54,7 +54,6 @@ public class SpringWebserviceComponent extends DefaultComponent implements SSLCo
     private boolean useGlobalSslContextParameters;
 
     public SpringWebserviceComponent() {
-        super();
     }
 
     public SpringWebserviceComponent(CamelContext context) {

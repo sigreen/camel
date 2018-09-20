@@ -52,11 +52,6 @@ public class SedaComponent extends DefaultComponent {
     private final Map<String, QueueReference> queues = new HashMap<>();
 
     public SedaComponent() {
-        super();
-    }
-
-    public SedaComponent(Class<? extends Endpoint> endpointClass) {
-        super();
     }
 
     /**

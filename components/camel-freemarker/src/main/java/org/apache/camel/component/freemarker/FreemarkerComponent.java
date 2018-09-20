@@ -38,7 +38,6 @@ public class FreemarkerComponent extends DefaultComponent {
     private Configuration noCacheConfiguration;
 
     public FreemarkerComponent() {
-        super();
     }
 
     protected Endpoint createEndpoint(String uri, String remaining, Map<String, Object> parameters) throws Exception {

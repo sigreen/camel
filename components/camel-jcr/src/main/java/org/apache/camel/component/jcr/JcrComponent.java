@@ -28,7 +28,6 @@ import org.apache.camel.impl.DefaultComponent;
 public class JcrComponent extends DefaultComponent {
 
     public JcrComponent() {
-        super();
     }
 
     public JcrComponent(CamelContext context) {

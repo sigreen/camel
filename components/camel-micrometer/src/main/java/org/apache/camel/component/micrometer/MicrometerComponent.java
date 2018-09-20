@@ -43,7 +43,6 @@ public class MicrometerComponent extends DefaultComponent {
     private MeterRegistry metricsRegistry;
 
     public MicrometerComponent() {
-        super();
     }
 
     @Override

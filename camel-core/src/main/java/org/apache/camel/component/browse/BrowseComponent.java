@@ -30,7 +30,6 @@ import org.apache.camel.impl.DefaultComponent;
 public class BrowseComponent extends DefaultComponent {
 
     public BrowseComponent() {
-        super();
     }
 
     protected Endpoint createEndpoint(String uri, String remaining, Map<String, Object> parameters) throws Exception {

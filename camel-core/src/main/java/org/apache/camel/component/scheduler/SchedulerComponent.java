@@ -35,7 +35,6 @@ public class SchedulerComponent extends DefaultComponent {
     private int concurrentTasks = 1;
 
     public SchedulerComponent() {
-        super();
     }
 
     @Override

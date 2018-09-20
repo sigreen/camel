@@ -29,7 +29,6 @@ import org.apache.camel.impl.DefaultComponent;
 public class LdapComponent extends DefaultComponent {
 
     public LdapComponent() {
-        super();
     }
 
     protected Endpoint createEndpoint(String uri, String remaining, Map<String, Object> parameters) throws Exception {

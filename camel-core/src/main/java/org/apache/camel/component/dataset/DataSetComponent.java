@@ -30,7 +30,6 @@ import org.apache.camel.util.CamelContextHelper;
 public class DataSetComponent extends DefaultComponent {
 
     public DataSetComponent() {
-        super();
     }
 
     @Override

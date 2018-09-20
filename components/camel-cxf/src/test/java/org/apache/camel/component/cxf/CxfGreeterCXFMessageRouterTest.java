@@ -15,10 +15,7 @@
  * limitations under the License.
  */
 package org.apache.camel.component.cxf;
-<<<<<<< HEAD
-=======
 
->>>>>>> b34673a917b... Remove some deprecated stuff
 import javax.xml.ws.Endpoint;
 
 import org.apache.camel.builder.NoErrorHandlerBuilder;

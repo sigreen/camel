@@ -31,7 +31,6 @@ public class SplunkComponent extends DefaultComponent {
     private SplunkConfigurationFactory splunkConfigurationFactory = new DefaultSplunkConfigurationFactory();
 
     public SplunkComponent() {
-        super(SplunkEndpoint.class);
     }
 
     protected Endpoint createEndpoint(String uri, String remaining, Map<String, Object> parameters) throws Exception {

@@ -32,7 +32,6 @@ public class ApnsComponent extends DefaultComponent {
     private ApnsService apnsService;
 
     public ApnsComponent() {
-        super();
     }
 
     public ApnsComponent(ApnsService apnsService) {

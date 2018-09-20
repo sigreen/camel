@@ -29,11 +29,10 @@ import org.apache.camel.impl.DefaultComponent;
 public class IronMQComponent extends DefaultComponent {
 
     public IronMQComponent(CamelContext context) {
-        super(context, IronMQEndpoint.class);
+        super(context);
     }
 
     public IronMQComponent() {
-        super(IronMQEndpoint.class);
     }
 
     @Override

@@ -40,7 +40,6 @@ public class CMComponent extends DefaultComponent {
     private Validator validator;
 
     public CMComponent() {
-        super();
     }
 
     public CMComponent(final CamelContext context) {

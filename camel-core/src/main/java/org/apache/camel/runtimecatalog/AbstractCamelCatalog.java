@@ -34,9 +34,6 @@ import java.util.TreeMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import org.apache.camel.language.simple.types.SimpleIllegalSyntaxException;
-import org.apache.camel.language.simple.types.SimpleParserException;
-
 import static org.apache.camel.runtimecatalog.CatalogHelper.after;
 import static org.apache.camel.runtimecatalog.JSonSchemaHelper.getNames;
 import static org.apache.camel.runtimecatalog.JSonSchemaHelper.getPropertyDefaultValue;
@@ -1122,22 +1119,44 @@ public abstract class AbstractCamelCatalog {
                 answer.setError(errMsg);
 
                 // is it simple parser exception then we can grab the index where the problem is
-                if (cause instanceof SimpleIllegalSyntaxException) {
-                    answer.setIndex(((SimpleIllegalSyntaxException) cause).getIndex());
-                    // we need to grab the short message field from this simple syntax exception
-                    String error = ((SimpleIllegalSyntaxException) cause).getShortMessage();
-                    if (error == null) {
+                if (cause.getClass().getName().equals("org.apache.camel.language.simple.types.SimpleIllegalSyntaxException")
+                        || cause.getClass().getName().equals("org.apache.camel.language.simple.types.SimpleParserException")) {
+                    try {
+                        // we need to grab the index field from those simple parser exceptions
+                        Method method = cause.getClass().getMethod("getIndex");
+                        Object result = method.invoke(cause);
+                        if (result != null) {
+                            int index = (int) result;
+                            answer.setIndex(index);
+                        }
+                    } catch (Throwable i) {
+                        // ignore
+                    }
+                }
+
+                // we need to grab the short message field from this simple syntax exception
+                if (cause.getClass().getName().equals("org.apache.camel.language.simple.types.SimpleIllegalSyntaxException")) {
+                    try {
+                        Method method = cause.getClass().getMethod("getShortMessage");
+                        Object result = method.invoke(cause);
+                        if (result != null) {
+                            String msg = (String) result;
+                            answer.setShortError(msg);
+                        }
+                    } catch (Throwable i) {
+                        // ignore
+                    }
+
+                    if (answer.getShortError() == null) {
                         // fallback and try to make existing message short instead
-                        error = answer.getError();
+                        String msg = answer.getError();
                         // grab everything before " at location " which would be regarded as the short message
-                        int idx = error.indexOf(" at location ");
+                        int idx = msg.indexOf(" at location ");
                         if (idx > 0) {
-                            error = error.substring(0, idx);
+                            msg = msg.substring(0, idx);
+                            answer.setShortError(msg);
                         }
                     }
-                    answer.setShortError(error);
-                } else if (cause instanceof SimpleParserException) {
-                    answer.setIndex(((SimpleParserException) cause).getIndex());
                 }
             }
         }

@@ -25,7 +25,6 @@ import org.apache.camel.impl.DefaultComponent;
 public class PrinterComponent extends DefaultComponent {
 
     public PrinterComponent() {
-        super();
     }
 
     @Override

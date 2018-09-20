@@ -31,7 +31,6 @@ public class EventAdminComponent extends DefaultComponent {
     private BundleContext bundleContext;
 
     public EventAdminComponent() {
-        super();
     }
 
     public BundleContext getBundleContext() {

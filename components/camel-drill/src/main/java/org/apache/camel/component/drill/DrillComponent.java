@@ -29,7 +29,6 @@ import org.apache.camel.impl.DefaultComponent;
 public class DrillComponent extends DefaultComponent {
 
     public DrillComponent() {
-        super();
     }
 
     public DrillComponent(final CamelContext context) {

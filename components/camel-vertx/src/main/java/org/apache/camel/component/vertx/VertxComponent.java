@@ -52,7 +52,6 @@ public class VertxComponent extends DefaultComponent {
     private VertxOptions vertxOptions;
 
     public VertxComponent() {
-        super();
     }
 
     public VertxComponent(CamelContext context) {

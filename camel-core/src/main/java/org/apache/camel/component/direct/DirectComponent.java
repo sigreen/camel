@@ -41,7 +41,6 @@ public class DirectComponent extends DefaultComponent {
     private long timeout = 30000L;
 
     public DirectComponent() {
-        super();
     }
 
     protected Endpoint createEndpoint(String uri, String remaining, Map<String, Object> parameters) throws Exception {

@@ -29,7 +29,6 @@ import org.apache.camel.util.StringHelper;
 public class ChronicleEngineComponent extends DefaultComponent {
     
     public ChronicleEngineComponent() {
-        super();
     }
 
     public ChronicleEngineComponent(CamelContext context) {

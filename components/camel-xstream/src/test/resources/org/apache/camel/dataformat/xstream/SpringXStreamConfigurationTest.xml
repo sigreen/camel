@@ -65,7 +65,7 @@
 
         <route>
             <from uri="direct:marshal"/>
-            <marshal ref="xstream-1" />
+            <marshal><custom ref="xstream-1" /></marshal>
             <to uri="mock:result"/>
         </route>
         <route>
@@ -76,7 +76,7 @@
         
         <route>
             <from uri="direct:marshal-json"/>
-            <marshal ref="xstream-json" />
+            <marshal><custom ref="xstream-json" /></marshal>
             <to uri="mock:result"/>
         </route>
 

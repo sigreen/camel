@@ -52,7 +52,6 @@ public class CryptoCmsComponent extends DefaultComponent {
     private EnvelopedDataDecryptorConfiguration envelopedDataDecryptorConfiguration;
 
     public CryptoCmsComponent() {
-        super();
     }
 
     public CryptoCmsComponent(CamelContext context) {

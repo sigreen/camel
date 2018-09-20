@@ -29,7 +29,6 @@ public class JoltComponent extends DefaultComponent {
     private Transform transform;
 
     public JoltComponent() {
-        super(JoltEndpoint.class);
     }
 
     protected Endpoint createEndpoint(String uri, String remaining, Map<String, Object> parameters) throws Exception {

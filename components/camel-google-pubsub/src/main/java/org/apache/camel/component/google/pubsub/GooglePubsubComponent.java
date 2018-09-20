@@ -29,7 +29,6 @@ public class GooglePubsubComponent extends DefaultComponent {
     private GooglePubsubConnectionFactory connectionFactory;
 
     public GooglePubsubComponent() {
-        super(GooglePubsubEndpoint.class);
     }
 
     @Override

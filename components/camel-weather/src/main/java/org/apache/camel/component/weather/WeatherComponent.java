@@ -41,7 +41,6 @@ public class WeatherComponent extends DefaultComponent {
     private String geolocationRequestHostIP;
 
     public WeatherComponent() {
-        super(WeatherEndpoint.class);
     }
 
     @Override

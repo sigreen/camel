@@ -33,7 +33,6 @@ public class FlatpackComponent extends DefaultComponent {
     public static final String TRAILER_ID = "trailer";
 
     public FlatpackComponent() {
-        super();
     }
 
     protected Endpoint createEndpoint(String uri, String remaining, Map<String, Object> parameters) throws Exception {

@@ -30,7 +30,6 @@ public class ControlBusComponent extends DefaultComponent {
     private ExecutorService executorService;
 
     public ControlBusComponent() {
-        super();
     }
 
     @Override

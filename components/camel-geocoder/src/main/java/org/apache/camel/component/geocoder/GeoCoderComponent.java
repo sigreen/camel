@@ -27,7 +27,6 @@ import org.apache.camel.impl.DefaultComponent;
 public class GeoCoderComponent extends DefaultComponent {
 
     public GeoCoderComponent() {
-        super();
     }
 
     protected Endpoint createEndpoint(String uri, String remaining,

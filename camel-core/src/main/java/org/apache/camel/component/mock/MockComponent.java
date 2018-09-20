@@ -33,7 +33,6 @@ import org.apache.camel.util.CamelLogger;
 public class MockComponent extends DefaultComponent {
 
     public MockComponent() {
-        super();
     }
 
     public MockComponent(CamelContext context) {

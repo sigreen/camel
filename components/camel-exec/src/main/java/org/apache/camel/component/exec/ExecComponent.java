@@ -29,7 +29,6 @@ import org.apache.camel.impl.DefaultComponent;
 public class ExecComponent extends DefaultComponent {
 
     public ExecComponent() {
-        super();
     }
 
     @Override

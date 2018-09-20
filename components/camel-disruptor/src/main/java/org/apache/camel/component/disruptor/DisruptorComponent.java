@@ -57,7 +57,6 @@ public class DisruptorComponent extends DefaultComponent {
     private final Map<String, DisruptorReference> disruptors = new HashMap<>();
 
     public DisruptorComponent() {
-        super(DisruptorEndpoint.class);
     }
 
     @Override

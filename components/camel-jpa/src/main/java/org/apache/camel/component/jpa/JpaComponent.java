@@ -46,7 +46,6 @@ public class JpaComponent extends DefaultComponent {
     private boolean sharedEntityManager;
 
     public JpaComponent() {
-        super();
     }
 
     // Properties

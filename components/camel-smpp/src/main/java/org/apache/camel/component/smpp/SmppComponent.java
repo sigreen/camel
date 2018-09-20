@@ -33,7 +33,6 @@ public class SmppComponent extends DefaultComponent {
     private SmppConfiguration configuration;
 
     public SmppComponent() {
-        super();
     }
 
     public SmppComponent(SmppConfiguration configuration) {

@@ -34,7 +34,6 @@ import org.apache.camel.util.URISupport;
 public class TestComponent extends DefaultComponent {
 
     public TestComponent() {
-        super();
     }
 
     @Override

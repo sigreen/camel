@@ -49,7 +49,6 @@ public class DirectVmComponent extends DefaultComponent {
     private boolean propagateProperties = true;
 
     public DirectVmComponent() {
-        super();
     }
 
     /**

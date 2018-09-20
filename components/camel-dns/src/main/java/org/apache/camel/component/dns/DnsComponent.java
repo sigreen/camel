@@ -70,7 +70,6 @@ import org.apache.camel.impl.DefaultComponent;
 public class DnsComponent extends DefaultComponent {
 
     public DnsComponent() {
-        super();
     }
 
     protected Endpoint createEndpoint(String uri, String remaining, Map<String, Object> parameters) throws Exception {

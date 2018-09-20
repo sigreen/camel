@@ -32,7 +32,6 @@ import org.apache.camel.util.StringHelper;
 public class DataFormatComponent extends DefaultComponent {
 
     public DataFormatComponent() {
-        super();
     }
 
     @Override

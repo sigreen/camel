@@ -39,7 +39,6 @@ public class XmppComponent extends DefaultComponent {
     private final Map<String, XmppEndpoint> endpointCache = new HashMap<>();
 
     public XmppComponent() {
-        super(XmppEndpoint.class);
     }
 
     @Override

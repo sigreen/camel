@@ -36,7 +36,7 @@
       <from uri="direct:unmarshal"/>
       <unmarshal><custom ref="myBeanio"/></unmarshal>
       <split>
-        <simple>body</simple>
+        <simple>${body}</simple>
         <to uri="mock:beanio-unmarshal"/>
       </split>
     </route>

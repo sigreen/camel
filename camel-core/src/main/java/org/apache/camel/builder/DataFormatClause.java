@@ -1156,6 +1156,7 @@ public class DataFormatClause<T extends ProcessorDefinition<?>> {
             String xmlCipherAlgorithm, String keyCipherAlgorithm, KeyStoreParameters keyOrTrustStoreParameters) {
         XMLSecurityDataFormat xsdf = new XMLSecurityDataFormat();
         xsdf.setSecureTag(secureTag);
+        xsdf.setNamespaces(namespaces);
         xsdf.setSecureTagContents(secureTagContents);
         xsdf.setRecipientKeyAlias(recipientKeyAlias);
         xsdf.setXmlCipherAlgorithm(xmlCipherAlgorithm);

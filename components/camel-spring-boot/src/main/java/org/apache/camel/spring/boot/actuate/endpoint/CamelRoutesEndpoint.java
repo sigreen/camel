@@ -33,7 +33,6 @@ import org.apache.camel.Route;
 import org.apache.camel.RuntimeCamelException;
 import org.apache.camel.StatefulService;
 import org.apache.camel.api.management.mbean.ManagedRouteMBean;
-import org.apache.camel.management.ManagedCamelContext;
 import org.apache.camel.model.ModelCamelContext;
 import org.apache.camel.model.ModelHelper;
 import org.apache.camel.model.RouteDefinition;

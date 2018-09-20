@@ -28,7 +28,6 @@ import org.apache.camel.impl.DefaultComponent;
 public class SpringIntegrationComponent extends DefaultComponent {
 
     public SpringIntegrationComponent() {
-        super();
     }
 
     protected SpringIntegrationEndpoint createEndpoint(String uri, String remaining, Map<String, Object> parameters) throws Exception {

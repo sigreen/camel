@@ -24,7 +24,6 @@ import javax.inject.Inject;
 import org.apache.camel.CamelContext;
 import org.apache.camel.ServiceStatus;
 import org.apache.camel.api.management.mbean.ManagedRouteMBean;
-import org.apache.camel.management.ManagedCamelContext;
 import org.apache.karaf.shell.api.console.Session;
 import org.apache.karaf.shell.api.console.SessionFactory;
 import org.junit.Test;

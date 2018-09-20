@@ -40,7 +40,6 @@ public abstract class GenericFileComponent<T> extends DefaultComponent {
     protected Logger log = LoggerFactory.getLogger(getClass());
 
     public GenericFileComponent() {
-        super();
     }
 
     public GenericFileComponent(CamelContext context) {

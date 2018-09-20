@@ -33,7 +33,6 @@ public class MQTTComponent extends DefaultComponent {
     private String password;
 
     public MQTTComponent() {
-        super();
     }
 
     protected Endpoint createEndpoint(String uri, String remaining, Map<String, Object> parameters) throws Exception {

@@ -24,7 +24,6 @@ import org.apache.camel.impl.DefaultComponent;
 public class ChunkComponent extends DefaultComponent {
 
     public ChunkComponent() {
-        super();
     }
 
     @Override

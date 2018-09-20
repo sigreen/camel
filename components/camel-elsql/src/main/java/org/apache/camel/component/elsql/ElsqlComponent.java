@@ -36,7 +36,6 @@ public class ElsqlComponent extends DefaultComponent {
     private String resourceUri;
 
     public ElsqlComponent() {
-        super();
     }
 
     @Override

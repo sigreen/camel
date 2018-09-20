@@ -16,7 +16,6 @@
  */
 package org.apache.camel.component.amqp;
 
-import java.net.MalformedURLException;
 import java.util.Set;
 
 import javax.jms.ConnectionFactory;
@@ -34,7 +33,6 @@ public class AMQPComponent extends JmsComponent {
     // Constructors
 
     public AMQPComponent() {
-        super(AMQPEndpoint.class);
     }
 
     public AMQPComponent(JmsConfiguration configuration) {
@@ -42,7 +40,7 @@ public class AMQPComponent extends JmsComponent {
     }
 
     public AMQPComponent(CamelContext context) {
-        super(context, AMQPEndpoint.class);
+        super(context);
     }
 
     public AMQPComponent(ConnectionFactory connectionFactory) {

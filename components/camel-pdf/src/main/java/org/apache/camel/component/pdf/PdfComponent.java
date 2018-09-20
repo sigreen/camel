@@ -25,7 +25,6 @@ import org.apache.camel.impl.DefaultComponent;
 public class PdfComponent extends DefaultComponent {
 
     public PdfComponent() {
-        super();
     }
 
     @Override

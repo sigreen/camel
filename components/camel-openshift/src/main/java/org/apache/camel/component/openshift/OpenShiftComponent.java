@@ -32,7 +32,6 @@ public class OpenShiftComponent extends DefaultComponent {
     private String server;
 
     public OpenShiftComponent() {
-        super(OpenShiftEndpoint.class);
     }
 
     protected Endpoint createEndpoint(String uri, String remaining, Map<String, Object> parameters) throws Exception {

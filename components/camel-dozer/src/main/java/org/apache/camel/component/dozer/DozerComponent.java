@@ -30,7 +30,6 @@ public class DozerComponent extends DefaultComponent {
     private static final Logger LOG = LoggerFactory.getLogger(DozerComponent.class);
 
     public DozerComponent() {
-        super();
     }
 
     public DozerComponent(CamelContext context) {

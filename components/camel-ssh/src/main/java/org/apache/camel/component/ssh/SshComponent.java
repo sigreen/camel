@@ -32,7 +32,6 @@ public class SshComponent extends DefaultComponent {
     private SshConfiguration configuration = new SshConfiguration();
 
     public SshComponent() {
-        super(SshEndpoint.class);
     }
 
     @Override

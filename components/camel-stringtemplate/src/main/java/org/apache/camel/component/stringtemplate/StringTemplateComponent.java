@@ -28,7 +28,6 @@ import org.apache.camel.util.ResourceHelper;
 public class StringTemplateComponent extends DefaultComponent {
 
     public StringTemplateComponent() {
-        super(StringTemplateEndpoint.class);
     }
 
     protected Endpoint createEndpoint(String uri, String remaining, Map<String, Object> parameters) throws Exception {

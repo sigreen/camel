@@ -28,7 +28,6 @@ import org.apache.camel.impl.DefaultComponent;
 public class BeanValidatorComponent extends DefaultComponent {
 
     public BeanValidatorComponent() {
-        super();
     }
 
     @Override

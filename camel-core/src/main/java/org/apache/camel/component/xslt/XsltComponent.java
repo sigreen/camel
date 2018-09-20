@@ -55,7 +55,6 @@ public class XsltComponent extends DefaultComponent {
     private boolean saxon;
 
     public XsltComponent() {
-        super();
     }
 
     public XmlConverter getXmlConverter() {

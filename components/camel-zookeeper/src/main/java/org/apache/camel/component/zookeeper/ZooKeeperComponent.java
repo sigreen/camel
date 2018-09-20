@@ -34,11 +34,9 @@ public class ZooKeeperComponent extends DefaultComponent {
     private ZooKeeperConfiguration configuration;
 
     public ZooKeeperComponent() {
-        super(ZooKeeperEndpoint.class);
     }
 
     public ZooKeeperComponent(ZooKeeperConfiguration configuration) {
-        super(ZooKeeperEndpoint.class);
         this.configuration = configuration;
     }
 

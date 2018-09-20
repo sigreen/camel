@@ -47,7 +47,6 @@ public class MailComponent extends DefaultComponent implements SSLContextParamet
     private boolean useGlobalSslContextParameters;
 
     public MailComponent() {
-        super();
     }
 
     public MailComponent(MailConfiguration configuration) {

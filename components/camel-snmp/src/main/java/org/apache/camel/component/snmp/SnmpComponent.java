@@ -28,7 +28,6 @@ import org.apache.camel.impl.DefaultComponent;
 public class SnmpComponent extends DefaultComponent {
 
     public SnmpComponent() {
-        super();
     }
 
     @Override

@@ -36,7 +36,6 @@ public class XmlSignatureComponent extends DefaultComponent {
     private XmlVerifierConfiguration verifierConfiguration;
 
     public XmlSignatureComponent() {
-        super();
     }
 
     public XmlSignatureComponent(CamelContext context) {

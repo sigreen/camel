@@ -32,7 +32,6 @@ import org.apache.camel.util.IntrospectionSupport;
 public class JMXComponent extends DefaultComponent {
 
     public JMXComponent() {
-        super();
     }
 
     @Override

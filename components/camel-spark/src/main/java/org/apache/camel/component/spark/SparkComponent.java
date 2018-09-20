@@ -28,7 +28,6 @@ public class SparkComponent extends DefaultComponent {
     private RddCallback rddCallback;
 
     public SparkComponent() {
-        super();
     }
 
     @Override

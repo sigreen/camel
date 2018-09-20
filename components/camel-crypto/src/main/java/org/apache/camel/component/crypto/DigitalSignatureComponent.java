@@ -32,7 +32,6 @@ public class DigitalSignatureComponent extends DefaultComponent {
     private DigitalSignatureConfiguration configuration;
 
     public DigitalSignatureComponent() {
-        super();
     }
 
     public DigitalSignatureComponent(CamelContext context) {

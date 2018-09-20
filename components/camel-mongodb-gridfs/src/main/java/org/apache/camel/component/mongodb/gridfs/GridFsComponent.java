@@ -25,7 +25,6 @@ import org.apache.camel.impl.DefaultComponent;
 public class GridFsComponent extends DefaultComponent {
 
     public GridFsComponent() {
-        super(GridFsEndpoint.class);
     }
     
     protected Endpoint createEndpoint(String uri, String remaining, Map<String, Object> parameters) throws Exception {

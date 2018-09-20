@@ -28,7 +28,6 @@ public class InfluxDbComponent extends DefaultComponent {
     private static final Logger LOG = LoggerFactory.getLogger(InfluxDbComponent.class);
 
     public InfluxDbComponent() {
-        super();
     }
 
     @Override

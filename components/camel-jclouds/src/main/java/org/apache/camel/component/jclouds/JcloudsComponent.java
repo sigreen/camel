@@ -34,7 +34,6 @@ public class JcloudsComponent extends DefaultComponent {
     private List<ComputeService> computeServices;
 
     public JcloudsComponent() {
-        super(JcloudsEndpoint.class);
     }
 
     protected Endpoint createEndpoint(String uri, String remaining, Map<String, Object> parameters) throws Exception {

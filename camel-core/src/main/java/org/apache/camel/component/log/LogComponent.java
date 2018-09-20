@@ -42,7 +42,6 @@ public class LogComponent extends DefaultComponent {
     private ExchangeFormatter exchangeFormatter;
 
     public LogComponent() {
-        super();
     }
 
     protected Endpoint createEndpoint(String uri, String remaining, Map<String, Object> parameters) throws Exception {

@@ -29,7 +29,6 @@ import org.apache.camel.impl.DefaultComponent;
 public class RefComponent extends DefaultComponent {
 
     public RefComponent() {
-        super();
     }
 
     protected Endpoint createEndpoint(String uri, String remaining, Map<String, Object> parameters) throws Exception {

@@ -34,7 +34,6 @@ public class DigitalOceanComponent extends DefaultComponent {
 
 
     public DigitalOceanComponent() {
-        super(DigitalOceanEndpoint.class);
     }
 
     protected Endpoint createEndpoint(String uri, String remaining, Map<String, Object> parameters) throws Exception {

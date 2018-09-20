@@ -34,7 +34,6 @@ public class FlinkComponent extends DefaultComponent {
     private DataStreamCallback dataStreamCallback;
 
     public FlinkComponent() {
-        super(FlinkEndpoint.class);
     }
 
     @Override

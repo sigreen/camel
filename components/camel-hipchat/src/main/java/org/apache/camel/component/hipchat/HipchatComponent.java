@@ -39,7 +39,6 @@ public class HipchatComponent extends DefaultComponent {
     private static final Logger LOG = LoggerFactory.getLogger(HipchatComponent.class);
 
     public HipchatComponent() {
-        super();
     }
 
     public HipchatComponent(CamelContext context) {

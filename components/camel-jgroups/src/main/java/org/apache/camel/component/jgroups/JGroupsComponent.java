@@ -34,7 +34,6 @@ public class JGroupsComponent extends DefaultComponent {
     private boolean enableViewMessages;
 
     public JGroupsComponent() {
-        super();
     }
 
     @Override

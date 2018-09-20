@@ -46,7 +46,6 @@ public class MetricsComponent extends DefaultComponent {
     private MetricRegistry metricRegistry;
 
     public MetricsComponent() {
-        super();
     }
 
     @Override

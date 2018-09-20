@@ -40,7 +40,6 @@ public class TimerComponent extends DefaultComponent {
     private final Map<String, AtomicInteger> refCounts = new HashMap<>();
 
     public TimerComponent() {
-        super();
     }
 
     public Timer getTimer(TimerConsumer consumer) {

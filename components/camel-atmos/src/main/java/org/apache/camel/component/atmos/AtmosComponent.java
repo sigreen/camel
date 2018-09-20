@@ -36,7 +36,6 @@ public class AtmosComponent extends DefaultComponent {
     private boolean sslValidation;
 
     public AtmosComponent() {
-        super();
     }
 
     public AtmosComponent(CamelContext context) {

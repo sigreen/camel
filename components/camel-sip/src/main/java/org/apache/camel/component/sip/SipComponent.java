@@ -25,7 +25,6 @@ import org.apache.camel.impl.DefaultComponent;
 public class SipComponent extends DefaultComponent {
 
     public SipComponent() {
-        super();
     }
 
     @Override

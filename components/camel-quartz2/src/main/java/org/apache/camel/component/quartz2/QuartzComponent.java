@@ -71,7 +71,6 @@ public class QuartzComponent extends DefaultComponent implements StartupListener
     private boolean prefixInstanceName = true;
 
     public QuartzComponent() {
-        super();
     }
 
     public QuartzComponent(CamelContext camelContext) {

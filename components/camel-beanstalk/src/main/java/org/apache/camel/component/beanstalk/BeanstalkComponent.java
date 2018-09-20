@@ -56,7 +56,6 @@ public class BeanstalkComponent extends DefaultComponent {
     private static ConnectionSettingsFactory connectionSettingsFactory = ConnectionSettingsFactory.DEFAULT;
 
     public BeanstalkComponent() {
-        super();
     }
 
     @Override

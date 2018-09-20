@@ -43,7 +43,6 @@ public class SqlComponent extends DefaultComponent {
     private boolean usePlaceholder = true;
 
     public SqlComponent() {
-        super();
     }
 
     public SqlComponent(Class<? extends Endpoint> endpointClass) {

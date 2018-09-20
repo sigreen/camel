@@ -47,7 +47,6 @@ public class GoraComponent extends DefaultComponent {
     private Configuration configuration;
 
     public GoraComponent() {
-        super();
     }
 
     /**

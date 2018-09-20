@@ -33,7 +33,6 @@ public class GuavaEventBusComponent extends DefaultComponent {
     private Class<?> listenerInterface;
 
     public GuavaEventBusComponent() {
-        super(GuavaEventBusEndpoint.class);
     }
 
     @Override

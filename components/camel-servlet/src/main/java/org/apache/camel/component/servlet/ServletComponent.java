@@ -59,11 +59,10 @@ public class ServletComponent extends HttpCommonComponent implements RestConsume
     private String fileNameExtWhitelist;
 
     public ServletComponent() {
-        super(ServletEndpoint.class);
     }
 
     public ServletComponent(Class<? extends ServletEndpoint> endpointClass) {
-        super(endpointClass);
+        super();
     }
 
     @Override

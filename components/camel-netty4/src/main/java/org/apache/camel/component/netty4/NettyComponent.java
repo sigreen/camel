@@ -44,7 +44,6 @@ public class NettyComponent extends DefaultComponent implements SSLContextParame
     private boolean useGlobalSslContextParameters;
 
     public NettyComponent() {
-        super();
     }
 
     public NettyComponent(Class<? extends Endpoint> endpointClass) {

@@ -24,7 +24,6 @@ import org.apache.camel.impl.DefaultComponent;
 public class BeverageComponent extends DefaultComponent {
 
     public BeverageComponent() {
-        super(BeverageEndpoint.class);
     }
 
     @Override

@@ -33,11 +33,6 @@ public class ValidatorComponent extends DefaultComponent {
     private ValidatorResourceResolverFactory resourceResolverFactory;
     
     public ValidatorComponent() {
-        this(ValidatorEndpoint.class);
-    }
-
-    public ValidatorComponent(Class<? extends Endpoint> endpointClass) {
-        super();
     }
 
     protected Endpoint createEndpoint(String uri, String remaining, Map<String, Object> parameters) throws Exception {

@@ -28,7 +28,6 @@ import org.apache.camel.impl.DefaultComponent;
 public class BlobServiceComponent extends DefaultComponent {
     
     public BlobServiceComponent() {
-        super();
     }
 
     public BlobServiceComponent(CamelContext context) {

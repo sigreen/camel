@@ -27,7 +27,6 @@ import org.apache.camel.impl.DefaultComponent;
 public class RestApiComponent extends DefaultComponent {
 
     public RestApiComponent() {
-        super();
     }
 
     @Override

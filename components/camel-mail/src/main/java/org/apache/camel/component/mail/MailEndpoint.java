@@ -66,26 +66,18 @@ public class MailEndpoint extends ScheduledPollEndpoint {
     private MailUidGenerator mailUidGenerator = new DefaultMailUidGenerator();
 
     public MailEndpoint() {
-        // ScheduledPollConsumer default delay is 500 millis and that is too often for polling a mailbox,
-        // so we override with a new default value. End user can override this value by providing a consumer.delay parameter
-        setDelay(MailConsumer.DEFAULT_CONSUMER_DELAY);
+        this(null, null, null);
+    }
+
+    public MailEndpoint(String endpointUri) {
+        this(endpointUri, null, new MailConfiguration());
     }
 
     public MailEndpoint(String uri, MailComponent component, MailConfiguration configuration) {
         super(uri, component);
         this.configuration = configuration;
-        setDelay(MailConsumer.DEFAULT_CONSUMER_DELAY);
-    }
-
-    @Deprecated
-    public MailEndpoint(String endpointUri, MailConfiguration configuration) {
-        super(endpointUri);
-        this.configuration = configuration;
-        setDelay(MailConsumer.DEFAULT_CONSUMER_DELAY);
-    }
-
-    public MailEndpoint(String endpointUri) {
-        this(endpointUri, new MailConfiguration());
+        // ScheduledPollConsumer default delay is 500 millis and that is too often for polling a mailbox,
+        // so we override with a new default value. End user can override this value by providing a consumer.delay parameter
         setDelay(MailConsumer.DEFAULT_CONSUMER_DELAY);
     }
 

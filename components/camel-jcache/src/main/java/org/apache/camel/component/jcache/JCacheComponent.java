@@ -38,7 +38,6 @@ public class JCacheComponent extends DefaultComponent {
     private String configurationUri;
 
     public JCacheComponent() {
-        super();
     }
 
     public JCacheComponent(CamelContext context) {

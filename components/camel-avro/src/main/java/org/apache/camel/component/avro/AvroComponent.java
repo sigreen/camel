@@ -39,7 +39,6 @@ public class AvroComponent extends DefaultComponent {
     private AvroConfiguration configuration;
 
     public AvroComponent() {
-        super();
     }
 
     public AvroComponent(CamelContext context) {

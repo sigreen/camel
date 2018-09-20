@@ -144,7 +144,6 @@ public abstract class JettyHttpComponent extends HttpCommonComponent implements 
     private boolean sendServerVersion = true;
 
     public JettyHttpComponent() {
-        super(JettyHttpEndpoint.class);
     }
 
     class ConnectorRef {

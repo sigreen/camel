@@ -111,7 +111,7 @@ public class JmsEndpoint extends DefaultEndpoint implements AsyncEndpoint, Heade
 
     @SuppressWarnings("deprecation")
     public JmsEndpoint(String endpointUri, JmsBinding binding, JmsConfiguration configuration, String destinationName, boolean pubSubDomain) {
-        super(UnsafeUriCharactersEncoder.encode(endpointUri));
+        super(UnsafeUriCharactersEncoder.encode(endpointUri), null);
         this.binding = binding;
         this.configuration = configuration;
         this.destinationName = destinationName;

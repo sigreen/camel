@@ -42,7 +42,7 @@ public class JmsSuspendResumeTest extends CamelTestSupport {
 
         assertMockEndpointsSatisfied();
 
-        context.getRouteController().resumeRoute("foo");
+        context.getRouteController().suspendRoute("foo");
 
         resetMocks();
         mock.expectedMessageCount(0);

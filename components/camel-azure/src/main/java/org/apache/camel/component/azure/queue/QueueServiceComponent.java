@@ -28,7 +28,6 @@ import org.apache.camel.impl.DefaultComponent;
 public class QueueServiceComponent extends DefaultComponent {
 
     public QueueServiceComponent() {
-        super();
     }
 
     public QueueServiceComponent(CamelContext context) {

@@ -613,7 +613,7 @@ public class DefaultCamelContext extends ServiceSupport implements ModelCamelCon
             strategy.onEndpointAdd(endpoint);
         }
         addEndpointToRegistry(uri, endpoint);
-        if (oldEndpoint != null) {
+        if (oldEndpoint != null && oldEndpoint != endpoint) {
             stopServices(oldEndpoint);
         }
 

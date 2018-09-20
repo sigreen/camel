@@ -26,8 +26,7 @@ import org.apache.camel.impl.DefaultComponent;
  */
 public abstract class FeedComponent extends DefaultComponent {
 
-    public FeedComponent(Class<? extends Endpoint> endpointClass) {
-        super();
+    public FeedComponent() {
     }
 
     protected abstract FeedEndpoint createEndpoint(String uri, String remaining, Map<String, Object> parameters) throws Exception;

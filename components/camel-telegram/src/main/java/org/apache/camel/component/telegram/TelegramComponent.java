@@ -32,7 +32,6 @@ public class TelegramComponent extends DefaultComponent {
     private String authorizationToken;
 
     public TelegramComponent() {
-        super(TelegramEndpoint.class);
     }
 
     @Override

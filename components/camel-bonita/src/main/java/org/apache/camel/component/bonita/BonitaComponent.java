@@ -26,7 +26,6 @@ import org.apache.camel.impl.DefaultComponent;
 public class BonitaComponent extends DefaultComponent {
 
     public BonitaComponent() {
-        super();
     }
 
     public BonitaComponent(CamelContext context) {

@@ -37,7 +37,6 @@ public class LanguageComponent extends DefaultComponent {
     public static final String RESOURCE = "resource:";
 
     public LanguageComponent() {
-        super();
     }
 
     protected Endpoint createEndpoint(String uri, String remaining, Map<String, Object> parameters) throws Exception {

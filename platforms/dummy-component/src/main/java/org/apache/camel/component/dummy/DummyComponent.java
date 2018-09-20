@@ -24,7 +24,6 @@ import org.apache.camel.impl.DefaultComponent;
 public class DummyComponent extends DefaultComponent {
 
     public DummyComponent() {
-        super();
     }
 
     @Override

@@ -27,7 +27,6 @@ import org.apache.camel.impl.DefaultComponent;
 public class FopComponent extends DefaultComponent {
 
     public FopComponent() {
-        super(FopEndpoint.class);
     }
 
     protected Endpoint createEndpoint(String uri, String remaining, Map<String, Object> parameters) throws Exception {

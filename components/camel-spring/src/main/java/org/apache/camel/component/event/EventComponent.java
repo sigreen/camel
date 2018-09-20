@@ -40,7 +40,6 @@ public class EventComponent extends DefaultComponent implements ApplicationConte
     private final Set<EventEndpoint> endpoints = new LinkedHashSet<>();
 
     public EventComponent() {
-        super();
     }
 
     public EventComponent(ApplicationContext applicationContext) {

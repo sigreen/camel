@@ -29,7 +29,6 @@ import org.apache.camel.util.ResourceHelper;
 public class MvelComponent extends DefaultComponent {
 
     public MvelComponent() {
-        super();
     }
 
     protected Endpoint createEndpoint(String uri, String remaining, Map<String, Object> parameters) throws Exception {

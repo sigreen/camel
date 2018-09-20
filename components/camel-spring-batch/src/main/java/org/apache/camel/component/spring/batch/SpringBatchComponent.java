@@ -34,7 +34,6 @@ public class SpringBatchComponent extends DefaultComponent {
     private JobRegistry jobRegistry;
 
     public SpringBatchComponent() {
-        super(SpringBatchEndpoint.class);
     }
 
     @Override

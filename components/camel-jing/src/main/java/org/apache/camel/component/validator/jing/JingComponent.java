@@ -30,7 +30,6 @@ import org.apache.camel.impl.DefaultComponent;
 public class JingComponent extends DefaultComponent {
 
     public JingComponent() {
-        super();
     }
 
     protected Endpoint createEndpoint(String uri, String remaining, Map<String, Object> parameters) throws Exception {

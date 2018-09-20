@@ -41,7 +41,6 @@ public class XQueryComponent extends DefaultComponent {
     private Map<String, Object> configurationProperties = new HashMap<>();
 
     public XQueryComponent() {
-        super(XQueryEndpoint.class);
     }
 
     protected Endpoint createEndpoint(String uri, String remaining, Map<String, Object> parameters) throws Exception {

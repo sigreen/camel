@@ -43,13 +43,8 @@ public class BeanComponent extends DefaultComponent {
     private Boolean cache;
 
     public BeanComponent() {
-        super();
     }
     
-    public BeanComponent(Class<? extends Endpoint> endpointClass) {
-        super();
-    }
-
     // Implementation methods
     //-----------------------------------------------------------------------
     protected Endpoint createEndpoint(String uri, String remaining, Map<String, Object> parameters) throws Exception {
