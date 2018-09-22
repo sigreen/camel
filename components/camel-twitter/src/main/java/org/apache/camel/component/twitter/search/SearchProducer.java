@@ -20,8 +20,8 @@ import java.util.List;
 
 import org.apache.camel.CamelExchangeException;
 import org.apache.camel.Exchange;
+import org.apache.camel.component.twitter.AbstractTwitterEndpoint;
 import org.apache.camel.component.twitter.TwitterConstants;
-import org.apache.camel.component.twitter.TwitterEndpoint;
 import org.apache.camel.impl.DefaultProducer;
 import org.apache.camel.util.ObjectHelper;
 import twitter4j.Query;
@@ -32,10 +32,10 @@ import twitter4j.Twitter;
 public class SearchProducer extends DefaultProducer {
 
     private volatile long lastId;
-    private TwitterEndpoint endpoint;
+    private AbstractTwitterEndpoint endpoint;
     private String keywords;
 
-    public SearchProducer(TwitterEndpoint endpoint, String keywords) {
+    public SearchProducer(AbstractTwitterEndpoint endpoint, String keywords) {
         super(endpoint);
         this.endpoint = endpoint;
         this.keywords = keywords;

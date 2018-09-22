@@ -91,52 +91,6 @@ public abstract class AbstractSmppCommand implements SmppCommand {
         return optParams;
     }
 
-    /**
-     * @deprecated will be removed in Camel 2.13.0/3.0.0 - use createOptionalParametersByCode instead
-     * @param optinalParamaters
-     * @return
-     */
-    @Deprecated
-    @SuppressWarnings({ "rawtypes", "unchecked" })
-    protected List<OptionalParameter> createOptionalParametersByName(Map<String, String> optinalParamaters) {
-        List<OptionalParameter> optParams = new ArrayList<>();
-
-        for (Entry<String, String> entry : optinalParamaters.entrySet()) {
-            OptionalParameter optParam = null;
-
-            String value = entry.getValue();
-            try {
-                Tag tag = Tag.valueOf(entry.getKey());
-                Class type = determineTypeClass(tag);
-
-                Set<Class> ancestorClasses = new HashSet<>(2);
-                Class superclass = type.getSuperclass();
-                ancestorClasses.add(superclass);
-                if (superclass != Object.class) {
-                    ancestorClasses.add(superclass.getSuperclass());
-                }
-                if (ancestorClasses.contains(OctetString.class)) {
-                    optParam = (OptionalParameter) type.getConstructor(byte[].class).newInstance(value.getBytes());
-                } else if (ancestorClasses.contains(OptionalParameter.Byte.class)) {
-                    Byte byteValue = (value == null) ? 0 : Byte.valueOf(value); // required because jsmpp 2.1.1 interpreted null as 0
-                    optParam = (OptionalParameter) type.getConstructor(byte.class).newInstance(byteValue);
-                } else if (ancestorClasses.contains(OptionalParameter.Int.class)) {
-                    Integer intValue = (value == null) ? 0 : Integer.valueOf(value); // required because jsmpp 2.1.1 interpreted null as 0
-                    optParam = (OptionalParameter) type.getConstructor(int.class).newInstance(intValue);
-                } else if (ancestorClasses.contains(OptionalParameter.Short.class)) {
-                    Short shortValue = (value == null) ? 0 : Short.valueOf(value); // required because jsmpp 2.1.1 interpreted null as 0
-                    optParam = (OptionalParameter) type.getConstructor(short.class).newInstance(shortValue);
-                }
-
-                optParams.add(optParam);
-            } catch (Exception e) {
-                log.info("Couldn't determine optional parameter for key {} and value {}. Skip this one.", entry.getKey(), value);
-            }
-        }
-
-        return optParams;
-    }
-
     @SuppressWarnings("unchecked")
     protected Class<? extends OptionalParameter> determineTypeClass(Tag tag) throws SecurityException, NoSuchFieldException, IllegalArgumentException, IllegalAccessException {
         // we have to use reflection because the type field is private

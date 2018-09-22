@@ -74,7 +74,7 @@ with the following path and query parameters:
 |===
 
 
-==== Query Parameters (18 parameters):
+==== Query Parameters (17 parameters):
 
 
 [width="100%",cols="2,5,^1,2",options="header"]
@@ -84,7 +84,6 @@ with the following path and query parameters:
 | *queryBuilder* (common) | Specifies the query builder. |  | InfinispanQueryBuilder
 | *bridgeErrorHandler* (consumer) | Allows for bridging the consumer to the Camel routing Error Handler, which mean any exceptions occurred while the consumer is trying to pickup incoming messages, or the likes, will now be processed as a message and handled by the routing Error Handler. By default the consumer will use the org.apache.camel.spi.ExceptionHandler to deal with exceptions, that will be logged at WARN or ERROR level and ignored. | false | boolean
 | *clusteredListener* (consumer) | If true, the listener will be installed for the entire cluster | false | boolean
-| *command* (consumer) | *Deprecated* The operation to perform. | PUT | String
 | *customListener* (consumer) | Returns the custom listener in use, if provided |  | InfinispanCustom Listener
 | *eventTypes* (consumer) | Specifies the set of event types to register by the consumer. Multiple event can be separated by comma. The possible event types are: CACHE_ENTRY_ACTIVATED, CACHE_ENTRY_PASSIVATED, CACHE_ENTRY_VISITED, CACHE_ENTRY_LOADED, CACHE_ENTRY_EVICTED, CACHE_ENTRY_CREATED, CACHE_ENTRY_REMOVED, CACHE_ENTRY_MODIFIED, TRANSACTION_COMPLETED, TRANSACTION_REGISTERED, CACHE_ENTRY_INVALIDATED, DATA_REHASHED, TOPOLOGY_CHANGED, PARTITION_STATUS_CHANGED |  | String
 | *sync* (consumer) | If true, the consumer will receive notifications synchronously | true | boolean
@@ -104,7 +103,7 @@ with the following path and query parameters:
 === Spring Boot Auto-Configuration
 
 
-The component supports 21 options, which are listed below.
+The component supports 20 options, which are listed below.
 
 
 
@@ -115,7 +114,6 @@ The component supports 21 options, which are listed below.
 | *camel.component.infinispan.configuration.cache-container* | Specifies the cache Container to connect |  | BasicCacheContainer
 | *camel.component.infinispan.configuration.cache-container-configuration* | The CacheContainer configuration. Uses if the cacheContainer is not defined. Must be the following types: org.infinispan.client.hotrod.configuration.Configuration - for remote cache interaction configuration; org.infinispan.configuration.cache.Configuration - for embedded cache interaction configuration; |  | Object
 | *camel.component.infinispan.configuration.clustered-listener* | If true, the listener will be installed for the entire cluster | false | Boolean
-| *camel.component.infinispan.configuration.command* | The operation to perform. | PUT | String
 | *camel.component.infinispan.configuration.configuration-properties* | Implementation specific properties for the CacheManager |  | Map
 | *camel.component.infinispan.configuration.configuration-uri* | An implementation specific URI for the CacheManager |  | String
 | *camel.component.infinispan.configuration.custom-listener* | Returns the custom listener in use, if provided |  | InfinispanCustom Listener

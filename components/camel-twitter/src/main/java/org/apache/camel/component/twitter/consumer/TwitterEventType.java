@@ -21,8 +21,8 @@ import java.util.Collections;
 import java.util.List;
 
 import org.apache.camel.Exchange;
+import org.apache.camel.component.twitter.AbstractTwitterEndpoint;
 import org.apache.camel.component.twitter.TwitterConstants;
-import org.apache.camel.component.twitter.TwitterEndpoint;
 import org.apache.camel.component.twitter.util.TwitterSorter;
 
 public enum TwitterEventType {
@@ -48,11 +48,11 @@ public enum TwitterEventType {
     FAVORITED_RETWEET,
     QUOTED_TWEET;
 
-    public Exchange createExchange(TwitterEndpoint endpoint) {
+    public Exchange createExchange(AbstractTwitterEndpoint endpoint) {
         return createExchange(endpoint, null);
     }
 
-    public <T> Exchange createExchange(TwitterEndpoint endpoint, T body) {
+    public <T> Exchange createExchange(AbstractTwitterEndpoint endpoint, T body) {
         Exchange exchange = endpoint.createExchange();
         exchange.getIn().setHeader(TwitterConstants.TWITTER_EVENT_TYPE, name());
 
@@ -63,7 +63,7 @@ public enum TwitterEventType {
         return exchange;
     }
 
-    public <T> List<Exchange> createExchangeList(TwitterEndpoint endpoint, List<T> bodyList) {
+    public <T> List<Exchange> createExchangeList(AbstractTwitterEndpoint endpoint, List<T> bodyList) {
         List<Exchange> exchanges = Collections.emptyList();
 
         if (bodyList != null && !bodyList.isEmpty()) {

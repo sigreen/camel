@@ -16,7 +16,6 @@
  */
 package org.apache.camel.component.sjms.tx;
 
-import org.apache.camel.component.sjms.BatchMessage;
 import org.junit.Test;
 
 /**

@@ -56,15 +56,6 @@ public class CxfRsComponent extends HeaderFilterStrategyComponent implements SSL
 
         CxfRsEndpoint answer;
 
-        Object value = parameters.remove("setDefaultBus");
-        if (value != null) {
-            LOG.warn("The option setDefaultBus is @deprecated, use name defaultBus instead");
-            if (!parameters.containsKey("defaultBus")) {
-                parameters.put("defaultBus", value);
-            }
-        }
-
-
         if (remaining.startsWith(CxfConstants.SPRING_CONTEXT_ENDPOINT)) {
             // Get the bean from the Spring context
             String beanId = remaining.substring(CxfConstants.SPRING_CONTEXT_ENDPOINT.length());

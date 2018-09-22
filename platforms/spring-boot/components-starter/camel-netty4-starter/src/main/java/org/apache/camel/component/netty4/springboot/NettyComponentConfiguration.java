@@ -16,11 +16,9 @@
  */
 package org.apache.camel.component.netty4.springboot;
 
-import java.io.File;
 import java.util.List;
 import java.util.Map;
 import javax.annotation.Generated;
-import io.netty.channel.ChannelHandler;
 import io.netty.channel.EventLoopGroup;
 import io.netty.channel.group.ChannelGroup;
 import io.netty.handler.ssl.SslHandler;
@@ -34,7 +32,6 @@ import org.apache.camel.component.netty4.TextLineDelimiter;
 import org.apache.camel.spring.boot.ComponentConfigurationPropertiesCommon;
 import org.apache.camel.util.jsse.SSLContextParameters;
 import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.boot.context.properties.DeprecatedConfigurationProperty;
 
 /**
  * Socket level networking using TCP or UDP with the Netty 4.x library.
@@ -186,18 +183,6 @@ public class NettyComponentConfiguration
          */
         private List encoders;
         /**
-         * A custom ChannelHandler class that can be used to perform special
-         * marshalling of outbound payloads.
-         */
-        @Deprecated
-        private ChannelHandler encoder;
-        /**
-         * A custom ChannelHandler class that can be used to perform special
-         * marshalling of inbound payloads.
-         */
-        @Deprecated
-        private ChannelHandler decoder;
-        /**
          * Whether or not to disconnect(close) from Netty Channel right after
          * use. Can be used for both consumer and producer.
          */
@@ -253,11 +238,6 @@ public class NettyComponentConfiguration
          * first element in the filter chain.
          */
         private Boolean allowDefaultCodec = true;
-        /**
-         * @deprecated use #setClientInitializerFactory
-         */
-        @Deprecated
-        private ClientInitializerFactory clientPipelineFactory;
         /**
          * To use a custom ClientInitializerFactory
          */
@@ -445,16 +425,6 @@ public class NettyComponentConfiguration
          */
         private Boolean needClientAuth = false;
         /**
-         * Client side certificate keystore to be used for encryption
-         */
-        @Deprecated
-        private File keyStoreFile;
-        /**
-         * Server side certificate keystore to be used for encryption
-         */
-        @Deprecated
-        private File trustStoreFile;
-        /**
          * Client side certificate keystore to be used for encryption. Is loaded
          * by default from classpath, but you can prefix with classpath:, file:,
          * or http: to load the resource from different systems.
@@ -481,11 +451,6 @@ public class NettyComponentConfiguration
          * using SSH
          */
         private String passphrase;
-        /**
-         * @deprecated use #setServerInitializerFactory
-         */
-        @Deprecated
-        private ServerInitializerFactory serverPipelineFactory;
         /**
          * To use a custom ServerInitializerFactory
          */
@@ -617,28 +582,6 @@ public class NettyComponentConfiguration
             this.encoders = encoders;
         }
 
-        @Deprecated
-        @DeprecatedConfigurationProperty
-        public ChannelHandler getEncoder() {
-            return encoder;
-        }
-
-        @Deprecated
-        public void setEncoder(ChannelHandler encoder) {
-            this.encoder = encoder;
-        }
-
-        @Deprecated
-        @DeprecatedConfigurationProperty
-        public ChannelHandler getDecoder() {
-            return decoder;
-        }
-
-        @Deprecated
-        public void setDecoder(ChannelHandler decoder) {
-            this.decoder = decoder;
-        }
-
         public Boolean getDisconnect() {
             return disconnect;
         }
@@ -711,18 +654,6 @@ public class NettyComponentConfiguration
 
         public void setAllowDefaultCodec(Boolean allowDefaultCodec) {
             this.allowDefaultCodec = allowDefaultCodec;
-        }
-
-        @Deprecated
-        @DeprecatedConfigurationProperty
-        public ClientInitializerFactory getClientPipelineFactory() {
-            return clientPipelineFactory;
-        }
-
-        @Deprecated
-        public void setClientPipelineFactory(
-                ClientInitializerFactory clientPipelineFactory) {
-            this.clientPipelineFactory = clientPipelineFactory;
         }
 
         public ClientInitializerFactory getClientInitializerFactory() {
@@ -986,28 +917,6 @@ public class NettyComponentConfiguration
             this.needClientAuth = needClientAuth;
         }
 
-        @Deprecated
-        @DeprecatedConfigurationProperty
-        public File getKeyStoreFile() {
-            return keyStoreFile;
-        }
-
-        @Deprecated
-        public void setKeyStoreFile(File keyStoreFile) {
-            this.keyStoreFile = keyStoreFile;
-        }
-
-        @Deprecated
-        @DeprecatedConfigurationProperty
-        public File getTrustStoreFile() {
-            return trustStoreFile;
-        }
-
-        @Deprecated
-        public void setTrustStoreFile(File trustStoreFile) {
-            this.trustStoreFile = trustStoreFile;
-        }
-
         public String getKeyStoreResource() {
             return keyStoreResource;
         }
@@ -1046,18 +955,6 @@ public class NettyComponentConfiguration
 
         public void setPassphrase(String passphrase) {
             this.passphrase = passphrase;
-        }
-
-        @Deprecated
-        @DeprecatedConfigurationProperty
-        public ServerInitializerFactory getServerPipelineFactory() {
-            return serverPipelineFactory;
-        }
-
-        @Deprecated
-        public void setServerPipelineFactory(
-                ServerInitializerFactory serverPipelineFactory) {
-            this.serverPipelineFactory = serverPipelineFactory;
         }
 
         public ServerInitializerFactory getServerInitializerFactory() {

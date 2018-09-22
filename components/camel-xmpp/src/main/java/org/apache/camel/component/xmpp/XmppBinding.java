@@ -152,7 +152,6 @@ public class XmppBinding {
             answer.put(XmppConstants.MESSAGE_TYPE, pubsubPacket.getType());
         }
         answer.put(XmppConstants.FROM, stanza.getFrom());
-        answer.put(XmppConstants.PACKET_ID, stanza.getStanzaId());
         answer.put(XmppConstants.STANZA_ID, stanza.getStanzaId());
         answer.put(XmppConstants.TO, stanza.getTo());
 

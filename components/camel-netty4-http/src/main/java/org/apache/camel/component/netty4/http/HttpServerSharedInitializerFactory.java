@@ -26,6 +26,7 @@ import io.netty.handler.codec.http.HttpObjectAggregator;
 import io.netty.handler.codec.http.HttpRequestDecoder;
 import io.netty.handler.codec.http.HttpResponseEncoder;
 import io.netty.handler.ssl.SslHandler;
+import org.apache.camel.CamelContext;
 import org.apache.camel.component.netty4.NettyConsumer;
 import org.apache.camel.component.netty4.ServerInitializerFactory;
 import org.apache.camel.component.netty4.ssl.SSLEngineFactory;
@@ -45,15 +46,15 @@ public class HttpServerSharedInitializerFactory extends HttpServerInitializerFac
     private static final Logger LOG = LoggerFactory.getLogger(HttpServerSharedInitializerFactory.class);
     private final NettySharedHttpServerBootstrapConfiguration configuration;
     private final HttpServerConsumerChannelFactory channelFactory;
-    private final ClassResolver classResolver;
+    private final CamelContext camelContext;
     private SSLContext sslContext;
 
     public HttpServerSharedInitializerFactory(NettySharedHttpServerBootstrapConfiguration configuration, HttpServerConsumerChannelFactory channelFactory,
-                                           ClassResolver classResolver) {
+                                           CamelContext camelContext) {
         this.configuration = configuration;
         this.channelFactory = channelFactory;
         // fallback and use default resolver
-        this.classResolver = classResolver != null ? classResolver : new DefaultClassResolver();
+        this.camelContext = camelContext;
 
         try {
             this.sslContext = createSSLContext();
@@ -105,34 +106,23 @@ public class HttpServerSharedInitializerFactory extends HttpServerInitializerFac
         if (configuration.getSslContextParameters() != null) {
             answer = configuration.getSslContextParameters().createSSLContext(null);
         } else {
-            if (configuration.getKeyStoreFile() == null && configuration.getKeyStoreResource() == null) {
+            if (configuration.getKeyStoreResource() == null) {
                 LOG.debug("keystorefile is null");
             }
-            if (configuration.getTrustStoreFile() == null && configuration.getTrustStoreResource() == null) {
+            if (configuration.getTrustStoreResource() == null) {
                 LOG.debug("truststorefile is null");
             }
             if (configuration.getPassphrase().toCharArray() == null) {
                 LOG.debug("passphrase is null");
             }
 
-            SSLEngineFactory sslEngineFactory;
-            if (configuration.getKeyStoreFile() != null || configuration.getTrustStoreFile() != null) {
-                sslEngineFactory = new SSLEngineFactory();
-                answer = sslEngineFactory.createSSLContext(classResolver,
-                        configuration.getKeyStoreFormat(),
-                        configuration.getSecurityProvider(),
-                        "file:" + configuration.getKeyStoreFile().getPath(),
-                        "file:" + configuration.getTrustStoreFile().getPath(),
-                        configuration.getPassphrase().toCharArray());
-            } else {
-                sslEngineFactory = new SSLEngineFactory();
-                answer = sslEngineFactory.createSSLContext(classResolver,
-                        configuration.getKeyStoreFormat(),
-                        configuration.getSecurityProvider(),
-                        configuration.getKeyStoreResource(),
-                        configuration.getTrustStoreResource(),
-                        configuration.getPassphrase().toCharArray());
-            }
+            SSLEngineFactory sslEngineFactory = new SSLEngineFactory();
+            answer = sslEngineFactory.createSSLContext(camelContext,
+                    configuration.getKeyStoreFormat(),
+                    configuration.getSecurityProvider(),
+                    configuration.getKeyStoreResource(),
+                    configuration.getTrustStoreResource(),
+                    configuration.getPassphrase().toCharArray());
         }
 
         return answer;

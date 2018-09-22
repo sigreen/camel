@@ -100,7 +100,7 @@ public class Jt400DataQueueConsumerTest extends Assert {
     public void testReceive() throws InterruptedException {
         new Thread(new Runnable() {
             public void run() {
-                consumer.receive();
+                consumer.receive(-1);
                 receiveFlag = true;
             }
         }).start();

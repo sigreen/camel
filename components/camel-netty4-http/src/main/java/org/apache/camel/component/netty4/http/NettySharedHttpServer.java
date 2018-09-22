@@ -16,6 +16,7 @@
  */
 package org.apache.camel.component.netty4.http;
 
+import org.apache.camel.CamelContextAware;
 import org.apache.camel.Service;
 import org.apache.camel.component.netty4.NettyServerBootstrapConfiguration;
 import org.apache.camel.component.netty4.NettyServerBootstrapFactory;
@@ -29,17 +30,12 @@ import org.apache.camel.spi.ClassResolver;
  * set this using {@link #setNettyServerBootstrapConfiguration(NettySharedHttpServerBootstrapConfiguration)}.
  * Then call the {@link #start()} to initialize this shared server.
  */
-public interface NettySharedHttpServer extends Service {
+public interface NettySharedHttpServer extends Service, CamelContextAware {
 
     /**
      * Sets the bootstrap configuration to use by this shared Netty HTTP server.
      */
     void setNettyServerBootstrapConfiguration(NettySharedHttpServerBootstrapConfiguration configuration);
-
-    /**
-     * To use a custom {@link ClassResolver} for loading resource on the classpath.
-     */
-    void setClassResolver(ClassResolver classResolver);
 
     /**
      * Whether to start the Netty HTTP server eager and bind to the port, or wait on first demand

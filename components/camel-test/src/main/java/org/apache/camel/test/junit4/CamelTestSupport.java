@@ -633,16 +633,6 @@ public abstract class CamelTestSupport extends TestSupport {
     }
 
     /**
-     * Whether or not type converters should be lazy loaded (notice core converters is always loaded)
-     *
-     * @return <tt>false</tt> by default.
-     */
-    @Deprecated
-    protected boolean isLazyLoadingTypeConverter() {
-        return false;
-    }
-
-    /**
      * Override this method to include and override properties
      * with the Camel {@link PropertiesComponent}.
      *

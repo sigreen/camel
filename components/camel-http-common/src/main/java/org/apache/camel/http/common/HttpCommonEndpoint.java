@@ -122,11 +122,6 @@ public abstract class HttpCommonEndpoint extends DefaultEndpoint implements Head
             description = "The status codes which are considered a success response. The values are inclusive. Multiple ranges can be"
                     + " defined, separated by comma, e.g. 200-204,209,301-304. Each range must be a single number or from-to with the dash included.")
     private String okStatusCodeRange = "200-299";
-    @UriParam(label = "producer,advanced",
-            description = "Refers to a custom org.apache.camel.component.http.UrlRewrite which allows you to rewrite urls when you bridge/proxy endpoints."
-                    + " See more details at http://camel.apache.org/urlrewrite.html")
-    @Deprecated
-    private UrlRewrite urlRewrite;
     @UriParam(label = "consumer", defaultValue = "false",
             description = "Configure the consumer to work in async mode")
     private boolean async;
@@ -134,7 +129,6 @@ public abstract class HttpCommonEndpoint extends DefaultEndpoint implements Head
     private CookieHandler cookieHandler;
     @UriParam(label = "producer", description = "Configure the HTTP method to use. The HttpMethod header cannot override this option if set.")
     private HttpMethods httpMethod;
-
     @UriParam(label = "producer,security", description = "Authentication methods allowed to use as a comma separated list of values Basic, Digest or NTLM.")
     private String authMethod;
     @UriParam(label = "producer,security", enums = "Basic,Digest,NTLM", description = "Which authentication method to prioritize to use, either as Basic, Digest or NTLM.")
@@ -211,22 +205,6 @@ public abstract class HttpCommonEndpoint extends DefaultEndpoint implements Head
 
     // Properties
     //-------------------------------------------------------------------------
-
-    /**
-     * @deprecated use {@link #getHttpBinding()}
-     */
-    @Deprecated
-    public HttpBinding getBinding() {
-        return httpBinding;
-    }
-
-    /**
-     * @deprecated use {@link #setHttpBinding(HttpBinding)}
-     */
-    @Deprecated
-    public void setBinding(HttpBinding httpBinding) {
-        setHttpBinding(httpBinding);
-    }
 
     public HttpBinding getHttpBinding() {
         if (httpBinding == null) {
@@ -436,20 +414,6 @@ public abstract class HttpCommonEndpoint extends DefaultEndpoint implements Head
      */
     public void setHttpMethodRestrict(String httpMethodRestrict) {
         this.httpMethodRestrict = httpMethodRestrict;
-    }
-
-    @Deprecated
-    public UrlRewrite getUrlRewrite() {
-        return urlRewrite;
-    }
-
-    /**
-     * Refers to a custom org.apache.camel.component.http.UrlRewrite which allows you to rewrite urls when you bridge/proxy endpoints.
-     * See more details at http://camel.apache.org/urlrewrite.html
-     */
-    @Deprecated
-    public void setUrlRewrite(UrlRewrite urlRewrite) {
-        this.urlRewrite = urlRewrite;
     }
 
     public Integer getResponseBufferSize() {

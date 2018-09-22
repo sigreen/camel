@@ -16,7 +16,7 @@
  */
 package org.apache.camel.component.twitter.streaming;
 
-import org.apache.camel.component.twitter.TwitterEndpoint;
+import org.apache.camel.component.twitter.AbstractTwitterEndpoint;
 import twitter4j.FilterQuery;
 import twitter4j.StallWarning;
 
@@ -27,7 +27,7 @@ public class FilterStreamingConsumerHandler extends AbstractStreamingConsumerHan
 
     private String keywords;
 
-    public FilterStreamingConsumerHandler(TwitterEndpoint endpoint, String keywords) {
+    public FilterStreamingConsumerHandler(AbstractTwitterEndpoint endpoint, String keywords) {
         super(endpoint);
         this.keywords = keywords;
     }

@@ -68,16 +68,6 @@ public abstract class TestSupport extends Assert {
     }
 
     /**
-     * Returns a value builder for the given property
-     * 
-     * @deprecated use {@link #exchangeProperty(String)}
-     */
-    @Deprecated
-    public static ValueBuilder property(String name) {
-        return Builder.exchangeProperty(name);
-    }
-
-    /**
      * Returns a value builder for the given exchange property
      */
     public static ValueBuilder exchangeProperty(String name) {
@@ -353,25 +343,6 @@ public abstract class TestSupport extends Assert {
     }
 
     /**
-     * If a processor is wrapped with a bunch of DelegateProcessor or DelegateAsyncProcessor objects
-     * this call will drill through them and return the Channel.
-     * <p/>
-     * Returns null if no channel is found.
-     */
-    @Deprecated
-    public static Channel unwrapChannel(Processor processor) {
-        while (true) {
-            if (processor instanceof Channel) {
-                return (Channel) processor;
-            } else if (processor instanceof DelegateProcessor) {
-                processor = ((DelegateProcessor)processor).getProcessor();
-            } else {
-                return null;
-            }
-        }
-    }
-
-    /**
      * Recursively delete a directory, useful to zapping test data
      *
      * @param file the directory to be deleted
@@ -497,41 +468,6 @@ public abstract class TestSupport extends Assert {
     public static boolean isJavaVendor(String vendor) {
         String javaVendor = System.getProperty("java.vendor").toLowerCase(Locale.US);
         return javaVendor.contains(vendor.toLowerCase(Locale.US));
-    }
-
-    /**
-     * Is this Java 1.5
-     *
-     * @return <tt>true</tt> if its Java 1.5, <tt>false</tt> if its not (for example Java 1.6 or better)
-     * @deprecated will be removed in the future as Camel requires JDK1.8+
-     */
-    @Deprecated
-    public static boolean isJava15() {
-        return getJavaMajorVersion() == 5;
-    }
-
-    /**
-     * Is this Java 1.6
-     *
-     * @return <tt>true</tt> if its Java 1.6, <tt>false</tt> if its not (for example Java 1.7 or better)
-     * @deprecated will be removed in the future as Camel requires JDK1.8+
-     */
-    @Deprecated
-    public static boolean isJava16() {
-        return getJavaMajorVersion() == 6;
-
-    }
-    
-    /**
-     * Is this Java 1.7
-     *
-     * @return <tt>true</tt> if its Java 1.7, <tt>false</tt> if its not (for example Java 1.6 or older)
-     * @deprecated will be removed in the future as Camel requires JDK1.8+
-     */
-    @Deprecated
-    public static boolean isJava17() {
-        return getJavaMajorVersion() == 7;
-
     }
 
     /**

@@ -28,8 +28,6 @@ public final class PahoConstants {
     public static final String DEFAULT_BROKER_URL = "tcp://localhost:1883";
     public static final int DEFAULT_QOS = 2;
 
-    @Deprecated
-    public static final String HEADER_ORIGINAL_MESSAGE = "PahoOriginalMessage";
     public static final String CAMEL_PAHO = "CamelPaho";
     public static final String CAMEL_PAHO_MSG_QOS = CAMEL_PAHO + "Qos";
     public static final String CAMEL_PAHO_MSG_RETAINED = CAMEL_PAHO + "Retained";

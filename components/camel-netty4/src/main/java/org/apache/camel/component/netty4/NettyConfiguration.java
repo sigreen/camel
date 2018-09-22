@@ -58,14 +58,8 @@ public class NettyConfiguration extends NettyServerBootstrapConfiguration implem
     private int decoderMaxLineLength = 1024;
     @UriParam(label = "codec")
     private String encoding;
-    @UriParam(label = "codec", description = "To use a single encoder. This options is deprecated use encoders instead.")
-    @Deprecated
-    private ChannelHandler encoder;
     @UriParam(label = "codec", javaType = "java.lang.String")
     private List<ChannelHandler> encoders = new ArrayList<>();
-    @UriParam(label = "codec", description = "To use a single decoder. This options is deprecated use encoders instead.")
-    @Deprecated
-    private ChannelHandler decoder;
     @UriParam(label = "codec", javaType = "java.lang.String")
     private List<ChannelHandler> decoders = new ArrayList<>();
     @UriParam
@@ -186,8 +180,6 @@ public class NettyConfiguration extends NettyServerBootstrapConfiguration implem
         passphrase = component.getAndRemoveOrResolveReferenceParameter(parameters, "passphrase", String.class, passphrase);
         keyStoreFormat = component.getAndRemoveOrResolveReferenceParameter(parameters, "keyStoreFormat", String.class, keyStoreFormat == null ? "JKS" : keyStoreFormat);
         securityProvider = component.getAndRemoveOrResolveReferenceParameter(parameters, "securityProvider", String.class, securityProvider == null ? "SunX509" : securityProvider);
-        keyStoreFile = component.getAndRemoveOrResolveReferenceParameter(parameters, "keyStoreFile", File.class, keyStoreFile);
-        trustStoreFile = component.getAndRemoveOrResolveReferenceParameter(parameters, "trustStoreFile", File.class, trustStoreFile);
         keyStoreResource = component.getAndRemoveOrResolveReferenceParameter(parameters, "keyStoreResource", String.class, keyStoreResource);
         trustStoreResource = component.getAndRemoveOrResolveReferenceParameter(parameters, "trustStoreResource", String.class, trustStoreResource);
         // clientPipelineFactory is @deprecated and to be removed
@@ -368,32 +360,6 @@ public class NettyConfiguration extends NettyServerBootstrapConfiguration implem
         this.encoders = encoders;
     }
 
-    public ChannelHandler getEncoder() {
-        return encoders.isEmpty() ? null : encoders.get(0);
-    }
-
-    /**
-     * A custom ChannelHandler class that can be used to perform special marshalling of outbound payloads.
-     */
-    public void setEncoder(ChannelHandler encoder) {
-        if (!encoders.contains(encoder)) {
-            encoders.add(encoder);
-        }
-    }
-
-    public ChannelHandler getDecoder() {
-        return decoders.isEmpty() ? null : decoders.get(0);
-    }
-
-    /**
-     * A custom ChannelHandler class that can be used to perform special marshalling of inbound payloads.
-     */
-    public void setDecoder(ChannelHandler decoder) {
-        if (!decoders.contains(decoder)) {
-            decoders.add(decoder);
-        }
-    }
-
     public boolean isDisconnect() {
         return disconnect;
     }
@@ -498,22 +464,6 @@ public class NettyConfiguration extends NettyServerBootstrapConfiguration implem
      */
     public void setAllowDefaultCodec(boolean allowDefaultCodec) {
         this.allowDefaultCodec = allowDefaultCodec;
-    }
-
-    /**
-     * @deprecated use #setClientInitializerFactory
-     */
-    @Deprecated
-    public void setClientPipelineFactory(ClientInitializerFactory clientPipelineFactory) {
-        this.clientInitializerFactory = clientPipelineFactory;
-    }
-
-    /**
-     * @deprecated use #getClientInitializerFactory
-     */
-    @Deprecated
-    public ClientInitializerFactory getClientPipelineFactory() {
-        return clientInitializerFactory;
     }
 
     public ClientInitializerFactory getClientInitializerFactory() {

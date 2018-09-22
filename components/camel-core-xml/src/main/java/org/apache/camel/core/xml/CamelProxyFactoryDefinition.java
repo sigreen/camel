@@ -33,8 +33,6 @@ public class CamelProxyFactoryDefinition extends IdentifiedType {
 
     @XmlAttribute
     private String serviceUrl;
-    @XmlAttribute @Deprecated
-    private String serviceRef;
     @XmlAttribute
     private Class<?> serviceInterface;
     @XmlAttribute
@@ -51,20 +49,6 @@ public class CamelProxyFactoryDefinition extends IdentifiedType {
      */
     public void setServiceUrl(String serviceUrl) {
         this.serviceUrl = serviceUrl;
-    }
-
-    public String getServiceRef() {
-        return serviceRef;
-    }
-
-    /**
-     * The camel endpoint reference used to send the message to when calling the service from the interface.
-     *
-     * @deprecated use serviceUrl instead with the ref endpoint.
-     */
-    @Deprecated
-    public void setServiceRef(String serviceRef) {
-        this.serviceRef = serviceRef;
     }
 
     public Class<?> getServiceInterface() {

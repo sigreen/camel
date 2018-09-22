@@ -64,7 +64,7 @@ public class IgniteCacheComponent extends AbstractIgniteComponent {
     @Override
     protected Endpoint createEndpoint(String uri, String remaining, Map<String, Object> parameters) throws Exception {
         ObjectHelper.notNull(getCamelContext(), "Camel Context");
-        IgniteCacheEndpoint answer = new IgniteCacheEndpoint(uri, remaining, parameters, this);
+        IgniteCacheEndpoint answer = new IgniteCacheEndpoint(uri, remaining, this);
         setProperties(answer, parameters);
         return answer;
     }

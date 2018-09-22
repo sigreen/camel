@@ -21,7 +21,6 @@ import java.util.List;
 
 import com.hazelcast.core.Hazelcast;
 import com.hazelcast.core.HazelcastInstance;
-import org.apache.camel.component.hazelcast.HazelcastComponent;
 import org.apache.camel.component.hazelcast.list.HazelcastListComponent;
 import org.apache.camel.component.hazelcast.set.HazelcastSetComponent;
 import org.apache.camel.component.hazelcast.topic.HazelcastTopicComponent;

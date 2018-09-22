@@ -81,22 +81,6 @@ public class Main extends org.apache.camel.spring.Main {
         return configClasses;
     }
 
-    /**
-     * @deprecated use {@link #setConfigClasses(String)}
-     */
-    @Deprecated
-    public void setConfigClassesString(String config) {
-        setConfigClasses(config);
-    }
-
-    /**
-     * @deprecated use {@link #getConfigClasses()}
-     */
-    @Deprecated
-    public String getConfigClassesString() {
-        return getConfigClasses();
-    }
-
     public Class[] getConfigClass() {
         return configClass;
     }

@@ -51,7 +51,6 @@ import org.apache.camel.http.common.HttpConfiguration;
 import org.apache.camel.http.common.HttpConsumer;
 import org.apache.camel.http.common.HttpRestHeaderFilterStrategy;
 import org.apache.camel.http.common.HttpRestServletResolveConsumerStrategy;
-import org.apache.camel.http.common.UrlRewrite;
 import org.apache.camel.spi.HeaderFilterStrategy;
 import org.apache.camel.spi.ManagementAgent;
 import org.apache.camel.spi.ManagementStrategy;
@@ -186,7 +185,6 @@ public abstract class JettyHttpComponent extends HttpCommonComponent implements 
         List<Filter> filters = resolveAndRemoveReferenceListParameter(parameters, "filtersRef", Filter.class);
         Boolean enableCors = getAndRemoveParameter(parameters, "enableCORS", Boolean.class, false);
         HeaderFilterStrategy headerFilterStrategy = resolveAndRemoveReferenceParameter(parameters, "headerFilterStrategy", HeaderFilterStrategy.class);
-        UrlRewrite urlRewrite = resolveAndRemoveReferenceParameter(parameters, "urlRewrite", UrlRewrite.class);
         SSLContextParameters sslContextParameters = resolveAndRemoveReferenceParameter(parameters, "sslContextParameters", SSLContextParameters.class);
         SSLContextParameters ssl = sslContextParameters != null ? sslContextParameters : this.sslContextParameters;
         ssl = ssl != null ? ssl : retrieveGlobalSslContextParameters();
@@ -231,14 +229,7 @@ public abstract class JettyHttpComponent extends HttpCommonComponent implements 
             endpoint.setProxyHost(proxyHost);
             endpoint.setProxyPort(proxyPort);
         }
-        if (urlRewrite != null) {
-            // let CamelContext deal with the lifecycle of the url rewrite
-            // this ensures its being shutdown when Camel shutdown etc.
-            getCamelContext().addService(urlRewrite);
-            endpoint.setUrlRewrite(urlRewrite);
-        }
         // setup the proxy host and proxy port
-
         if (httpClientParameters != null && !httpClientParameters.isEmpty()) {
             endpoint.setHttpClientParameters(httpClientParameters);
         }
@@ -254,7 +245,7 @@ public abstract class JettyHttpComponent extends HttpCommonComponent implements 
             binding = getHttpBinding();
         }
         if (binding != null) {
-            endpoint.setBinding(binding);
+            endpoint.setHttpBinding(binding);
         }
         // prefer to use endpoint configured over component configured
         if (jettyBinding == null) {

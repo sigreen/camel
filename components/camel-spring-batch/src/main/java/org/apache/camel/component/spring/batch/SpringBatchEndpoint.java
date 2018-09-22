@@ -45,13 +45,6 @@ public class SpringBatchEndpoint extends DefaultEndpoint {
     @UriParam
     private boolean jobFromHeader;
 
-    /**
-     * @deprecated will be removed in Camel 3.0
-     * use jobLauncher instead
-     */
-    @Deprecated
-    private String jobLauncherRef;
-
     @UriParam
     private JobLauncher jobLauncher;
 
@@ -104,14 +97,6 @@ public class SpringBatchEndpoint extends DefaultEndpoint {
     }
 
     private JobLauncher resolveJobLauncher() {
-        if (jobLauncherRef != null) {
-            JobLauncher jobLauncher = getCamelContext().getRegistry().lookupByNameAndType(jobLauncherRef, JobLauncher.class);
-            if (jobLauncher == null) {
-                throw new IllegalStateException(String.format("No JobLauncher named %s found in the registry.", jobLauncherRef));
-            }
-            return jobLauncher;
-        }
-
         if (defaultResolvedJobLauncher != null) {
             return defaultResolvedJobLauncher;
         }
@@ -134,19 +119,6 @@ public class SpringBatchEndpoint extends DefaultEndpoint {
      */
     public void setJobName(String jobName) {
         this.jobName = jobName;
-    }
-
-    @Deprecated
-    public String getJobLauncherRef() {
-        return jobLauncherRef;
-    }
-
-    /**
-     * Explicitly specifies a JobLauncher to be used looked up from the registry.
-     */
-    @Deprecated
-    public void setJobLauncherRef(String jobLauncherRef) {
-        this.jobLauncherRef = jobLauncherRef;
     }
 
     public JobLauncher getJobLauncher() {

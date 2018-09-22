@@ -1034,7 +1034,7 @@ public class XMLSecurityDataFormat extends ServiceSupport implements DataFormat,
     }
     
     /**
-     * @deprecated  Will change to private access in the future.  Use {@link #setKeyOrTrustStoreParameters()} instead.
+     * @deprecated  Will change to private access in the future.  Use {@link #setKeyOrTrustStoreParameters(KeyStoreParameters)} instead.
      */
     @Deprecated
     public String getTrustStorePassword() {
@@ -1045,7 +1045,7 @@ public class XMLSecurityDataFormat extends ServiceSupport implements DataFormat,
     }
     
     /**
-     * @deprecated  Use {@link #setKeyOrTrustStoreParameters()} instead.
+     * @deprecated  Use {@link #setKeyOrTrustStoreParameters(KeyStoreParameters)} instead.
      */
     @Deprecated
     public void setTrustStorePassword(String trustStorePassword) {

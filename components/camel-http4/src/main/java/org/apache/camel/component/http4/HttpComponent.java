@@ -35,7 +35,6 @@ import org.apache.camel.http.common.HttpBinding;
 import org.apache.camel.http.common.HttpCommonComponent;
 import org.apache.camel.http.common.HttpHelper;
 import org.apache.camel.http.common.HttpRestHeaderFilterStrategy;
-import org.apache.camel.http.common.UrlRewrite;
 import org.apache.camel.spi.HeaderFilterStrategy;
 import org.apache.camel.spi.Metadata;
 import org.apache.camel.spi.RestConfiguration;
@@ -236,7 +235,6 @@ public class HttpComponent extends HttpCommonComponent implements RestProducerFa
         String httpMethodRestrict = getAndRemoveParameter(parameters, "httpMethodRestrict", String.class);
         
         HeaderFilterStrategy headerFilterStrategy = resolveAndRemoveReferenceParameter(parameters, "headerFilterStrategy", HeaderFilterStrategy.class);
-        UrlRewrite urlRewrite = resolveAndRemoveReferenceParameter(parameters, "urlRewrite", UrlRewrite.class);
 
         boolean secure = HttpHelper.isSecureConnection(uri) || sslContextParameters != null;
 
@@ -286,13 +284,6 @@ public class HttpComponent extends HttpCommonComponent implements RestProducerFa
             setProperties(endpoint, properties);
         }
 
-        if (urlRewrite != null) {
-            // let CamelContext deal with the lifecycle of the url rewrite
-            // this ensures its being shutdown when Camel shutdown etc.
-            getCamelContext().addService(urlRewrite);
-            endpoint.setUrlRewrite(urlRewrite);
-        }
-
         // configure the endpoint
         setProperties(endpoint, parameters);
 
@@ -314,9 +305,9 @@ public class HttpComponent extends HttpCommonComponent implements RestProducerFa
         } else {
             setEndpointHeaderFilterStrategy(endpoint);
         }
-        endpoint.setBinding(getHttpBinding());
+        endpoint.setHttpBinding(getHttpBinding());
         if (httpBinding != null) {
-            endpoint.setBinding(httpBinding);
+            endpoint.setHttpBinding(httpBinding);
         }
         if (httpMethodRestrict != null) {
             endpoint.setHttpMethodRestrict(httpMethodRestrict);

@@ -526,7 +526,6 @@ public class MllpTcpServerConsumer extends DefaultConsumer {
 
         // TODO:  re-evaluate this - it seems that the MLLP buffer should be populated by now
         if (consumerRunnable.getMllpBuffer().hasCompleteEnvelope()) {
-            // The mllpBuffer will be used if bufferWrites is set or if auto acknowledgement is used
             message.setHeader(MllpConstants.MLLP_ACKNOWLEDGEMENT, consumerRunnable.getMllpBuffer().toMllpPayload());
             message.setHeader(MllpConstants.MLLP_ACKNOWLEDGEMENT_STRING, consumerRunnable.getMllpBuffer().toHl7String(charset));
 

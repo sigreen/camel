@@ -20,7 +20,6 @@ import javax.annotation.Generated;
 import org.apache.camel.spring.boot.ComponentConfigurationPropertiesCommon;
 import org.apache.sshd.common.keyprovider.KeyPairProvider;
 import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.boot.context.properties.DeprecatedConfigurationProperty;
 
 /**
  * The ssh component enables access to SSH servers such that you can send an SSH
@@ -84,11 +83,6 @@ public class SshComponentConfiguration
      * server connection. Defaults to 30000 milliseconds.
      */
     private Long timeout;
-    /**
-     * Sets the resource path of the certificate to use for Authentication.
-     */
-    @Deprecated
-    private String certFilename;
     /**
      * Sets the resource path of the certificate to use for Authentication. Will
      * use ResourceHelperKeyPairProvider to resolve file based certificate, and
@@ -190,17 +184,6 @@ public class SshComponentConfiguration
         this.timeout = timeout;
     }
 
-    @Deprecated
-    @DeprecatedConfigurationProperty
-    public String getCertFilename() {
-        return certFilename;
-    }
-
-    @Deprecated
-    public void setCertFilename(String certFilename) {
-        this.certFilename = certFilename;
-    }
-
     public String getCertResource() {
         return certResource;
     }
@@ -284,12 +267,6 @@ public class SshComponentConfiguration
          * SSH server connection. Defaults to 30000 milliseconds.
          */
         private Long timeout = 30000L;
-        /**
-         * @deprecated As of version 2.11, replaced by
-         *             {@link #setCertResource(String)}
-         */
-        @Deprecated
-        private String certFilename;
         /**
          * Sets the resource path of the certificate to use for Authentication.
          * Will use ResourceHelperKeyPairProvider to resolve file based
@@ -383,17 +360,6 @@ public class SshComponentConfiguration
 
         public void setTimeout(Long timeout) {
             this.timeout = timeout;
-        }
-
-        @Deprecated
-        @DeprecatedConfigurationProperty
-        public String getCertFilename() {
-            return certFilename;
-        }
-
-        @Deprecated
-        public void setCertFilename(String certFilename) {
-            this.certFilename = certFilename;
         }
 
         public String getCertResource() {

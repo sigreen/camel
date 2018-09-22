@@ -79,28 +79,8 @@ public interface ConnectorComponent extends Component {
 
     /**
      * A set of additional component/endpoint options to use for the base component when creating connector endpoints.
-     *
-     * @deprecated use {@link #getOptions()} instead
-     */
-    @Deprecated
-    default Map<String, Object> getComponentOptions() {
-        return getOptions();
-    }
-
-    /**
-     * A set of additional component/endpoint options to use for the base component when creating connector endpoints.
      */
     Map<String, Object> getOptions();
-
-    /**
-     * A set of additional component/endpoint options to use for the base component when creating connector endpoints.
-     *
-     * @deprecated use {@link #setOptions(Map)} instead
-     */
-    @Deprecated
-    default void setComponentOptions(Map<String, Object> options) {
-        setOptions(options);
-    }
 
     /**
      * A set of additional component/endpoint options to use for the base component when creating connector endpoints.

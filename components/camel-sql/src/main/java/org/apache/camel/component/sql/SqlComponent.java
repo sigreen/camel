@@ -66,10 +66,6 @@ public class SqlComponent extends DefaultComponent {
         if (ds != null) {
             target = ds;
         }
-        String dataSourceRef = getAndRemoveParameter(parameters, "dataSourceRef", String.class);
-        if (target == null && dataSourceRef != null) {
-            target = CamelContextHelper.mandatoryLookup(getCamelContext(), dataSourceRef, DataSource.class);
-        }
         if (target == null) {
             // fallback and use component
             target = dataSource;
@@ -128,7 +124,6 @@ public class SqlComponent extends DefaultComponent {
         endpoint.setOnConsumeFailed(onConsumeFailed);
         endpoint.setOnConsumeBatchComplete(onConsumeBatchComplete);
         endpoint.setDataSource(ds);
-        endpoint.setDataSourceRef(dataSourceRef);
         endpoint.setTemplateOptions(templateOptions);
         return endpoint;
     }

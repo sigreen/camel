@@ -87,14 +87,6 @@ public class CamelSpringBootApplicationController {
         LOG.debug("CamelContext shutdown complete.");
     }
 
-    /**
-     * @deprecated use {@link #run()}
-     */
-    @Deprecated
-    public void blockMainThread() {
-        run();
-    }
-
     @PreDestroy
     private void destroy() {
         main.completed();

@@ -227,21 +227,6 @@ public class JmsBinding {
         return map;
     }
 
-    /**
-     * @deprecated not in use
-     */
-    @Deprecated
-    public Object getObjectProperty(Message jmsMessage, String name) throws JMSException {
-        // try a direct lookup first
-        Object answer = jmsMessage.getObjectProperty(name);
-        if (answer == null) {
-            // then encode the key and do another lookup
-            String key = jmsKeyFormatStrategy.encodeKey(name);
-            answer = jmsMessage.getObjectProperty(key);
-        }
-        return answer;
-    }
-
     protected Object createByteArrayFromBytesMessage(Exchange exchange, BytesMessage message) throws JMSException {
         // ActiveMQ has special optimised mode for bytes message, so we should use streaming if possible
         Long size = getSafeLongProperty(message, "_AMQ_LARGE_SIZE");

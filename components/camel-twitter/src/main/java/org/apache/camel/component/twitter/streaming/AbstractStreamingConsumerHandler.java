@@ -23,7 +23,7 @@ import java.util.concurrent.atomic.AtomicReference;
 
 import org.apache.camel.Exchange;
 import org.apache.camel.Service;
-import org.apache.camel.component.twitter.TwitterEndpoint;
+import org.apache.camel.component.twitter.AbstractTwitterEndpoint;
 import org.apache.camel.component.twitter.consumer.AbstractTwitterConsumerHandler;
 import org.apache.camel.component.twitter.consumer.TwitterEventListener;
 import org.apache.camel.component.twitter.consumer.TwitterEventType;
@@ -42,7 +42,7 @@ public abstract class AbstractStreamingConsumerHandler extends AbstractTwitterCo
     private final AtomicReference<TwitterEventListener> twitterEventListener;
     private boolean clear;
 
-    public AbstractStreamingConsumerHandler(TwitterEndpoint te) {
+    public AbstractStreamingConsumerHandler(AbstractTwitterEndpoint te) {
         super(te);
         this.receivedStatuses = new ArrayList<>();
         this.twitterStream = te.getProperties().createTwitterStream();

@@ -77,7 +77,7 @@ with the following path and query parameters:
 |===
 
 
-==== Query Parameters (7 parameters):
+==== Query Parameters (6 parameters):
 
 
 [width="100%",cols="2,5,^1,2",options="header"]
@@ -88,7 +88,6 @@ with the following path and query parameters:
 | *timeout* (producer) | Sending timeout in millis. | 5000 | int
 | *synchronous* (advanced) | Sets whether synchronous processing should be strictly used, or Camel is allowed to use asynchronous processing (if supported). | false | boolean
 | *encryption* (security) | To specify an encryption method. |  | Encryption
-| *encryptionMethod* (security) | *Deprecated* To specify an encryption method. |  | NagiosEncryptionMethod
 | *password* (security) | Password to be authenticated when sending checks to Nagios. |  | String
 |===
 // endpoint options: END
@@ -96,7 +95,7 @@ with the following path and query parameters:
 === Spring Boot Auto-Configuration
 
 
-The component supports 10 options, which are listed below.
+The component supports 9 options, which are listed below.
 
 
 
@@ -105,7 +104,6 @@ The component supports 10 options, which are listed below.
 | Name | Description | Default | Type
 | *camel.component.nagios.configuration.connection-timeout* | Connection timeout in millis. | 5000 | Integer
 | *camel.component.nagios.configuration.encryption* | To specify an encryption method. |  | Encryption
-| *camel.component.nagios.configuration.encryption-method* | To specify an encryption method. |  | NagiosEncryptionMethod
 | *camel.component.nagios.configuration.host* | This is the address of the Nagios host where checks should be send. |  | String
 | *camel.component.nagios.configuration.nagios-settings* |  |  | NagiosSettings
 | *camel.component.nagios.configuration.password* | Password to be authenticated when sending checks to Nagios. |  | String

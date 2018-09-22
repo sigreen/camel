@@ -269,7 +269,7 @@ final class XmlCdiBeanFactory {
     }
 
     private SyntheticBean<?> proxyFactoryBean(Bean<?> context, CamelProxyFactoryDefinition proxy, URL url) {
-        if (isEmpty(proxy.getServiceRef()) && isEmpty(proxy.getServiceUrl())) {
+        if (isEmpty(proxy.getServiceUrl())) {
             throw new CreationException(
                 format("Missing [%s] or [%s] attribute for imported bean [%s] from resource [%s]",
                     "serviceRef", "serviceUrl", proxy.getId(), url));

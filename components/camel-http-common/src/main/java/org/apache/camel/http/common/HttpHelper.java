@@ -145,21 +145,6 @@ public final class HttpHelper {
      * Deserializes the input stream to a Java object
      *
      * @param is input stream for the Java object
-     * @return the java object, or <tt>null</tt> if input stream was <tt>null</tt>
-     * @throws ClassNotFoundException is thrown if class not found
-     * @throws IOException can be thrown
-     * @deprecated Camel 3.0 
-     * Please use the one which has the parameter of camel context
-     */
-    @Deprecated
-    public static Object deserializeJavaObjectFromStream(InputStream is) throws ClassNotFoundException, IOException {
-        return deserializeJavaObjectFromStream(is, null);
-    }
-    
-    /**
-     * Deserializes the input stream to a Java object
-     *
-     * @param is input stream for the Java object
      * @param context the camel context which could help us to apply the customer classloader
      * @return the java object, or <tt>null</tt> if input stream was <tt>null</tt>
      * @throws ClassNotFoundException is thrown if class not found
@@ -397,90 +382,6 @@ public final class HttpHelper {
         }
 
         return value;
-    }
-
-    /**
-     * Processes any custom {@link org.apache.camel.http.common.UrlRewrite}.
-     *
-     * @param exchange    the exchange
-     * @param url         the url
-     * @param endpoint    the http endpoint
-     * @param producer    the producer
-     * @return            the rewritten url, or <tt>null</tt> to use original url
-     * @throws Exception is thrown if any error during rewriting url
-     */
-    public static String urlRewrite(Exchange exchange, String url, HttpCommonEndpoint endpoint, Producer producer) throws Exception {
-        String answer = null;
-
-        String relativeUrl;
-        if (endpoint.getUrlRewrite() != null) {
-            // we should use the relative path if possible
-            String baseUrl;
-            relativeUrl = endpoint.getHttpUri().toASCIIString();
-            // strip query parameters from relative url
-            if (relativeUrl.contains("?")) {
-                relativeUrl = StringHelper.before(relativeUrl, "?");
-            }
-            if (url.startsWith(relativeUrl)) {
-                baseUrl = url.substring(0, relativeUrl.length());
-                relativeUrl = url.substring(relativeUrl.length());
-            } else {
-                baseUrl = null;
-                relativeUrl = url;
-            }
-            // mark it as null if its empty
-            if (ObjectHelper.isEmpty(relativeUrl)) {
-                relativeUrl = null;
-            }
-
-            String newUrl;
-            if (endpoint.getUrlRewrite() instanceof HttpServletUrlRewrite) {
-                // its servlet based, so we need the servlet request
-                HttpServletRequest request = exchange.getIn().getBody(HttpServletRequest.class);
-                if (request == null) {
-                    HttpMessage msg = exchange.getIn(HttpMessage.class);
-                    if (msg != null) {
-                        request = msg.getRequest();
-                    }
-                }
-                if (request == null) {
-                    throw new IllegalArgumentException("UrlRewrite " + endpoint.getUrlRewrite() + " requires the message body to be a"
-                            + "HttpServletRequest instance, but was: " + ObjectHelper.className(exchange.getIn().getBody()));
-                }
-                // we need to adapt the context-path to be the path from the endpoint, if it came from a http based endpoint
-                // as eg camel-jetty have hardcoded context-path as / for all its servlets/endpoints
-                // we have the actual context-path stored as a header with the key CamelServletContextPath
-                String contextPath = exchange.getIn().getHeader("CamelServletContextPath", String.class);
-                request = new UrlRewriteHttpServletRequestAdapter(request, contextPath);
-                newUrl = ((HttpServletUrlRewrite) endpoint.getUrlRewrite()).rewrite(url, relativeUrl, producer, request);
-            } else {
-                newUrl = endpoint.getUrlRewrite().rewrite(url, relativeUrl, producer);
-            }
-
-            if (ObjectHelper.isNotEmpty(newUrl) && !newUrl.equals(url)) {
-                // we got a new url back, that can either be a new absolute url
-                // or a new relative url
-                if (newUrl.startsWith("http:") || newUrl.startsWith("https:")) {
-                    answer = newUrl;
-                } else if (baseUrl != null) {
-                    // avoid double // when adding the urls
-                    if (baseUrl.endsWith("/") && newUrl.startsWith("/")) {
-                        answer = baseUrl + newUrl.substring(1);
-                    } else {
-                        answer = baseUrl + newUrl;
-                    }
-                } else {
-                    // use the new url as is
-                    answer = newUrl;
-                }
-                if (LOG.isDebugEnabled()) {
-                    LOG.debug("Using url rewrite to rewrite from url {} to {} -> {}",
-                            new Object[]{relativeUrl != null ? relativeUrl : url, newUrl, answer});
-                }
-            }
-        }
-
-        return answer;
     }
 
     /**

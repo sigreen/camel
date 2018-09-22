@@ -25,12 +25,6 @@ public final class JpaConstants {
 
     public static final String ENTITY_MANAGER = "CamelEntityManager";
 
-    /**
-     * @deprecated use {@link #ENTITY_MANAGER}
-     */
-    @Deprecated
-    public static final String ENTITYMANAGER = ENTITY_MANAGER;
-
     private JpaConstants() {
         // utility class
     }

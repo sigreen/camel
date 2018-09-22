@@ -19,7 +19,7 @@ package org.apache.camel.component.twitter.consumer;
 import java.util.List;
 
 import org.apache.camel.Exchange;
-import org.apache.camel.component.twitter.TwitterEndpoint;
+import org.apache.camel.component.twitter.AbstractTwitterEndpoint;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import twitter4j.Paging;
@@ -34,14 +34,14 @@ public abstract class AbstractTwitterConsumerHandler {
     /**
      * Instance of TwitterEndpoint.
      */
-    protected final TwitterEndpoint endpoint;
+    protected final AbstractTwitterEndpoint endpoint;
 
     /**
      * The last tweet ID received.
      */
     private long lastId;
 
-    protected AbstractTwitterConsumerHandler(TwitterEndpoint endpoint) {
+    protected AbstractTwitterConsumerHandler(AbstractTwitterEndpoint endpoint) {
         this.endpoint = endpoint;
         this.lastId = -1;
     }

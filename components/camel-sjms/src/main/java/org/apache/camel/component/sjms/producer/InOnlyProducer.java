@@ -26,7 +26,6 @@ import org.apache.camel.AsyncCallback;
 import org.apache.camel.CamelExchangeException;
 import org.apache.camel.Endpoint;
 import org.apache.camel.Exchange;
-import org.apache.camel.component.sjms.BatchMessage;
 import org.apache.camel.component.sjms.MessageProducerResources;
 import org.apache.camel.component.sjms.SjmsProducer;
 import org.apache.camel.component.sjms.TransactionCommitStrategy;
@@ -57,13 +56,7 @@ public class InOnlyProducer extends SjmsProducer {
                 if (exchange.getIn().getBody() instanceof List) {
                     Iterable<?> payload = (Iterable<?>) exchange.getIn().getBody();
                     for (final Object object : payload) {
-                        Message message;
-                        if (BatchMessage.class.isInstance(object)) {
-                            BatchMessage<?> batchMessage = (BatchMessage<?>) object;
-                            message = getEndpoint().getBinding().makeJmsMessage(exchange, batchMessage.getPayload(), batchMessage.getHeaders(), producer.getSession(), null);
-                        } else {
-                            message = getEndpoint().getBinding().makeJmsMessage(exchange, object, exchange.getIn().getHeaders(), producer.getSession(), null);
-                        }
+                        Message message = getEndpoint().getBinding().makeJmsMessage(exchange, object, exchange.getIn().getHeaders(), producer.getSession(), null);
                         messages.add(message);
                     }
                 } else {

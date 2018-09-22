@@ -47,14 +47,6 @@ public class PaxLoggingEndpoint extends DefaultEndpoint {
         return appender;
     }
 
-    /**
-     * @deprecated use {@link #getAppender()}
-     */
-    @Deprecated
-    public String getName() {
-        return getAppender();
-    }
-
     public PaxLoggingComponent getComponent() {
         return (PaxLoggingComponent) super.getComponent();
     }

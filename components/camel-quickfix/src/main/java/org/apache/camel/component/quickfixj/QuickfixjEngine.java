@@ -106,47 +106,13 @@ public class QuickfixjEngine extends ServiceSupport {
         ThreadPerConnector, ThreadPerSession;
     }
 
-    /**
-     * @deprecated Better make use of the {@link #QuickfixjEngine(String, String)} constructor
-     *             as the {@code forcedShutdown} paramater had/has no effect.
-     */
-    @Deprecated
-    public QuickfixjEngine(String uri, String settingsResourceName, boolean forcedShutdown)
-        throws ConfigError, FieldConvertError, IOException, JMException {
-
-        this(uri, settingsResourceName, forcedShutdown, null, null, null);
-    }
-
     public QuickfixjEngine(String uri, String settingsResourceName) throws ConfigError, FieldConvertError, IOException, JMException {
         this(uri, settingsResourceName, null, null, null);
-    }
-
-    /**
-     * @deprecated Better make use of the {@link #QuickfixjEngine(String, String, MessageStoreFactory, LogFactory, MessageFactory)} constructor
-     *             as the {@code forcedShutdown} paramater had/has no effect.
-     */
-    @Deprecated
-    public QuickfixjEngine(String uri, String settingsResourceName, boolean forcedShutdown,
-            MessageStoreFactory messageStoreFactoryOverride, LogFactory sessionLogFactoryOverride,
-            MessageFactory messageFactoryOverride) throws ConfigError, FieldConvertError, IOException, JMException {
-        this(uri, loadSettings(settingsResourceName), forcedShutdown, messageStoreFactoryOverride,
-                sessionLogFactoryOverride, messageFactoryOverride);
     }
 
     public QuickfixjEngine(String uri, String settingsResourceName, MessageStoreFactory messageStoreFactoryOverride, LogFactory sessionLogFactoryOverride,
                            MessageFactory messageFactoryOverride) throws ConfigError, FieldConvertError, IOException, JMException {
         this(uri, loadSettings(settingsResourceName), messageStoreFactoryOverride, sessionLogFactoryOverride, messageFactoryOverride);
-    }
-
-    /**
-     * @deprecated Better make use of the {@link #QuickfixjEngine(String, SessionSettings, MessageStoreFactory, LogFactory, MessageFactory)} constructor
-     *             as the {@code forcedShutdown} paramater had/has no effect.
-     */
-    @Deprecated
-    public QuickfixjEngine(String uri, SessionSettings settings, boolean forcedShutdown,
-            MessageStoreFactory messageStoreFactoryOverride, LogFactory sessionLogFactoryOverride,
-            MessageFactory messageFactoryOverride) throws ConfigError, FieldConvertError, IOException, JMException {
-        this(uri, settings, messageStoreFactoryOverride, sessionLogFactoryOverride, messageFactoryOverride);
     }
 
     public QuickfixjEngine(String uri, SessionSettings settings, MessageStoreFactory messageStoreFactoryOverride, LogFactory sessionLogFactoryOverride,

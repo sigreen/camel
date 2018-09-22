@@ -28,11 +28,6 @@ import org.junit.Test;
  */
 public class DebugNoLazyTypeConverterTest extends CamelTestSupport {
 
-    @Override
-    protected boolean isLazyLoadingTypeConverter() {
-        return false;
-    }
-
     // START SNIPPET: e1
     @Override
     public boolean isUseDebugger() {

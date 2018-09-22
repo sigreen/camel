@@ -71,7 +71,6 @@ public class CamelCatalogTest {
     public void testFindLanguageNames() throws Exception {
         List<String> names = catalog.findLanguageNames();
 
-        assertTrue(names.contains("el"));
         assertTrue(names.contains("simple"));
         assertTrue(names.contains("spel"));
         assertTrue(names.contains("xpath"));
@@ -83,11 +82,9 @@ public class CamelCatalogTest {
     public void testFindOtherNames() throws Exception {
         List<String> names = catalog.findOtherNames();
 
-        assertTrue(names.contains("eclipse"));
         assertTrue(names.contains("hystrix"));
         assertTrue(names.contains("leveldb"));
         assertTrue(names.contains("kura"));
-        assertTrue(names.contains("servletlistener"));
         assertTrue(names.contains("swagger-java"));
         assertTrue(names.contains("test-spring"));
 
@@ -338,21 +335,21 @@ public class CamelCatalogTest {
 
     @Test
     public void testEndpointLenientProperties() throws Exception {
-        Map<String, String> map = catalog.endpointLenientProperties("http:myserver?throwExceptionOnFailure=false&foo=123&bar=456");
+        Map<String, String> map = catalog.endpointLenientProperties("http4:myserver?throwExceptionOnFailure=false&foo=123&bar=456");
         assertNotNull(map);
         assertEquals(2, map.size());
 
         assertEquals("123", map.get("foo"));
         assertEquals("456", map.get("bar"));
 
-        map = catalog.endpointLenientProperties("http:myserver?throwExceptionOnFailure=false&foo=123&bar=456&httpClient.timeout=5000&httpClient.soTimeout=10000");
+        map = catalog.endpointLenientProperties("http4:myserver?throwExceptionOnFailure=false&foo=123&bar=456&httpClient.timeout=5000&httpClient.soTimeout=10000");
         assertNotNull(map);
         assertEquals(2, map.size());
 
         assertEquals("123", map.get("foo"));
         assertEquals("456", map.get("bar"));
 
-        map = catalog.endpointLenientProperties("http:myserver?throwExceptionOnFailure=false&foo=123&bar=456&httpClient.timeout=5000&httpClient.soTimeout=10000&myPrefix.baz=beer");
+        map = catalog.endpointLenientProperties("http4:myserver?throwExceptionOnFailure=false&foo=123&bar=456&httpClient.timeout=5000&httpClient.soTimeout=10000&myPrefix.baz=beer");
         assertNotNull(map);
         assertEquals(3, map.size());
 
@@ -540,7 +537,7 @@ public class CamelCatalogTest {
 
     @Test
     public void testEndpointPropertiesMultiValued() throws Exception {
-        Map<String, String> map = catalog.endpointProperties("http:helloworld?httpClientOptions=httpClient.foo=123&httpClient.bar=456");
+        Map<String, String> map = catalog.endpointProperties("http4:helloworld?httpClientOptions=httpClient.foo=123&httpClient.bar=456");
         assertNotNull(map);
         assertEquals(2, map.size());
 
@@ -1133,12 +1130,12 @@ public class CamelCatalogTest {
 
     @Test
     public void testValidateEndpointTwitterSpecial() throws Exception {
-        String uri = "twitter://search?{{%s}}&keywords=java";
+        String uri = "twitter-search://search?{{%s}}&keywords=java";
 
         EndpointValidationResult result = catalog.validateEndpointProperties(uri);
         assertTrue(result.isSuccess());
 
-        uri = "twitter://search?{{%s}}";
+        uri = "twitter-search://search?{{%s}}";
         result = catalog.validateEndpointProperties(uri);
         assertTrue(result.isSuccess());
     }

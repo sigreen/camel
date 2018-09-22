@@ -39,10 +39,6 @@ public class QuickfixjSpringTest extends CamelSpringTestSupport {
     @Override
     @Before
     public void setUp() throws Exception {
-        if (isJava16()) {
-            // cannot test on java 1.6
-            return;
-        }
         super.setUp();
     }
 
@@ -53,11 +49,6 @@ public class QuickfixjSpringTest extends CamelSpringTestSupport {
 
     @Test
     public void configureInSpring() throws Exception {
-        if (isJava16()) {
-            // cannot test on java 1.6
-            return;
-        }
-
         SessionID sessionID = new SessionID("FIX.4.2:INITIATOR->ACCEPTOR");
         QuickfixjConfiguration configuration = context.getRegistry().lookupByNameAndType("quickfixjConfiguration", QuickfixjConfiguration.class);
 

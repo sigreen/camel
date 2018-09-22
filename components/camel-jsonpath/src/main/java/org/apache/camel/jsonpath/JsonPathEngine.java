@@ -56,11 +56,6 @@ public class JsonPathEngine {
     private JsonPathAdapter adapter;
     private volatile boolean initJsonAdapter;
 
-    @Deprecated
-    public JsonPathEngine(String expression) {
-        this(expression, false, false, true, null, null);
-    }
-
     public JsonPathEngine(String expression, boolean writeAsString, boolean suppressExceptions, boolean allowSimple,
                           String headerName, Option[] options) {
         this.expression = expression;

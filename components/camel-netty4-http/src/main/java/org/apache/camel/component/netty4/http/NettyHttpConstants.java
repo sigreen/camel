@@ -25,8 +25,6 @@ public final class NettyHttpConstants {
 
     public static final String CONTENT_TYPE_JAVA_SERIALIZED_OBJECT = "application/x-java-serialized-object";
     public static final String CONTENT_TYPE_WWW_FORM_URLENCODED = "application/x-www-form-urlencoded";
-    @Deprecated
-    public static final String HTTP_RESPONSE_TEXT = Exchange.HTTP_RESPONSE_TEXT;
     public static final String HTTP_AUTHENTICATION = "CamelHttpAuthentication";
 
     private NettyHttpConstants() {

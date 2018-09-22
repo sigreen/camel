@@ -76,32 +76,6 @@ public class XStreamDataFormat extends AbstractXStreamWrapper  {
         }
     }
 
-    /**
-     * A factory method which takes a collection of types to be annotated
-     */
-    @Deprecated
-    public static XStreamDataFormat processAnnotations(ClassResolver resolver, Iterable<Class<?>> types) {
-        XStreamDataFormat answer = new XStreamDataFormat();
-        XStream xstream = answer.getXStream(resolver);
-        for (Class<?> type : types) {
-            xstream.processAnnotations(type);
-        }
-        return answer;
-    }
-
-    /**
-     * A factory method which takes a number of types to be annotated
-     */
-    @Deprecated
-    public static XStreamDataFormat processAnnotations(ClassResolver resolver, Class<?>... types) {
-        XStreamDataFormat answer = new XStreamDataFormat();
-        XStream xstream = answer.getXStream(resolver);
-        for (Class<?> type : types) {
-            xstream.processAnnotations(type);
-        }
-        return answer;
-    }
-    
     // just make sure the exchange property can override the xmlstream encoding setting
     protected void updateCharactorEncodingInfo(Exchange exchange) {
         if (exchange.getProperty(Exchange.CHARSET_NAME) == null && encoding != null) {

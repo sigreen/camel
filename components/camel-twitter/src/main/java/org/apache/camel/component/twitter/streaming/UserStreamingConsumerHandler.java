@@ -17,8 +17,8 @@
 package org.apache.camel.component.twitter.streaming;
 
 import org.apache.camel.Exchange;
+import org.apache.camel.component.twitter.AbstractTwitterEndpoint;
 import org.apache.camel.component.twitter.TwitterConstants;
-import org.apache.camel.component.twitter.TwitterEndpoint;
 import org.apache.camel.component.twitter.TwitterHelper;
 import org.apache.camel.component.twitter.consumer.TwitterEventType;
 import twitter4j.DirectMessage;
@@ -30,7 +30,7 @@ import twitter4j.UserStreamListener;
 
 public class UserStreamingConsumerHandler extends AbstractStreamingConsumerHandler implements UserStreamListener {
 
-    public UserStreamingConsumerHandler(TwitterEndpoint endpoint) {
+    public UserStreamingConsumerHandler(AbstractTwitterEndpoint endpoint) {
         super(endpoint);
     }
 

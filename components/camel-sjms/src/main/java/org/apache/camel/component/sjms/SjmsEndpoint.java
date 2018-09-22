@@ -97,8 +97,6 @@ public class SjmsEndpoint extends DefaultEndpoint implements AsyncEndpoint, Mult
     @UriParam(defaultValue = "AUTO_ACKNOWLEDGE", enums = "SESSION_TRANSACTED,CLIENT_ACKNOWLEDGE,AUTO_ACKNOWLEDGE,DUPS_OK_ACKNOWLEDGE",
             description = "The JMS acknowledgement name, which is one of: SESSION_TRANSACTED, CLIENT_ACKNOWLEDGE, AUTO_ACKNOWLEDGE, DUPS_OK_ACKNOWLEDGE")
     private SessionAcknowledgementType acknowledgementMode = SessionAcknowledgementType.AUTO_ACKNOWLEDGE;
-    @Deprecated
-    private int sessionCount = 1;
     @UriParam(label = "producer", defaultValue = "1",
             description = "Sets the number of producers used for this endpoint.")
     private int producerCount = 1;
@@ -395,26 +393,6 @@ public class SjmsEndpoint extends DefaultEndpoint implements AsyncEndpoint, Mult
      */
     public boolean isTopic() {
         return topic;
-    }
-
-    /**
-     * Returns the number of Session instances expected on this endpoint.
-     */
-    @Deprecated
-    public int getSessionCount() {
-        return sessionCount;
-    }
-
-    /**
-     * Sets the number of Session instances used for this endpoint. Value is
-     * ignored for endpoints that require a dedicated session such as a
-     * transacted or InOut endpoint.
-     *
-     * @param sessionCount the number of Session instances, default is 1
-     */
-    @Deprecated
-    public void setSessionCount(int sessionCount) {
-        this.sessionCount = sessionCount;
     }
 
     public int getProducerCount() {

@@ -34,9 +34,6 @@ public class InfinispanConfiguration implements Cloneable {
     private String hosts;
     @UriParam(label = "producer", defaultValue = "PUT")
     private InfinispanOperation operation = InfinispanOperation.PUT;
-    @Deprecated
-    @UriParam(label = "consumer", defaultValue = "PUT")
-    private String command = "PUT";
     @UriParam(label = "consumer", defaultValue = "true")
     private boolean sync = true;
     @UriParam(label = "consumer", javaType = "java.lang.String")
@@ -59,24 +56,6 @@ public class InfinispanConfiguration implements Cloneable {
     private Object cacheContainerConfiguration;
     @UriParam(label = "advanced")
     private Object resultHeader;
-
-    public String getCommand() {
-        return operation.toString();
-    }
-
-    /**
-     * The operation to perform.
-     *
-     * @deprecated replaced by @{link setOperation}
-     */
-    @Deprecated
-    public void setCommand(String command) {
-        if (command.startsWith(InfinispanConstants.OPERATION)) {
-            command = command.substring(InfinispanConstants.OPERATION.length()).toUpperCase();
-        }
-
-        setOperation(InfinispanOperation.valueOf(command));
-    }
 
     public InfinispanOperation getOperation() {
         return operation;

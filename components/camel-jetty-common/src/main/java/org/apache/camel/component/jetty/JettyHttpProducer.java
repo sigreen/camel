@@ -106,13 +106,6 @@ public class JettyHttpProducer extends DefaultAsyncProducer implements AsyncProc
         // get the url from the uri
         url = uri.toASCIIString();
 
-        // execute any custom url rewrite
-        String rewriteUrl = HttpHelper.urlRewrite(exchange, url, getEndpoint(), this);
-        if (rewriteUrl != null) {
-            // update url and query string from the rewritten url
-            url = rewriteUrl;
-        }
-
         String methodName = HttpHelper.createMethod(exchange, getEndpoint(), exchange.getIn().getBody() != null).name();
 
         JettyContentExchange httpExchange = getEndpoint().createContentExchange();

@@ -47,10 +47,6 @@ public class ElsqlComponent extends DefaultComponent {
         if (ds != null) {
             target = ds;
         }
-        String dataSourceRef = getAndRemoveParameter(parameters, "dataSourceRef", String.class);
-        if (target == null && dataSourceRef != null) {
-            target = CamelContextHelper.mandatoryLookup(getCamelContext(), dataSourceRef, DataSource.class);
-        }
         if (target == null) {
             // fallback and use component
             target = getDataSource();
@@ -89,7 +85,6 @@ public class ElsqlComponent extends DefaultComponent {
         endpoint.setElSqlConfig(elSqlConfig);
         endpoint.setDatabaseVendor(databaseVendor);
         endpoint.setDataSource(target);
-        endpoint.setDataSourceRef(dataSourceRef);
         endpoint.setOnConsume(onConsume);
         endpoint.setOnConsumeFailed(onConsumeFailed);
         endpoint.setOnConsumeBatchComplete(onConsumeBatchComplete);

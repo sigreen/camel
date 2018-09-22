@@ -72,17 +72,6 @@ public class Jt400DataQueueConsumer extends ScheduledPollConsumer {
         queueService.stop();
     }
 
-    @Deprecated
-    public Exchange receive() {
-        // -1 to indicate a blocking read from data queue
-        return receive(-1);
-    }
-
-    @Deprecated
-    public Exchange receiveNoWait() {
-        return receive(0);
-    }
-
     /**
      * Receives an entry from a data queue and returns an {@link Exchange} to
      * send this data If the endpoint's format is set to {@link org.apache.camel.component.jt400.Jt400Configuration.Format#binary},

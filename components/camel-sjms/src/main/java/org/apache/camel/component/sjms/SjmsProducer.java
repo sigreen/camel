@@ -273,14 +273,6 @@ public abstract class SjmsProducer extends DefaultAsyncProducer {
         return isSynchronous();
     }
 
-    /**
-     * @deprecated use {@link #getOrCreateConnectionResource()}
-     */
-    @Deprecated
-    protected ConnectionResource getConnectionResource() {
-        return getEndpoint().getConnectionResource();
-    }
-
     protected ConnectionResource getOrCreateConnectionResource() {
         ConnectionResource answer = getEndpoint().getConnectionResource();
         if (answer == null) {

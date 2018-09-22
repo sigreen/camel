@@ -18,8 +18,8 @@ package org.apache.camel.component.twitter.directmessage;
 
 import org.apache.camel.CamelExchangeException;
 import org.apache.camel.Exchange;
+import org.apache.camel.component.twitter.AbstractTwitterEndpoint;
 import org.apache.camel.component.twitter.TwitterConstants;
-import org.apache.camel.component.twitter.TwitterEndpoint;
 import org.apache.camel.impl.DefaultProducer;
 import org.apache.camel.util.ObjectHelper;
 
@@ -30,10 +30,10 @@ import twitter4j.User;
  */
 public class DirectMessageProducer extends DefaultProducer {
 
-    private TwitterEndpoint endpoint;
+    private AbstractTwitterEndpoint endpoint;
     private String user;
 
-    public DirectMessageProducer(TwitterEndpoint endpoint, String user) {
+    public DirectMessageProducer(AbstractTwitterEndpoint endpoint, String user) {
         super(endpoint);
         this.endpoint = endpoint;
         this.user = user;

@@ -149,17 +149,6 @@ public class SnmpEndpoint extends DefaultPollingEndpoint {
         return exchange;
     }
 
-    /**
-     * creates and configures the endpoint
-     *
-     * @throws Exception if unable to setup connection
-     * @deprecated use {@link #start()} instead
-     */
-    @Deprecated
-    public void initiate() throws Exception {
-        // noop
-    }
-
     public long getDelay() {
         return delay;
     }

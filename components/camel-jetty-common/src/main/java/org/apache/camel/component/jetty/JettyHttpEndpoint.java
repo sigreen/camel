@@ -107,22 +107,9 @@ public abstract class JettyHttpEndpoint extends HttpCommonEndpoint {
     @UriParam(label = "producer,advanced",
         description = "To use a custom JettyHttpBinding which be used to customize how a response should be written for the producer.")
     private JettyHttpBinding jettyBinding;
-    @UriParam(label = "producer,advanced",
-            description = "To use a custom JettyHttpBinding which be used to customize how a response should be written for the producer.")
-    @Deprecated
-    private String jettyBindingRef;
-    @UriParam(label = "consumer,advanced",
-            description = "Option to disable throwing the HttpOperationFailedException in case of failed responses from the remote server."
-            + " This allows you to get all responses regardless of the HTTP status code.")
-    @Deprecated
-    private String httpBindingRef;
     @UriParam(label = "consumer,advanced",
             description = "Allows using a custom multipart filter. Note: setting multipartFilterRef forces the value of enableMultipartFilter to true.")
     private Filter multipartFilter;
-    @UriParam(label = "consumer,advanced",
-            description = "Allows using a custom multipart filter. Note: setting multipartFilterRef forces the value of enableMultipartFilter to true.")
-    @Deprecated
-    private String multipartFilterRef;
     @UriParam(label = "security",
             description = "To configure security using SSLContextParameters")
     private SSLContextParameters sslContextParameters;

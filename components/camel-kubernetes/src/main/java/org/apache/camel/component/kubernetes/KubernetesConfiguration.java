@@ -31,9 +31,6 @@ public class KubernetesConfiguration implements Cloneable {
     @Metadata(required = "true")
     private String masterUrl;
 
-    @Deprecated
-    private String category;
-
     @UriParam
     private KubernetesClient kubernetesClient;
 
@@ -115,17 +112,6 @@ public class KubernetesConfiguration implements Cloneable {
 
     public void setMasterUrl(String masterUrl) {
         this.masterUrl = masterUrl;
-    }
-
-    /**
-     * Kubernetes Producer and Consumer category
-     */
-    public String getCategory() {
-        return category;
-    }
-
-    public void setCategory(String category) {
-        this.category = category;
     }
 
     /**
@@ -338,22 +324,6 @@ public class KubernetesConfiguration implements Cloneable {
     }
 
     /**
-     * @deprecated use {@link #getNamespace()}
-     */
-    @Deprecated
-    public String getNamespaceName() {
-        return getNamespace();
-    }
-
-    /**
-     * @deprecated use {@link #setNamespace(String)}
-     */
-    @Deprecated
-    public void setNamespaceName(String namespace) {
-        setNamespace(namespace);
-    }
-
-    /**
      * The Consumer pool size
      */
     public int getPoolSize() {
@@ -423,7 +393,7 @@ public class KubernetesConfiguration implements Cloneable {
 
     @Override
     public String toString() {
-        return "KubernetesConfiguration [masterUrl=" + masterUrl + ", category=" + category + ", kubernetesClient="
+        return "KubernetesConfiguration [masterUrl=" + masterUrl + ", kubernetesClient="
                 + kubernetesClient + ", username=" + username + ", password=" + password + ", operation=" + operation
                 + ", apiVersion=" + apiVersion + ", caCertData=" + caCertData + ", caCertFile=" + caCertFile
                 + ", clientCertData=" + clientCertData + ", clientCertFile=" + clientCertFile + ", clientKeyAlgo="

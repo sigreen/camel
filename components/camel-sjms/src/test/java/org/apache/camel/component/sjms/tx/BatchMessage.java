@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.apache.camel.component.sjms;
+package org.apache.camel.component.sjms.tx;
 
 import java.util.List;
 import java.util.Map;
@@ -25,10 +25,7 @@ import java.util.Map;
  * <p/>
  * <b>Important:</b> This BatchMessage is only supported by <tt>InOnly</tt> messaging style
  * (eg you cannot do request/reply with this BatchMessage)
- *
- * @deprecated do not use, its being removed in a future Camel release
  */
-@Deprecated
 public class BatchMessage<T> {
     private T payload;
     private Map<String, Object> headers;

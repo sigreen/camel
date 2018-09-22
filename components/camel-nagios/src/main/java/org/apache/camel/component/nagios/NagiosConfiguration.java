@@ -45,9 +45,6 @@ public class NagiosConfiguration implements Cloneable {
     private int timeout = 5000;
     @UriParam(label = "security", secret = true)
     private String password;
-    @Deprecated
-    @UriParam(label = "security")
-    private NagiosEncryptionMethod encryptionMethod;
     @UriParam(label = "security")
     private Encryption encryption = Encryption.NONE;
 
@@ -155,19 +152,6 @@ public class NagiosConfiguration implements Cloneable {
         this.password = password;
     }
 
-    public NagiosEncryptionMethod getEncryptionMethod() {
-        return encryptionMethod;
-    }
-
-    /**
-     * To specify an encryption method.
-     * @deprecated use the {@link #encryption} query parameter instead.
-     */
-    @Deprecated
-    public void setEncryptionMethod(NagiosEncryptionMethod encryptionMethod) {
-        this.encryptionMethod = encryptionMethod;
-    }
-
     public Encryption getEncryption() {
         return encryption;
     }
@@ -182,7 +166,7 @@ public class NagiosConfiguration implements Cloneable {
     @Override
     public String toString() {
         return "NagiosConfiguration[host=" + host + ":" + port + ", connectionTimeout=" + connectionTimeout
-                + ", timeout=" + timeout + ", encryptionMethod=" + encryptionMethod + ", encryption=" + encryption + "]";
+                + ", timeout=" + timeout + ", encryption=" + encryption + "]";
     }
 
 }

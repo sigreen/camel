@@ -139,22 +139,6 @@ public class SshEndpoint extends ScheduledPollEndpoint {
         getConfiguration().setTimeout(timeout);
     }
 
-    /**
-     * @deprecated As of version 2.11, replaced by {@link #getCertResource()}
-     */
-    @Deprecated
-    public String getCertFilename() {
-        return getConfiguration().getCertFilename();
-    }
-
-    /**
-     * @deprecated As of version 2.11, replaced by {@link #setCertResource(String)}
-     */
-    @Deprecated
-    public void setCertFilename(String certFilename) {
-        getConfiguration().setCertFilename(certFilename);
-    }
-
     public String getCertResource() {
         return getConfiguration().getCertResource();
     }

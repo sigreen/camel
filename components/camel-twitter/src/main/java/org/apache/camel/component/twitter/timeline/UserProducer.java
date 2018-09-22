@@ -17,7 +17,7 @@
 package org.apache.camel.component.twitter.timeline;
 
 import org.apache.camel.Exchange;
-import org.apache.camel.component.twitter.TwitterEndpoint;
+import org.apache.camel.component.twitter.AbstractTwitterEndpoint;
 import org.apache.camel.impl.DefaultProducer;
 import twitter4j.Status;
 import twitter4j.StatusUpdate;
@@ -27,9 +27,9 @@ import twitter4j.StatusUpdate;
  */
 public class UserProducer extends DefaultProducer {
 
-    private TwitterEndpoint endpoint;
+    private AbstractTwitterEndpoint endpoint;
 
-    public UserProducer(TwitterEndpoint endpoint) {
+    public UserProducer(AbstractTwitterEndpoint endpoint) {
         super(endpoint);
         this.endpoint = endpoint;
     }

@@ -229,21 +229,6 @@ public abstract class XQueryBuilder implements Expression, Predicate, NamespaceA
         }
     }
 
-    @Deprecated
-    public void assertMatches(String text, Exchange exchange) throws AssertionError {
-        List<?> list;
-
-        try {
-            list = evaluateAsList(exchange);
-        } catch (Exception e) {
-            throw new AssertionError(e);
-        }
-
-        if (!matches(exchange, list)) {
-            throw new AssertionError(this + " failed on " + exchange + " as evaluated: " + list);
-        }
-    }
-
     // Static helper methods
     //-------------------------------------------------------------------------
     public static XQueryBuilder xquery(final String queryText) {

@@ -33,7 +33,6 @@ public class NettyHttpOperationFailedException extends CamelException {
     private final String redirectLocation;
     private final int statusCode;
     private final String statusText;
-    private final transient HttpContent content;
     private final String contentAsString;
 
     public NettyHttpOperationFailedException(String uri, int statusCode, String statusText, String location, HttpContent content) {
@@ -43,7 +42,6 @@ public class NettyHttpOperationFailedException extends CamelException {
         this.statusCode = statusCode;
         this.statusText = statusText;
         this.redirectLocation = location;
-        this.content = content;
 
         String str = "";
         try {
@@ -76,19 +74,6 @@ public class NettyHttpOperationFailedException extends CamelException {
 
     public String getStatusText() {
         return statusText;
-    }
-
-    /**
-     * Gets the {@link HttpContent}.
-     * <p/>
-     * Notice this may be <tt>null</tt> if this exception has been serialized,
-     * as the {@link HttpContent} instance is marked as transient in this class.
-     *
-     * @deprecated use getContentAsString();
-     */
-    @Deprecated
-    public HttpContent getHttpContent() {
-        return content;
     }
 
     /**

@@ -27,7 +27,6 @@ import org.apache.camel.CamelContext;
 import org.apache.camel.Exchange;
 import org.apache.camel.Processor;
 import org.apache.camel.builder.RouteBuilder;
-import org.apache.camel.component.sjms.BatchMessage;
 import org.apache.camel.component.sjms.SjmsComponent;
 import org.apache.camel.test.junit4.CamelTestSupport;
 

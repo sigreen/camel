@@ -247,14 +247,6 @@ public class SjmsConsumer extends DefaultConsumer {
         return messageHandler;
     }
 
-    /**
-     * @deprecated use {@link #getOrCreateConnectionResource()}
-     */
-    @Deprecated
-    protected ConnectionResource getConnectionResource() {
-        return getEndpoint().getConnectionResource();
-    }
-
     protected ConnectionResource getOrCreateConnectionResource() {
         ConnectionResource answer = getEndpoint().getConnectionResource();
         if (answer == null) {

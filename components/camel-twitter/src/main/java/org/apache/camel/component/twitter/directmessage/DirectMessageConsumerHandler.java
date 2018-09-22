@@ -19,7 +19,7 @@ package org.apache.camel.component.twitter.directmessage;
 import java.util.List;
 
 import org.apache.camel.Exchange;
-import org.apache.camel.component.twitter.TwitterEndpoint;
+import org.apache.camel.component.twitter.AbstractTwitterEndpoint;
 import org.apache.camel.component.twitter.consumer.AbstractTwitterConsumerHandler;
 import org.apache.camel.component.twitter.consumer.TwitterEventType;
 import twitter4j.DirectMessage;
@@ -30,7 +30,7 @@ import twitter4j.TwitterException;
  */
 public class DirectMessageConsumerHandler extends AbstractTwitterConsumerHandler {
 
-    public DirectMessageConsumerHandler(TwitterEndpoint te) {
+    public DirectMessageConsumerHandler(AbstractTwitterEndpoint te) {
         super(te);
     }
 

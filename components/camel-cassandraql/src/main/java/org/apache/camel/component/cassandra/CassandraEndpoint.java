@@ -199,16 +199,6 @@ public class CassandraEndpoint extends ScheduledPollEndpoint {
         this.beanRef = beanRef;
     }
 
-    @Deprecated
-    public String getBeanRef() {
-        return beanRef;
-    }
-
-    @Deprecated
-    public void setBeanRef(String beanRef) {
-        this.beanRef = beanRef;
-    }
-
     public String getHosts() {
         return hosts;
     }

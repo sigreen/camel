@@ -428,31 +428,6 @@ public final class XmlSignatureHelper {
     }
 
     /**
-     * Use {@link #transformToOutputStream(Node, OutputStream, boolean, String)}
-     * instead.
-     */
-    @Deprecated
-    public static void transformToOutputStream(Node node, OutputStream os, boolean omitXmlDeclaration) throws Exception { //NOPMD
-
-        if (node.getNodeType() == Node.TEXT_NODE) {
-            byte[] bytes = tranformTextNodeToByteArray(node);
-            os.write(bytes);
-        } else {
-            transformNonTextNodeToOutputStream(node, os, omitXmlDeclaration);
-        }
-    }
-
-    /**
-     * Use
-     * {@link #transformNonTextNodeToOutputStream(Node, OutputStream, boolean, String)}
-     * instead.
-     */
-    @Deprecated
-    public static void transformNonTextNodeToOutputStream(Node node, OutputStream os, boolean omitXmlDeclaration) throws Exception { //NOPMD
-        transformNonTextNodeToOutputStream(node, os, omitXmlDeclaration, null);
-    }
-
-    /**
      * Serializes a node using a certain character encoding.
      * 
      * @param node
@@ -481,12 +456,6 @@ public final class XmlSignatureHelper {
         LSSerializer lss = domImplementationLS.createLSSerializer();
         lss.getDomConfig().setParameter("xml-declaration", !omitXmlDeclaration);
         lss.write(node, lsOutput);
-    }
-
-    /** use {@link #tranformTextNodeToByteArray(Node, String)} instead. */
-    @Deprecated
-    public static byte[] tranformTextNodeToByteArray(Node node) {
-        return tranformTextNodeToByteArray(node, null);
     }
 
     /**

@@ -61,9 +61,6 @@ public class IrcConfiguration implements Cloneable {
     private String username;
     @UriParam(label = "security")
     private SSLTrustManager trustManager = new SSLDefaultTrustManager();
-    @UriParam(defaultValue = "true")
-    @Deprecated
-    private boolean persistent = true;
     @UriParam(defaultValue = "true", label = "advanced")
     private boolean colors = true;
     @UriParam(defaultValue = "true", label = "filter")
@@ -299,19 +296,6 @@ public class IrcConfiguration implements Cloneable {
      */
     public void setPort(int port) {
         this.port = port;
-    }
-
-    public boolean isPersistent() {
-        return persistent;
-    }
-
-    /**
-     * Use persistent messages.
-     * @deprecated not in use
-     */
-    @Deprecated
-    public void setPersistent(boolean persistent) {
-        this.persistent = persistent;
     }
 
     public boolean isColors() {

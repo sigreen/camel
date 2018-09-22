@@ -20,7 +20,7 @@ import java.util.Collections;
 import java.util.List;
 
 import org.apache.camel.Exchange;
-import org.apache.camel.component.twitter.TwitterEndpoint;
+import org.apache.camel.component.twitter.AbstractTwitterEndpoint;
 import org.apache.camel.component.twitter.consumer.AbstractTwitterConsumerHandler;
 import org.apache.camel.component.twitter.consumer.TwitterEventType;
 import org.apache.camel.util.ObjectHelper;
@@ -43,7 +43,7 @@ public class SearchConsumerHandler extends AbstractTwitterConsumerHandler {
 
     private String keywords;
 
-    public SearchConsumerHandler(TwitterEndpoint te, String keywords) {
+    public SearchConsumerHandler(AbstractTwitterEndpoint te, String keywords) {
         super(te);
         this.keywords = keywords;
     }

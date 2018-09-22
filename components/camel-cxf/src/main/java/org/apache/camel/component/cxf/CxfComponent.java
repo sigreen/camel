@@ -84,14 +84,6 @@ public class CxfComponent extends HeaderFilterStrategyComponent implements SSLCo
 
         CxfEndpoint result;
 
-        Object value = parameters.remove("setDefaultBus");
-        if (value != null) {
-            LOG.warn("The option setDefaultBus is @deprecated, use name defaultBus instead");
-            if (!parameters.containsKey("defaultBus")) {
-                parameters.put("defaultBus", value);
-            }
-        }
-
         if (allowStreaming != null && !parameters.containsKey("allowStreaming")) {
             parameters.put("allowStreaming", Boolean.toString(allowStreaming));
         }

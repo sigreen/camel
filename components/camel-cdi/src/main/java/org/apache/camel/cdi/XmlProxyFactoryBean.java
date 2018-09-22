@@ -59,21 +59,15 @@ final class XmlProxyFactoryBean<T> extends SyntheticBean<T> {
                 : getReference(manager, CamelContext.class, this.context);
 
             Endpoint endpoint;
-            if (isNotEmpty(proxy.getServiceRef())) {
-                endpoint = context.getRegistry().lookupByNameAndType(proxy.getServiceRef(), Endpoint.class);
+            if (isNotEmpty(proxy.getServiceUrl())) {
+                endpoint = context.getEndpoint(proxy.getServiceUrl());
             } else {
-                if (isNotEmpty(proxy.getServiceUrl())) {
-                    endpoint = context.getEndpoint(proxy.getServiceUrl());
-                } else {
-                    throw new IllegalStateException("serviceUrl or serviceRef must not be empty!");
-                }
+                throw new IllegalStateException("serviceUrl must not be empty!");
             }
 
             if (endpoint == null) {
                 throw new UnsatisfiedResolutionException("Could not resolve endpoint: "
-                    + (isNotEmpty(proxy.getServiceRef())
-                    ? proxy.getServiceRef()
-                    : proxy.getServiceUrl()));
+                    + proxy.getServiceUrl());
             }
 
             // binding is enabled by default

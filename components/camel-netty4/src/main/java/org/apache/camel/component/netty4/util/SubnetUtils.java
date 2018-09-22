@@ -64,7 +64,7 @@ public class SubnetUtils {
 
 
     /**
-     * Returns <code>true</code> if the return value of {@link SubnetInfo#getAddressCount()}
+     * Returns <code>true</code> if the return value of {@link SubnetInfo#getAddressCountLong()}
      * includes the network and broadcast addresses.
      * @since 2.2
      * @return true if the hostcount includes the network and broadcast addresses
@@ -74,7 +74,7 @@ public class SubnetUtils {
     }
 
     /**
-     * Set to <code>true</code> if you want the return value of {@link SubnetInfo#getAddressCount()}
+     * Set to <code>true</code> if you want the return value of {@link SubnetInfo#getAddressCountLong()}
      * to include the network and broadcast addresses.
      * @param inclusiveHostCount true if network and broadcast addresses are to be included
      * @since 2.2
@@ -190,23 +190,6 @@ public class SubnetUtils {
          * Get the count of available addresses.
          * Will be zero for CIDR/31 and CIDR/32 if the inclusive flag is false.
          * @return the count of addresses, may be zero.
-         * @throws RuntimeException if the correct count is greater than {@code Integer.MAX_VALUE}
-         * @deprecated use {@link #getAddressCountLong()} instead
-         */
-        @Deprecated
-        public int getAddressCount() {
-            long countLong = getAddressCountLong();
-            if (countLong > Integer.MAX_VALUE) {
-                throw new RuntimeException("Count is larger than an integer: " + countLong);
-            }
-            // N.B. cannot be negative
-            return (int)countLong;
-        }
-
-        /**
-         * Get the count of available addresses.
-         * Will be zero for CIDR/31 and CIDR/32 if the inclusive flag is false.
-         * @return the count of addresses, may be zero.
          */
         public long getAddressCountLong() {
             long b = broadcastLong();
@@ -227,8 +210,8 @@ public class SubnetUtils {
         }
 
         public String[] getAllAddresses() {
-            int ct = getAddressCount();
-            String[] addresses = new String[ct];
+            long ct = getAddressCountLong();
+            String[] addresses = new String[(int) ct];
             if (ct == 0) {
                 return addresses;
             }
@@ -253,7 +236,7 @@ public class SubnetUtils {
                 .append("Broadcast:\t[").append(getBroadcastAddress()).append("]\n")
                  .append("First Address:\t[").append(getLowAddress()).append("]\n")
                  .append("Last Address:\t[").append(getHighAddress()).append("]\n")
-                 .append("# Addresses:\t[").append(getAddressCount()).append("]\n");
+                 .append("# Addresses:\t[").append(getAddressCountLong()).append("]\n");
             return buf.toString();
         }
     }

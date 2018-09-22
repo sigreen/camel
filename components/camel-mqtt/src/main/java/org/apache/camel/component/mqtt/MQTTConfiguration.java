@@ -84,22 +84,11 @@ public class MQTTConfiguration extends MQTT {
     @UriParam(label = "producer,advanced", defaultValue = "true")
     private boolean lazySessionCreation = true;
 
-    /**
-     * These a properties that are looked for in an Exchange - to publish to
-     */
-    @UriParam(defaultValue = "MQTTTopicPropertyName")
-    private String mqttTopicPropertyName = "MQTTTopicPropertyName";
     @UriParam(defaultValue = "MQTTRetain")
     private String mqttRetainPropertyName = "MQTTRetain";
     @UriParam(defaultValue = "MQTTQos")
     private String mqttQosPropertyName = "MQTTQos";
 
-    /**
-     * These are set on the Endpoint - together with properties inherited from MQTT
-     */
-    @UriParam
-    @Deprecated
-    private String subscribeTopicName = "";
     @UriParam
     private String subscribeTopicNames = "";
     @UriParam(defaultValue = "camel/mqtt/test")
@@ -132,19 +121,6 @@ public class MQTTConfiguration extends MQTT {
         return qos;
     }
 
-    @Deprecated
-    public String getSubscribeTopicName() {
-        return subscribeTopicName;
-    }
-
-    /**
-     * The name of the Topic to subscribe to for messages.
-     */
-    @Deprecated
-    public void setSubscribeTopicName(String subscribeTopicName) {
-        this.subscribeTopicName = subscribeTopicName;
-    }
-
     public String getSubscribeTopicNames() {
         return subscribeTopicNames;
     }
@@ -170,22 +146,6 @@ public class MQTTConfiguration extends MQTT {
      */
     public void setPublishTopicName(String publishTopicName) {
         this.publishTopicName = publishTopicName;
-    }
-
-    /**
-     * Please use MQTT_SUBSCRIBE_TOPIC and MQTT_PUBLISH_TOPIC to set or get the topic name
-     */
-    @Deprecated
-    public String getMqttTopicPropertyName() {
-        return mqttTopicPropertyName;
-    }
-
-    /**
-     * Please use MQTT_SUBSCRIBE_TOPIC and MQTT_PUBLISH_TOPIC to set or get the topic name
-     */
-    @Deprecated
-    public void setMqttTopicPropertyName(String mqttTopicPropertyName) {
-        this.mqttTopicPropertyName = mqttTopicPropertyName;
     }
 
     public String getMqttRetainPropertyName() {

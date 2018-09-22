@@ -16,7 +16,7 @@
  */
 package org.apache.camel.component.twitter.streaming;
 
-import org.apache.camel.component.twitter.TwitterEndpoint;
+import org.apache.camel.component.twitter.AbstractTwitterEndpoint;
 import twitter4j.StallWarning;
 
 /**
@@ -24,7 +24,7 @@ import twitter4j.StallWarning;
  */
 public class SampleStreamingConsumerHandler extends AbstractStreamingConsumerHandler {
 
-    public SampleStreamingConsumerHandler(TwitterEndpoint endpoint) {
+    public SampleStreamingConsumerHandler(AbstractTwitterEndpoint endpoint) {
         super(endpoint);
     }
 

@@ -196,18 +196,12 @@ public class SmppDataSmCommand extends AbstractSmppCommand {
             dataSm.setRegisteredDelivery(config.getRegisteredDelivery());
         }
 
-        Map<java.lang.Short, Object> optinalParamater = in.getHeader(SmppConstants.OPTIONAL_PARAMETER, Map.class);
-        if (optinalParamater != null) {
-            List<OptionalParameter> optParams = createOptionalParametersByCode(optinalParamater);
+        Map<java.lang.Short, Object> optionalParameter = in.getHeader(SmppConstants.OPTIONAL_PARAMETER, Map.class);
+        if (optionalParameter != null) {
+            List<OptionalParameter> optParams = createOptionalParametersByCode(optionalParameter);
             dataSm.setOptionalParameters(optParams.toArray(new OptionalParameter[optParams.size()]));
         } else {
-            Map<String, String> optinalParamaters = in.getHeader(SmppConstants.OPTIONAL_PARAMETERS, Map.class);
-            if (optinalParamaters != null) {
-                List<OptionalParameter> optParams = createOptionalParametersByName(optinalParamaters);
-                dataSm.setOptionalParameters(optParams.toArray(new OptionalParameter[optParams.size()]));
-            } else {
-                dataSm.setOptionalParameters();
-            }
+            dataSm.setOptionalParameters();
         }
 
         return dataSm;

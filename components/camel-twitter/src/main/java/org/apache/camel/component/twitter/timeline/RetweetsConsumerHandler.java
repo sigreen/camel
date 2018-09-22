@@ -18,7 +18,7 @@ package org.apache.camel.component.twitter.timeline;
 
 import java.util.List;
 
-import org.apache.camel.component.twitter.TwitterEndpoint;
+import org.apache.camel.component.twitter.AbstractTwitterEndpoint;
 import twitter4j.Paging;
 import twitter4j.Status;
 import twitter4j.TwitterException;
@@ -28,7 +28,7 @@ import twitter4j.TwitterException;
  */
 public class RetweetsConsumerHandler extends AbstractStatusConsumerHandler {
 
-    public RetweetsConsumerHandler(TwitterEndpoint endpoint) {
+    public RetweetsConsumerHandler(AbstractTwitterEndpoint endpoint) {
         super(endpoint);
     }
 
