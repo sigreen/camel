@@ -328,21 +328,6 @@ public abstract class TestSupport extends Assert {
     }
 
     /**
-     * If a processor is wrapped with a bunch of DelegateProcessor or DelegateAsyncProcessor objects
-     * this call will drill through them and return the wrapped Processor.
-     */
-    @Deprecated
-    public static Processor unwrap(Processor processor) {
-        while (true) {
-            if (processor instanceof DelegateProcessor) {
-                processor = ((DelegateProcessor)processor).getProcessor();
-            } else {
-                return processor;
-            }
-        }
-    }
-
-    /**
      * Recursively delete a directory, useful to zapping test data
      *
      * @param file the directory to be deleted
