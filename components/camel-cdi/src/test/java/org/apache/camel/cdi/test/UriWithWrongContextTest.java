@@ -68,7 +68,7 @@ public class UriWithWrongContextTest {
 class UriWithWrongContextRoute extends RouteBuilder {
 
     @Inject
-    @Uri(value = "direct:inbound", context = "second")
+    @Uri(value = "direct:inbound") @ContextName("second")
     Endpoint inbound;
 
     @Override

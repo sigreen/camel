@@ -368,7 +368,7 @@ public class CdiCamelExtension implements Extension {
             .filter(ip -> getRawType(ip.getType()).getName().startsWith("org.apache.camel"))
             .map(InjectionPoint::getQualifiers)
             .flatMap(Set::stream)
-            .anyMatch(isAnnotationType(Uri.class).or(isAnnotationType(Mock.class)).or(isEqual(DEFAULT)));
+            .anyMatch(isAnnotationType(Uri.class).or(isEqual(DEFAULT)));
     }
 
     private SyntheticBean<?> camelContextBean(BeanManager manager, Class<?> beanClass, Annotation... qualifiers) {
