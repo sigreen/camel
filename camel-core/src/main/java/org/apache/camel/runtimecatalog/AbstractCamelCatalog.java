@@ -34,6 +34,8 @@ import java.util.TreeMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import org.apache.camel.language.simple.types.SimpleIllegalSyntaxException;
+
 import static org.apache.camel.runtimecatalog.CatalogHelper.after;
 import static org.apache.camel.runtimecatalog.JSonSchemaHelper.getNames;
 import static org.apache.camel.runtimecatalog.JSonSchemaHelper.getPropertyDefaultValue;
@@ -59,6 +61,7 @@ import static org.apache.camel.runtimecatalog.URISupport.createQueryString;
 import static org.apache.camel.runtimecatalog.URISupport.isEmpty;
 import static org.apache.camel.runtimecatalog.URISupport.normalizeUri;
 import static org.apache.camel.runtimecatalog.URISupport.stripQuery;
+
 
 /**
  * Base class for both the runtime RuntimeCamelCatalog from camel-core and the complete CamelCatalog from camel-catalog.
@@ -1231,6 +1234,10 @@ public abstract class AbstractCamelCatalog {
 
             if (cause != null) {
                 answer.setError(cause.getMessage());
+                if (cause instanceof SimpleIllegalSyntaxException) {
+                    answer.setShortError(((SimpleIllegalSyntaxException) cause).getShortMessage());
+                    answer.setIndex(((SimpleIllegalSyntaxException) cause).getIndex());
+                }
             }
         }
 
