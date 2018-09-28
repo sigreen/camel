@@ -307,13 +307,13 @@ public class Resequencer extends ServiceSupport implements AsyncProcessor, Navig
     }
 
     protected void doStart() throws Exception {
-        ServiceHelper.startServices(processor);
+        ServiceHelper.startService(processor);
         sender.start();
     }
 
     protected void doStop() throws Exception {
         sender.cancel();
-        ServiceHelper.stopServices(processor);
+        ServiceHelper.stopService(processor);
         collection.clear();
     }
 
