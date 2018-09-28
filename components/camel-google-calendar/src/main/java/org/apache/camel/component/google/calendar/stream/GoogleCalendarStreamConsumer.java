@@ -33,15 +33,12 @@ import org.apache.camel.Processor;
 import org.apache.camel.impl.ScheduledBatchPollingConsumer;
 import org.apache.camel.util.CastUtils;
 import org.apache.camel.util.ObjectHelper;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 /**
  * The GoogleCalendar consumer.
  */
 public class GoogleCalendarStreamConsumer extends ScheduledBatchPollingConsumer {
 
-    private static final Logger LOG = LoggerFactory.getLogger(GoogleCalendarStreamConsumer.class);
     private DateTime lastUpdate;
 
     public GoogleCalendarStreamConsumer(Endpoint endpoint, Processor processor) {
@@ -118,7 +115,7 @@ public class GoogleCalendarStreamConsumer extends ScheduledBatchPollingConsumer 
             getAsyncProcessor().process(exchange, new AsyncCallback() {
                 @Override
                 public void done(boolean doneSync) {
-                    LOG.trace("Processing exchange done");
+                    log.trace("Processing exchange done");
                 }
             });
         }

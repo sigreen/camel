@@ -35,8 +35,6 @@ import org.apache.camel.Message;
 import org.apache.camel.impl.DefaultProducer;
 import org.apache.camel.util.ObjectHelper;
 import org.apache.camel.util.URISupport;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import static org.apache.camel.component.aws.common.AwsExchangeUtil.getMessageForResponse;
 
@@ -45,8 +43,6 @@ import static org.apache.camel.component.aws.common.AwsExchangeUtil.getMessageFo
  * <a href="http://aws.amazon.com/iam/">AWS IAM</a>
  */
 public class IAMProducer extends DefaultProducer {
-
-    private static final Logger LOG = LoggerFactory.getLogger(IAMProducer.class);
 
     private transient String iamProducerToString;
 
@@ -109,7 +105,7 @@ public class IAMProducer extends DefaultProducer {
         try {
             result = iamClient.listAccessKeys();
         } catch (AmazonServiceException ase) {
-            LOG.trace("List Access Keys command returned the error code {}", ase.getErrorCode());
+            log.trace("List Access Keys command returned the error code {}", ase.getErrorCode());
             throw ase;
         }
         Message message = getMessageForResponse(exchange);
@@ -126,7 +122,7 @@ public class IAMProducer extends DefaultProducer {
         try {
             result = iamClient.createUser(request);
         } catch (AmazonServiceException ase) {
-            LOG.trace("Create user command returned the error code {}", ase.getErrorCode());
+            log.trace("Create user command returned the error code {}", ase.getErrorCode());
             throw ase;
         }
         Message message = getMessageForResponse(exchange);
@@ -143,7 +139,7 @@ public class IAMProducer extends DefaultProducer {
         try {
             result = iamClient.deleteUser(request);
         } catch (AmazonServiceException ase) {
-            LOG.trace("Delete user command returned the error code {}", ase.getErrorCode());
+            log.trace("Delete user command returned the error code {}", ase.getErrorCode());
             throw ase;
         }
         Message message = getMessageForResponse(exchange);
@@ -155,7 +151,7 @@ public class IAMProducer extends DefaultProducer {
         try {
             result = iamClient.listUsers();
         } catch (AmazonServiceException ase) {
-            LOG.trace("List users command returned the error code {}", ase.getErrorCode());
+            log.trace("List users command returned the error code {}", ase.getErrorCode());
             throw ase;
         }
         Message message = getMessageForResponse(exchange);
@@ -172,7 +168,7 @@ public class IAMProducer extends DefaultProducer {
         try {
             result = iamClient.createAccessKey(request);
         } catch (AmazonServiceException ase) {
-            LOG.trace("Create Access Key command returned the error code {}", ase.getErrorCode());
+            log.trace("Create Access Key command returned the error code {}", ase.getErrorCode());
             throw ase;
         }
         Message message = getMessageForResponse(exchange);
@@ -189,7 +185,7 @@ public class IAMProducer extends DefaultProducer {
         try {
             result = iamClient.deleteAccessKey(request);
         } catch (AmazonServiceException ase) {
-            LOG.trace("Delete Access Key command returned the error code {}", ase.getErrorCode());
+            log.trace("Delete Access Key command returned the error code {}", ase.getErrorCode());
             throw ase;
         }
         Message message = getMessageForResponse(exchange);

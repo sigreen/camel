@@ -43,15 +43,13 @@ import org.apache.camel.util.ObjectHelper;
 import org.apache.camel.util.URISupport;
 import org.eclipse.jetty.client.HttpClient;
 import org.eclipse.jetty.util.component.LifeCycle;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 /**
  * @version 
  */
 @Deprecated
 public class JettyHttpProducer extends DefaultAsyncProducer implements AsyncProcessor {
-    private static final Logger LOG = LoggerFactory.getLogger(JettyHttpProducer.class);
+
     private HttpClient client;
     private boolean sharedClient;
     private JettyHttpBinding binding;
@@ -140,7 +138,7 @@ public class JettyHttpProducer extends DefaultAsyncProducer implements AsyncProc
             }
         }
 
-        LOG.trace("Using URL: {} with method: {}", url, methodName);
+        log.trace("Using URL: {} with method: {}", url, methodName);
 
         // if there is a body to send as data
         if (exchange.getIn().getBody() != null) {
@@ -158,7 +156,7 @@ public class JettyHttpProducer extends DefaultAsyncProducer implements AsyncProc
                         HttpHelper.writeObjectToStream(bos, obj);
                         httpExchange.setRequestContent(bos.toByteArray());
                     } finally {
-                        IOHelper.close(bos, "body", LOG);
+                        IOHelper.close(bos, "body", log);
                     }
                 } else {
                     throw new RuntimeCamelException("Content-type " + HttpConstants.CONTENT_TYPE_JAVA_SERIALIZED_OBJECT + " is not allowed");
@@ -256,8 +254,8 @@ public class JettyHttpProducer extends DefaultAsyncProducer implements AsyncProc
         }
 
         // set the callback, which will handle all the response logic
-        if (LOG.isDebugEnabled()) {
-            LOG.debug("Sending HTTP request to: {}", httpExchange.getUrl());
+        if (log.isDebugEnabled()) {
+            log.debug("Sending HTTP request to: {}", httpExchange.getUrl());
         }
 
         if (getEndpoint().getCookieHandler() != null) {
@@ -318,7 +316,7 @@ public class JettyHttpProducer extends DefaultAsyncProducer implements AsyncProc
             // start the thread pool
             Object tp = getClientThreadPool();
             if (tp instanceof LifeCycle) {
-                LOG.debug("Starting client thread pool {}", tp);
+                log.debug("Starting client thread pool {}", tp);
                 ((LifeCycle) tp).start();
             }
         }
@@ -334,7 +332,7 @@ public class JettyHttpProducer extends DefaultAsyncProducer implements AsyncProc
             // stop thread pool
             Object tp = getClientThreadPool();
             if (tp instanceof LifeCycle) {
-                LOG.debug("Stopping client thread pool {}", tp);
+                log.debug("Stopping client thread pool {}", tp);
                 ((LifeCycle) tp).stop();
             }
         }

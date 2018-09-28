@@ -64,8 +64,6 @@ public class Resequencer extends ServiceSupport implements AsyncProcessor, Navig
     public static final long DEFAULT_BATCH_TIMEOUT = 1000L;
     public static final int DEFAULT_BATCH_SIZE = 100;
 
-    private static final Logger LOG = LoggerFactory.getLogger(Resequencer.class);
-
     private String id;
     private long batchTimeout = DEFAULT_BATCH_TIMEOUT;
     private int batchSize = DEFAULT_BATCH_SIZE;
@@ -148,7 +146,7 @@ public class Resequencer extends ServiceSupport implements AsyncProcessor, Navig
         // setting batch size to 0 or negative is like disabling it, so we set it as the max value
         // as the code logic is dependent on a batch size having 1..n value
         if (batchSize <= 0) {
-            LOG.debug("Disabling batch size, will only be triggered by timeout");
+            log.debug("Disabling batch size, will only be triggered by timeout");
             this.batchSize = Integer.MAX_VALUE;
         } else {
             this.batchSize = batchSize;
@@ -332,14 +330,14 @@ public class Resequencer extends ServiceSupport implements AsyncProcessor, Navig
                 int size = exchange.getProperty(Exchange.BATCH_SIZE, Integer.class);
                 if (batchSize != size) {
                     batchSize = size;
-                    LOG.trace("Using batch consumer completion, so setting batch size to: {}", batchSize);
+                    log.trace("Using batch consumer completion, so setting batch size to: {}", batchSize);
                 }
             }
 
             // validate that the exchange can be used
             if (!isValid(exchange)) {
                 if (isIgnoreInvalidExchanges()) {
-                    LOG.debug("Invalid Exchange. This Exchange will be ignored: {}", exchange);
+                    log.debug("Invalid Exchange. This Exchange will be ignored: {}", exchange);
                 } else {
                     throw new CamelExchangeException("Exchange is not valid to be used by the BatchProcessor", exchange);
                 }
@@ -415,7 +413,7 @@ public class Resequencer extends ServiceSupport implements AsyncProcessor, Navig
                 do {
                     try {
                         if (!exchangeEnqueued.get()) {
-                            LOG.trace("Waiting for new exchange to arrive or batchTimeout to occur after {} ms.", batchTimeout);
+                            log.trace("Waiting for new exchange to arrive or batchTimeout to occur after {} ms.", batchTimeout);
                             exchangeEnqueuedCondition.await(batchTimeout, TimeUnit.MILLISECONDS);
                         }
 
@@ -427,9 +425,9 @@ public class Resequencer extends ServiceSupport implements AsyncProcessor, Navig
 
                         if (id != null || !exchangeEnqueued.get()) {
                             if (id != null) {
-                                LOG.trace("Collecting exchanges to be aggregated triggered by completion predicate");
+                                log.trace("Collecting exchanges to be aggregated triggered by completion predicate");
                             } else {
-                                LOG.trace("Collecting exchanges to be aggregated triggered by batch timeout");
+                                log.trace("Collecting exchanges to be aggregated triggered by batch timeout");
                             }
                             drainQueueTo(collection, batchSize, id);
                         } else {
@@ -440,7 +438,7 @@ public class Resequencer extends ServiceSupport implements AsyncProcessor, Navig
                                 drainQueueTo(collection, batchSize, id);
                             }
                             if (drained) {
-                                LOG.trace("Collecting exchanges to be aggregated triggered by new exchanges received");
+                                log.trace("Collecting exchanges to be aggregated triggered by new exchanges received");
                             }
 
                             if (!isOutBatchCompleted()) {
@@ -500,14 +498,14 @@ public class Resequencer extends ServiceSupport implements AsyncProcessor, Navig
         }
 
         public void enqueueExchange(Exchange exchange) {
-            LOG.debug("Received exchange to be batched: {}", exchange);
+            log.debug("Received exchange to be batched: {}", exchange);
             queueLock.lock();
             try {
                 // pre test whether the completion predicate matched
                 if (completionPredicate != null) {
                     boolean matches = completionPredicate.matches(exchange);
                     if (matches) {
-                        LOG.trace("Exchange matched completion predicate: {}", exchange);
+                        log.trace("Exchange matched completion predicate: {}", exchange);
                         // add this exchange to the list of exchanges which marks the batch as complete
                         completionPredicateMatched.add(exchange.getExchangeId());
                     }
@@ -526,7 +524,7 @@ public class Resequencer extends ServiceSupport implements AsyncProcessor, Navig
                 Exchange exchange = iter.next();
                 iter.remove();
                 try {
-                    LOG.debug("Sending aggregated exchange: {}", exchange);
+                    log.debug("Sending aggregated exchange: {}", exchange);
                     processExchange(exchange);
                 } catch (Throwable t) {
                     // must catch throwable to avoid growing memory

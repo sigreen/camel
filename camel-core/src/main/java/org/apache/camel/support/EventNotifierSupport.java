@@ -26,7 +26,7 @@ import org.slf4j.LoggerFactory;
  * @version 
  */
 public abstract class EventNotifierSupport extends ServiceSupport implements EventNotifier {
-    protected Logger log = LoggerFactory.getLogger(getClass());
+
     private boolean ignoreCamelContextEvents;
     private boolean ignoreRouteEvents;
     private boolean ignoreServiceEvents;
