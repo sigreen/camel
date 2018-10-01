@@ -23,7 +23,6 @@ import org.junit.Assert;
 import org.junit.Test;
 
 /**
- * @version 
  */
 public class Jsr223Test extends Assert {
     private String [] scriptNames = {"beanshell", "groovy", "js", "python", "ruby", "javascript"};

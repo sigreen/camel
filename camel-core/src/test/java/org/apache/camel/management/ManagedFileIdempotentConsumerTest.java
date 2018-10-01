@@ -34,7 +34,6 @@ import org.junit.Before;
 import org.junit.Test;
 
 /**
- * @version 
  */
 public class ManagedFileIdempotentConsumerTest extends ManagementTestSupport {
     protected Endpoint startEndpoint;

@@ -25,7 +25,6 @@ import org.apache.camel.processor.idempotent.MemoryIdempotentRepository;
 import org.junit.Test;
 
 /**
- * @version 
  */
 public class AsyncEndpointIdempotentConsumerTest extends ContextTestSupport {
 

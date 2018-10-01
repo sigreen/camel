@@ -22,7 +22,6 @@ import org.apache.camel.spi.FactoryFinderResolver;
 import org.osgi.framework.BundleContext;
 
 /**
- * @version 
  */
 public class OsgiFactoryFinderResolver implements FactoryFinderResolver {
 

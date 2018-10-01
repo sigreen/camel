@@ -24,7 +24,6 @@ import org.apache.camel.Producer;
 import org.apache.camel.ProducerTemplate;
 
 /**
- * @version 
  */
 public class InjectedBean {
     @EndpointInject(uri = "direct:fieldInjectedEndpoint")

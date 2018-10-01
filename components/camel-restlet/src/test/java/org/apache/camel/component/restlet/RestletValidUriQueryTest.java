@@ -24,8 +24,6 @@ import org.apache.http.client.methods.HttpGet;
 import org.junit.Test;
 
 /**
- *
- * @version 
  */
 public class RestletValidUriQueryTest extends RestletTestSupport {
     private static final String QUERY_STRING = "foo=bar&test=123";

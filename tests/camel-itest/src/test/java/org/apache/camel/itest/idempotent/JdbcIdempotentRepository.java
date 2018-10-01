@@ -22,7 +22,6 @@ import org.apache.camel.spi.IdempotentRepository;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 /**
- * @version 
  */
 public class JdbcIdempotentRepository implements IdempotentRepository<String> {
 

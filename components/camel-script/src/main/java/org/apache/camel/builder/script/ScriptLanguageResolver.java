@@ -21,7 +21,6 @@ import org.apache.camel.spi.Language;
 import org.apache.camel.spi.LanguageResolver;
 
 /**
- * @version 
  */
 public class ScriptLanguageResolver implements LanguageResolver {
 

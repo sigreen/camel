@@ -23,7 +23,6 @@ import org.apache.camel.util.FileUtil;
 import org.junit.Test;
 
 /**
- * @version 
  */
 public class SftpProduceTempFileTest extends SftpServerTestSupport {
 

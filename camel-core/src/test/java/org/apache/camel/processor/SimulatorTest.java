@@ -28,7 +28,6 @@ import org.apache.camel.util.jndi.JndiContext;
 import org.junit.Test;
 
 /**
- * @version 
  */
 public class SimulatorTest extends ContextTestSupport {
 

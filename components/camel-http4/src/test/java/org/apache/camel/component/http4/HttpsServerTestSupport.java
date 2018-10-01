@@ -27,8 +27,6 @@ import org.junit.After;
 import org.junit.Before;
 
 /**
- *
- * @version 
  */
 public abstract class HttpsServerTestSupport extends HttpServerTestSupport {
 

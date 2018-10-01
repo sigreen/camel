@@ -28,7 +28,6 @@ import org.junit.Ignore;
 import org.junit.Test;
 
 /**
- * @version 
  */
 @Ignore
 public class JettyHttpProducerSuspendWhileInProgressTest extends BaseJettyTest {

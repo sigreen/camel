@@ -27,7 +27,6 @@ import org.junit.Ignore;
 import org.junit.Test;
 
 /**
- * @version 
  */
 @Ignore("This test takes a long time to run, so run it manually")
 public class JettyAsyncDefaultContinuationTimeoutTest extends BaseJettyTest {

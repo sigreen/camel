@@ -22,7 +22,6 @@ import org.apache.camel.processor.intercept.InterceptSendToEndpointInOnException
 import static org.apache.camel.spring.processor.SpringTestHelper.createSpringCamelContext;
 
 /**
- * @version 
  */
 public class SpringInterceptSendToEndpointInOnExceptionTest extends InterceptSendToEndpointInOnException {
 

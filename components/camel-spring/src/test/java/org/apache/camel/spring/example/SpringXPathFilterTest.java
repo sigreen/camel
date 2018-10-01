@@ -22,7 +22,6 @@ import org.apache.camel.spring.SpringCamelContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
- * @version 
  */
 public class SpringXPathFilterTest extends XPathFilterTest {
 

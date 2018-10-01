@@ -19,7 +19,6 @@ package org.apache.camel.spring.config;
 import org.apache.camel.ProducerTemplate;
 
 /**
- * @version 
  */
 public class TemplateUsingBean {
     private ProducerTemplate template;

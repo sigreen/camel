@@ -31,8 +31,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- *
- * @version 
  */
 public class DefaultCxfMessageMapper implements CxfMessageMapper {
     private static final Logger LOG = LoggerFactory.getLogger(DefaultCxfMessageMapper.class);

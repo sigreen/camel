@@ -24,7 +24,6 @@ import org.apache.camel.processor.async.MyAsyncComponent;
 import org.junit.Test;
 
 /**
- * @version 
  */
 public class AsyncLoopCopyTest extends ContextTestSupport {
 

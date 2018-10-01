@@ -17,7 +17,6 @@
 package org.apache.camel.itest.jms;
 
 /**
- * @version 
  */
 public class JmsMediumQueuePerformanceTest extends JmsPerformanceTest {
 

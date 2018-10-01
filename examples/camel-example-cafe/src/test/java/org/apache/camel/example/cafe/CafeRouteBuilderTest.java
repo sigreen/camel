@@ -31,7 +31,6 @@ import org.apache.camel.test.junit4.CamelTestSupport;
 import org.junit.Test;
 
 /**
- * @version 
  */
 public class CafeRouteBuilderTest extends CamelTestSupport {
     protected TestWaiter waiter = new TestWaiter();

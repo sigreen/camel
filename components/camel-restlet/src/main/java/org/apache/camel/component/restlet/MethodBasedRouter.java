@@ -32,7 +32,6 @@ import org.slf4j.LoggerFactory;
 /**
  * A simple router that routes requests to target Restlets based on method. 
  * 
- * @version 
  */
 class MethodBasedRouter extends Restlet {
     private static final Logger LOG = LoggerFactory.getLogger(MethodBasedRouter.class);

@@ -23,7 +23,6 @@ import org.apache.camel.component.mock.MockEndpoint;
 import org.junit.Test;
 
 /**
- * @version 
  */
 public class Mina2SslGlobalContextParametersTcpTest extends BaseMina2Test {
 

@@ -26,7 +26,6 @@ import org.apache.camel.builder.RouteBuilder;
 import org.junit.Test;
 
 /**
- * @version 
  */
 public class SedaTimeoutTest extends ContextTestSupport {
     private int timeout = 100;

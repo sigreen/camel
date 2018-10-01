@@ -32,7 +32,6 @@ import org.junit.Test;
 import static org.apache.camel.ShutdownRoute.Default;
 
 /**
- * @version 
  */
 public class ShutdownNotDeferTest extends ContextTestSupport {
 

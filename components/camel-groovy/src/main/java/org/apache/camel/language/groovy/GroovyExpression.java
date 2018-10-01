@@ -29,7 +29,6 @@ import org.apache.camel.support.ExpressionSupport;
 import org.apache.camel.util.ExchangeHelper;
 
 /**
- * @version 
  */
 public class GroovyExpression extends ExpressionSupport {
     private final String text;

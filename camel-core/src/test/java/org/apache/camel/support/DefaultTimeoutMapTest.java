@@ -31,7 +31,6 @@ import org.slf4j.LoggerFactory;
 import static org.awaitility.Awaitility.await;
 
 /**
- * @version 
  */
 public class DefaultTimeoutMapTest extends Assert {
 

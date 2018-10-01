@@ -28,7 +28,6 @@ import org.junit.Test;
 /**
  * This unit test verifies a single route can service multiple methods.
  * 
- * @version 
  */
 public class RestletMultiRoutesEndpointTest extends RestletTestSupport {
 

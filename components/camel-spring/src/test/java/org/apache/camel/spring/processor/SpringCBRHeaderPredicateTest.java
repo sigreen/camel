@@ -22,7 +22,6 @@ import org.apache.camel.processor.CBRHeaderPredicateTest;
 import static org.apache.camel.spring.processor.SpringTestHelper.createSpringCamelContext;
 
 /**
- * @version 
  */
 public class SpringCBRHeaderPredicateTest extends CBRHeaderPredicateTest {
 

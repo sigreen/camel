@@ -22,7 +22,6 @@ import org.apache.camel.component.bean.ProxyHelper;
 import org.junit.Test;
 
 /**
- * @version 
  */
 public class ProxyReturnNullIssueTest extends ContextTestSupport {
 

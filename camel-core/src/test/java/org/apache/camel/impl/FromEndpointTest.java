@@ -26,7 +26,6 @@ import org.apache.camel.component.mock.MockEndpoint;
 import org.junit.Test;
 
 /**
- * @version 
  */
 public class FromEndpointTest extends ContextTestSupport {
     private MockEndpoint results;

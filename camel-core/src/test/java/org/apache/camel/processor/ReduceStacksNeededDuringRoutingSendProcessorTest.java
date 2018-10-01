@@ -31,7 +31,6 @@ import org.apache.camel.impl.DefaultEndpoint;
 import org.junit.Test;
 
 /**
- * @version 
  */
 public class ReduceStacksNeededDuringRoutingSendProcessorTest extends ContextTestSupport {
 

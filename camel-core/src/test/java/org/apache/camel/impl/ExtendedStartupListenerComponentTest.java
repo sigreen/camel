@@ -24,7 +24,6 @@ import org.apache.camel.component.direct.DirectComponent;
 import org.junit.Test;
 
 /**
- * @version 
  */
 public class ExtendedStartupListenerComponentTest extends ContextTestSupport {
 

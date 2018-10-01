@@ -27,7 +27,6 @@ import org.springframework.context.support.AbstractXmlApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
- * @version 
  */
 public class ProcessorAsEndpointTest extends SpringTestSupport {
     protected Object body = "<hello>world!</hello>";

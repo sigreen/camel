@@ -25,7 +25,6 @@ import org.apache.camel.ServiceStatus;
 import org.junit.Test;
 
 /**
- * @version 
  */
 public class ManagedUnregisterCamelContextTest extends ManagementTestSupport {
 

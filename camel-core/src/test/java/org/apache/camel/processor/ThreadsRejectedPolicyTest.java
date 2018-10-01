@@ -23,7 +23,6 @@ import org.junit.Test;
 import static org.apache.camel.ThreadPoolRejectedPolicy.DiscardOldest;
 
 /**
- * @version 
  */
 public class ThreadsRejectedPolicyTest extends ContextTestSupport {
 

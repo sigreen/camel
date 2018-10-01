@@ -40,7 +40,6 @@ import org.apache.camel.util.ExchangeHelper;
  * href="http://www.thaiopensource.com/relaxng/jing.html">Jing</a> library to
  * validate XML against RelaxNG
  * 
- * @version 
  */
 public class JingValidator extends DefaultProducer {
     private Schema schema;

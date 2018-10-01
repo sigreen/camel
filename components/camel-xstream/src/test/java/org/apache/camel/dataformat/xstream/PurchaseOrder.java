@@ -19,7 +19,6 @@ package org.apache.camel.dataformat.xstream;
 import org.apache.camel.util.ObjectHelper;
 
 /**
- * @version 
  */
 public class PurchaseOrder {
     private String name;

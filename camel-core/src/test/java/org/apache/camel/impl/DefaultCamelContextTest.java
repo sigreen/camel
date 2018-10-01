@@ -39,7 +39,6 @@ import org.apache.camel.util.CamelContextHelper;
 import org.junit.Test;
 
 /**
- * @version 
  */
 public class DefaultCamelContextTest extends TestSupport {
 

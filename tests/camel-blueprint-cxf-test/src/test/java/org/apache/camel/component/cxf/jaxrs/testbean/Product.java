@@ -19,8 +19,6 @@ package org.apache.camel.component.cxf.jaxrs.testbean;
 import javax.xml.bind.annotation.XmlRootElement;
 
 /**
- *
- * @version 
  */
 @XmlRootElement(name = "Product")
 public class Product {

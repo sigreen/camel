@@ -24,7 +24,6 @@ import org.apache.camel.processor.aggregate.AggregationStrategy;
 import org.junit.Test;
 
 /**
- * @version 
  */
 public class MulticastParallelTimeout3Test extends ContextTestSupport {
 

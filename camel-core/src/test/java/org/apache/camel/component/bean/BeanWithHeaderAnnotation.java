@@ -21,7 +21,6 @@ import org.w3c.dom.Document;
 import org.apache.camel.Header;
 
 /**
- * @version 
  */
 public class BeanWithHeaderAnnotation {
 

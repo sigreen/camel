@@ -48,7 +48,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * @version 
  */
 public class CxfProducerTest extends Assert {
     protected static final String ECHO_OPERATION = "echo";

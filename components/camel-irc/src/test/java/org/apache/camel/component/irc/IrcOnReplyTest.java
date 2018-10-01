@@ -27,7 +27,6 @@ import org.junit.Ignore;
 import org.junit.Test;
 
 /**
- * @version 
  */
 public class IrcOnReplyTest extends CamelTestSupport {
     protected MockEndpoint resultEndpoint;

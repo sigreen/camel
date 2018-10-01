@@ -25,7 +25,6 @@ import org.apache.camel.Exchange;
 import org.junit.Test;
 
 /**
- * @version 
  */
 public class NIOConverterTest extends ContextTestSupport {
 

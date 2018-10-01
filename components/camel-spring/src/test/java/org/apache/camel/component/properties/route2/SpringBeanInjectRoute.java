@@ -23,7 +23,6 @@ import org.apache.camel.impl.FooBar;
 import org.apache.camel.spring.SpringRouteBuilder;
 
 /**
- * @version 
  */
 public class SpringBeanInjectRoute extends SpringRouteBuilder {
 

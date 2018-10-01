@@ -17,7 +17,6 @@
 package org.apache.camel.component.jetty.proxy;
 
 /**
- * @version 
  */
 public class MyAppException extends Exception {
 

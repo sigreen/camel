@@ -29,7 +29,6 @@ import org.apache.camel.builder.RouteBuilder;
 import org.junit.Test;
 
 /**
- * @version 
  */
 public class Mina2ProducerAnotherConcurrentTest extends BaseMina2Test {
 

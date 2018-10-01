@@ -27,7 +27,6 @@ import org.apache.camel.support.SynchronizationAdapter;
 import org.junit.Test;
 
 /**
- * @version 
  */
 public class GertJBIIssueTest extends ContextTestSupport {
 

@@ -27,7 +27,6 @@ import javax.persistence.Query;
 /**
  * A builder of query expressions
  * 
- * @version 
  */
 public abstract class QueryBuilder implements QueryFactory {
     ParameterBuilder parameterBuilder;

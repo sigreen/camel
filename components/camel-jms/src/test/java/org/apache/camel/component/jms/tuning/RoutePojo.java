@@ -23,7 +23,6 @@ import org.apache.camel.ProducerTemplate;
 import org.apache.camel.RecipientList;
 
 /**
- * @version 
  */
 public class RoutePojo {
 

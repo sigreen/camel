@@ -27,7 +27,6 @@ import org.junit.Before;
 import org.junit.Test;
 
 /**
- * @version 
  */
 public class DeadLetterChannelTest extends ContextTestSupport {
     protected Endpoint startEndpoint;

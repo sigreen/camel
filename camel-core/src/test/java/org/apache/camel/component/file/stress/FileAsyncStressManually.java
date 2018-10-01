@@ -26,7 +26,6 @@ import org.apache.camel.component.mock.MockEndpoint;
 import org.junit.Ignore;
 
 /**
- * @version 
  */
 @Ignore("Manual test")
 public class FileAsyncStressManually extends ContextTestSupport {

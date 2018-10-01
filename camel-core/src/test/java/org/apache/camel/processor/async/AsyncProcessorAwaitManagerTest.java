@@ -26,7 +26,6 @@ import org.apache.camel.spi.AsyncProcessorAwaitManager;
 import org.junit.Test;
 
 /**
- * @version 
  */
 public class AsyncProcessorAwaitManagerTest extends ContextTestSupport {
 

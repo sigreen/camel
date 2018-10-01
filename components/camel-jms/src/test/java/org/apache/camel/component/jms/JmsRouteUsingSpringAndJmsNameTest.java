@@ -20,7 +20,6 @@ import org.junit.Before;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
- * @version 
  */
 public class JmsRouteUsingSpringAndJmsNameTest extends JmsRouteUsingSpringTest {
 

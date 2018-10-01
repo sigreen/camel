@@ -20,7 +20,6 @@ import org.apache.camel.ContextTestSupport;
 import org.junit.Test;
 
 /**
- * @version 
  */
 public class RouteBuilderAddRoutesOnlyInterceptTest extends ContextTestSupport {
 

@@ -17,7 +17,6 @@
 package org.apache.camel.component.file.remote;
 
 /**
- * @version 
  */
 public class FromFtpRecursiveNoopNotStepwiseTest extends FromFtpRecursiveNoopTest {
 

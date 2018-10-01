@@ -47,7 +47,6 @@ import static org.apache.camel.component.jms.JmsComponent.jmsComponentAutoAcknow
 
 
 /**
- * @version 
  */
 public class JmsRouteRequestReplyTest extends CamelTestSupport {
 

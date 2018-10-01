@@ -22,7 +22,6 @@ import org.junit.After;
 import org.junit.Test;
 
 /**
- * @version 
  */
 public class PropertiesComponentLocationWithJvmPropertyTest extends ContextTestSupport {
 

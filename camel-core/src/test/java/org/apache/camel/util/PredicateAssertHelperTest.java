@@ -26,7 +26,6 @@ import org.junit.Test;
 import static org.apache.camel.builder.Builder.constant;
 
 /**
- * @version 
  */
 public class PredicateAssertHelperTest extends ContextTestSupport {
 

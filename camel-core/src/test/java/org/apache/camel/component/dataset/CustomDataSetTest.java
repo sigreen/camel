@@ -30,7 +30,6 @@ import org.apache.camel.util.PredicateAssertHelper;
 import org.junit.Test;
 
 /**
- * @version 
  */
 public class CustomDataSetTest extends ContextTestSupport {
     protected DataSet dataSet = new DataSetSupport() {

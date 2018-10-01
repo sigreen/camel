@@ -22,7 +22,6 @@ import org.apache.camel.Service;
 import org.junit.Test;
 
 /**
- * @version 
  */
 public class DefaultCamelContextStopFailureTest extends ContextTestSupport {
 

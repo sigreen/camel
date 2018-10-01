@@ -23,7 +23,6 @@ import org.apache.camel.spi.RestConfiguration;
 import org.junit.Test;
 
 /**
- * @version 
  */
 public class RestRestletGetCorsTest extends RestletTestSupport {
 

@@ -31,7 +31,6 @@ import org.apache.camel.spi.EndpointUtilizationStatistics;
 import org.junit.Test;
 
 /**
- * @version 
  */
 public class DefaultProducerCacheTest extends ContextTestSupport {
 

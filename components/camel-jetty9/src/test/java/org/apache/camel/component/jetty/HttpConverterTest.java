@@ -30,7 +30,6 @@ import org.apache.camel.http.common.HttpMessage;
 import org.junit.Test;
 
 /**
- * @version 
  */
 public class HttpConverterTest extends BaseJettyTest {
 

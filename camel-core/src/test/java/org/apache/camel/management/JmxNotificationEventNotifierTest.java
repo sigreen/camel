@@ -28,7 +28,6 @@ import org.apache.camel.impl.DefaultCamelContext;
 import org.junit.Test;
 
 /**
- * @version 
  */
 public class JmxNotificationEventNotifierTest extends ContextTestSupport {
 

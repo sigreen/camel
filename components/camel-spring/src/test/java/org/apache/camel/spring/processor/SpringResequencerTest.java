@@ -22,7 +22,6 @@ import org.apache.camel.processor.ResequencerTest;
 import static org.apache.camel.spring.processor.SpringTestHelper.createSpringCamelContext;
 
 /**
- * @version 
  */
 public class SpringResequencerTest extends ResequencerTest {
     protected CamelContext createCamelContext() throws Exception {

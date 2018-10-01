@@ -27,8 +27,6 @@ import org.apache.http.impl.client.HttpClientBuilder;
 import org.junit.Test;
 
 /**
- *
- * @version 
  */
 public class RestletRedirectTest extends RestletTestSupport {
 

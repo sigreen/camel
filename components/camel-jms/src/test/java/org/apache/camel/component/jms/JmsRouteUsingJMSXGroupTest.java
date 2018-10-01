@@ -31,7 +31,6 @@ import static org.apache.camel.component.jms.JmsComponent.jmsComponentAutoAcknow
 import static org.apache.camel.component.jms.JmsConstants.JMS_X_GROUP_ID;
 
 /**
- * @version 
  */
 public class JmsRouteUsingJMSXGroupTest extends CamelTestSupport {
 

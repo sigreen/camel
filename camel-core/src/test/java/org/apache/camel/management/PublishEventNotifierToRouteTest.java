@@ -23,7 +23,6 @@ import org.apache.camel.impl.DefaultCamelContext;
 import org.junit.Test;
 
 /**
- * @version 
  */
 public class PublishEventNotifierToRouteTest extends ContextTestSupport {
 

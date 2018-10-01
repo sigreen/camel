@@ -25,7 +25,6 @@ import org.junit.Test;
 import static org.hamcrest.CoreMatchers.equalTo;
 
 /**
- * @version 
  */
 public class FtpConsumerAutoCreateTest extends FtpServerTestSupport {
 

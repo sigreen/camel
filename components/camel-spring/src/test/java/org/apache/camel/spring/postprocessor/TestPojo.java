@@ -21,7 +21,6 @@ import org.apache.camel.ProducerTemplate;
 import org.springframework.stereotype.Component;
 
 /**
- * @version 
  */
 @Component("testPojo")
 public class TestPojo {

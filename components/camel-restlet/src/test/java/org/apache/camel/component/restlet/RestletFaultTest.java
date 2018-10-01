@@ -24,8 +24,6 @@ import org.apache.http.client.methods.HttpPost;
 import org.junit.Test;
 
 /**
- *
- * @version 
  */
 public class RestletFaultTest extends RestletTestSupport {
 

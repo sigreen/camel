@@ -25,7 +25,6 @@ import org.junit.Test;
 import org.springframework.orm.jpa.JpaTransactionManager;
 
 /**
- * @version 
  */
 public class JpaEndpointTest extends CamelTestSupport {
 

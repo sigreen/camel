@@ -28,7 +28,6 @@ import org.apache.camel.support.ServiceSupport;
 import org.junit.Test;
 
 /**
- * @version 
  */
 public class ManagedNonManagedServiceTest extends ManagementTestSupport {
 

@@ -24,7 +24,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 
 /**
- * @version 
  */
 @ContextConfiguration
 public class ProducerTemplateAlreadyExistTest extends SpringRunWithTestSupport {

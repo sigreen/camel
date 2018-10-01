@@ -25,7 +25,6 @@ import org.apache.camel.component.jetty.BaseJettyTest;
 import org.junit.Test;
 
 /**
- * @version 
  */
 public class JettyHttpProducerQueryParamTest extends BaseJettyTest {
 

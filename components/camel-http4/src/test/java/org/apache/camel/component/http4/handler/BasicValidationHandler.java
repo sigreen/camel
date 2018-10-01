@@ -32,8 +32,6 @@ import org.apache.http.protocol.HttpRequestHandler;
 import org.apache.http.util.EntityUtils;
 
 /**
- *
- * @version 
  */
 public class BasicValidationHandler implements HttpRequestHandler {
 

@@ -21,8 +21,6 @@ import javax.xml.bind.annotation.XmlRootElement;
 import org.apache.camel.util.ObjectHelper;
 
 /**
- *
- * @version 
  */
 @XmlRootElement(name = "Customer")
 public class Customer {

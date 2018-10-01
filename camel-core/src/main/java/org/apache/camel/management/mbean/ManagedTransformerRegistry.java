@@ -35,7 +35,6 @@ import org.apache.camel.spi.TransformerRegistry;
 import org.apache.camel.util.ObjectHelper;
 
 /**
- * @version 
  */
 @ManagedResource(description = "Managed TransformerRegistry")
 public class ManagedTransformerRegistry extends ManagedService implements ManagedTransformerRegistryMBean {

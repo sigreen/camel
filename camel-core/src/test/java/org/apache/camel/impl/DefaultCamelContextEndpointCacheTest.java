@@ -26,7 +26,6 @@ import org.apache.camel.Producer;
 import org.junit.Test;
 
 /**
- * @version 
  */
 public class DefaultCamelContextEndpointCacheTest extends ContextTestSupport {
 

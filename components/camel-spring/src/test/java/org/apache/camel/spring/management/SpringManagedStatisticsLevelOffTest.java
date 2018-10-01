@@ -22,7 +22,6 @@ import org.apache.camel.management.ManagedStatisticsLevelOffTest;
 import static org.apache.camel.spring.processor.SpringTestHelper.createSpringCamelContext;
 
 /**
- * @version 
  */
 public class SpringManagedStatisticsLevelOffTest extends ManagedStatisticsLevelOffTest {
 

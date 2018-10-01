@@ -20,7 +20,6 @@ import org.apache.camel.TestSupport;
 import org.junit.Test;
 
 /**
- * @version 
  */
 public class MainRunnerTest extends TestSupport {
 

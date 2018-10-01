@@ -17,7 +17,6 @@
 package org.apache.camel.spring.interceptor;
 
 /**
- * @version 
  */
 public interface AnnotatedBookStore {
     

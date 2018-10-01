@@ -22,7 +22,6 @@ import org.apache.camel.TypeConverter;
 import org.apache.camel.util.ObjectHelper;
 
 /**
- * @version 
  */
 public class SoapPayloadBean {
 

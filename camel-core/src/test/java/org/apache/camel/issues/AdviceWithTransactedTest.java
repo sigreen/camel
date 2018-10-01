@@ -26,7 +26,6 @@ import org.apache.camel.spi.RouteContext;
 import org.junit.Test;
 
 /**
- * @version 
  */
 public class AdviceWithTransactedTest extends ContextTestSupport {
 

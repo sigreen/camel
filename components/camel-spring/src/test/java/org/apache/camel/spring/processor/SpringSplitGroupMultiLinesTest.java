@@ -22,7 +22,6 @@ import org.apache.camel.processor.SplitGroupMultiLinesTest;
 import static org.apache.camel.spring.processor.SpringTestHelper.createSpringCamelContext;
 
 /**
- * @version 
  */
 public class SpringSplitGroupMultiLinesTest extends SplitGroupMultiLinesTest {
 

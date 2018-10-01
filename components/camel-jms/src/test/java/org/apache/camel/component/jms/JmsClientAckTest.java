@@ -30,7 +30,6 @@ import org.junit.Test;
 import static org.apache.camel.component.jms.JmsComponent.jmsComponentClientAcknowledge;
 
 /**
- * @version 
  */
 public class JmsClientAckTest extends CamelTestSupport {
 

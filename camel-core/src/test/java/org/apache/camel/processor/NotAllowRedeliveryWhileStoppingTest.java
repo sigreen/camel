@@ -23,7 +23,6 @@ import org.apache.camel.util.StopWatch;
 import org.junit.Test;
 
 /**
- * @version 
  */
 public class NotAllowRedeliveryWhileStoppingTest extends ContextTestSupport {
 

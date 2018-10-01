@@ -17,7 +17,6 @@
 package org.apache.camel.component.xquery;
 
 /**
- * @version 
  */
 public class TestBean {
     private String subject;

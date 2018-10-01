@@ -35,7 +35,6 @@ import org.apache.camel.spi.ValidatorRegistry;
 import org.apache.camel.util.ObjectHelper;
 
 /**
- * @version 
  */
 @ManagedResource(description = "Managed ValidatorRegistry")
 public class ManagedValidatorRegistry extends ManagedService implements ManagedValidatorRegistryMBean {

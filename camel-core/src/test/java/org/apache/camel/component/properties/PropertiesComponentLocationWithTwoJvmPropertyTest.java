@@ -19,7 +19,6 @@ import org.apache.camel.CamelContext;
 import org.junit.After;
 
 /**
- * @version 
  */
 public class PropertiesComponentLocationWithTwoJvmPropertyTest extends PropertiesComponentLocationWithJvmPropertyTest {
 

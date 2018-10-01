@@ -23,7 +23,6 @@ import org.apache.camel.processor.aggregate.AggregationStrategy;
 import org.junit.Test;
 
 /**
- * @version 
  */
 public class MulticastPipelineAggregateIssueTest extends ContextTestSupport {
 

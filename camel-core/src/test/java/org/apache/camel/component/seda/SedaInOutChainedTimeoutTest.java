@@ -24,7 +24,6 @@ import org.apache.camel.util.StopWatch;
 import org.junit.Test;
 
 /**
- * @version 
  */
 public class SedaInOutChainedTimeoutTest extends ContextTestSupport {
 

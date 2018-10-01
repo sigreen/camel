@@ -22,7 +22,6 @@ import org.apache.camel.management.ManagedNamePatternFixedTest;
 import static org.apache.camel.spring.processor.SpringTestHelper.createSpringCamelContext;
 
 /**
- * @version 
  */
 public class SpringManagedNamePatternFixedTest extends ManagedNamePatternFixedTest {
 

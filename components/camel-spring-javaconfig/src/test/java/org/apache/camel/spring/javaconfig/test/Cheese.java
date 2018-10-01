@@ -17,7 +17,6 @@
 package org.apache.camel.spring.javaconfig.test;
 
 /**
- * @version 
  */
 public interface Cheese {
     void doCheese();

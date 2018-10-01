@@ -24,7 +24,6 @@ import org.apache.camel.Exchange;
 import org.junit.Test;
 
 /**
- * @version 
  */
 public class DefaultConsumerTemplateWithCustomCacheMaxSizeTest extends ContextTestSupport {
 

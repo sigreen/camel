@@ -20,7 +20,6 @@ import org.apache.camel.PropertyInject;
 import org.apache.camel.spring.SpringRouteBuilder;
 
 /**
- * @version 
  */
 public class SpringPropertyInjectRoute extends SpringRouteBuilder {
 

@@ -37,7 +37,6 @@ import org.junit.Test;
 
 
 /**
- * @version 
  */
 public class DebugTest extends ContextTestSupport {
 

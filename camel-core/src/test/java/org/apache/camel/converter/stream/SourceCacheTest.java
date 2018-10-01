@@ -22,7 +22,6 @@ import org.apache.camel.ContextTestSupport;
 import org.junit.Test;
 
 /**
- * @version 
  */
 public class SourceCacheTest extends ContextTestSupport {
 

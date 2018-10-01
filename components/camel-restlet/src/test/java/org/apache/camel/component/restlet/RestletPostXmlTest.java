@@ -25,7 +25,6 @@ import org.apache.http.entity.StringEntity;
 import org.junit.Test;
 
 /**
- * @version 
  */
 public class RestletPostXmlTest extends RestletTestSupport {
     

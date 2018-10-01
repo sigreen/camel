@@ -22,7 +22,6 @@ import org.apache.camel.Body;
 import org.apache.camel.Headers;
 
 /**
- * @version 
  */
 public interface MyListener {
 

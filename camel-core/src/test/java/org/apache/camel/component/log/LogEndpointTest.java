@@ -25,7 +25,6 @@ import org.apache.camel.processor.CamelLogProcessor;
 import org.junit.Test;
 
 /**
- * @version 
  */
 public class LogEndpointTest extends ContextTestSupport {
 

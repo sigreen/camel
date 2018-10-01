@@ -31,7 +31,6 @@ import org.apache.camel.processor.DelegateProcessor;
 import org.junit.Test;
 
 /**
- * @version 
  */
 public class BuilderWithScopesTest extends TestSupport {
 

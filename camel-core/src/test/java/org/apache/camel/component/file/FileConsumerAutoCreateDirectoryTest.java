@@ -27,7 +27,6 @@ import org.apache.camel.Processor;
 import org.junit.Test;
 
 /**
- * @version 
  */
 public class FileConsumerAutoCreateDirectoryTest extends ContextTestSupport {
 

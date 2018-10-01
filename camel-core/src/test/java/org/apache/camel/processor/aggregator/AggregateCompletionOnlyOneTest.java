@@ -28,7 +28,6 @@ import org.apache.camel.spi.AggregationRepository;
 import org.junit.Test;
 
 /**
- * @version 
  */
 public class AggregateCompletionOnlyOneTest extends ContextTestSupport {
 

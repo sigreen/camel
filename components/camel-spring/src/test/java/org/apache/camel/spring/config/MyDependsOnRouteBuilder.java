@@ -19,7 +19,6 @@ package org.apache.camel.spring.config;
 import org.apache.camel.spring.SpringRouteBuilder;
 
 /**
- * @version 
  */
 public class MyDependsOnRouteBuilder extends SpringRouteBuilder {
 

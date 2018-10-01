@@ -26,7 +26,6 @@ import org.junit.Test;
 /**
  * JUnit test class for <code>org.apache.camel.component.smpp.SmppConnectionFactory</code>
  * 
- * @version 
  */
 public class SmppConnectionFactoryTest {
 

@@ -26,7 +26,6 @@ import org.apache.camel.impl.JndiRegistry;
 import org.junit.Test;
 
 /**
- * @version 
  */
 public class RecipientListBeanTest extends ContextTestSupport {
 

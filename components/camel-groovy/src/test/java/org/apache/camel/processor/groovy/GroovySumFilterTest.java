@@ -25,7 +25,6 @@ import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
- * @version 
  */
 public class GroovySumFilterTest extends CamelSpringTestSupport {
 

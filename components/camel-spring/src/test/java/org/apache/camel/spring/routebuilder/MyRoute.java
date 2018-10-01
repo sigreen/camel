@@ -20,7 +20,6 @@ import org.apache.camel.CamelContext;
 import org.apache.camel.spring.SpringRouteBuilder;
 
 /**
- * @version 
  */
 public class MyRoute extends SpringRouteBuilder {
 

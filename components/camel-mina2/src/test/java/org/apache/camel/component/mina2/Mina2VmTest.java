@@ -21,7 +21,6 @@ import org.apache.camel.component.mock.MockEndpoint;
 import org.junit.Test;
 
 /**
- * @version 
  */
 public class Mina2VmTest extends BaseMina2Test {
 

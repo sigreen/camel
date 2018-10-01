@@ -22,7 +22,6 @@ import org.apache.camel.impl.FromMultipleEndpointTest;
 import static org.apache.camel.spring.processor.SpringTestHelper.createSpringCamelContext;
 
 /**
- * @version 
  */
 public class SpringFromMultipleEndpointTest extends FromMultipleEndpointTest {
     @Override

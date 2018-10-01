@@ -30,7 +30,6 @@ import org.apache.camel.spring.SpringRouteBuilder;
 import org.junit.Test;
 
 /**
- * @version 
  */
 public class JpaProducerConcurrentTest extends AbstractJpaTest {
     protected static final String SELECT_ALL_STRING = "select x from " + SendEmail.class.getName() + " x";

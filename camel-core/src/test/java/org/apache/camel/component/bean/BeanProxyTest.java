@@ -27,7 +27,6 @@ import org.junit.Test;
 
 
 /**
- * @version 
  */
 public class BeanProxyTest extends ContextTestSupport {
 

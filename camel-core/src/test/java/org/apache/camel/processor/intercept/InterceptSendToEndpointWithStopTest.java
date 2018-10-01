@@ -23,7 +23,6 @@ import org.junit.Test;
 /**
  * Unit test for intercepting sending to endpoint
  * 
- * @version 
  */
 public class InterceptSendToEndpointWithStopTest extends ContextTestSupport {
 

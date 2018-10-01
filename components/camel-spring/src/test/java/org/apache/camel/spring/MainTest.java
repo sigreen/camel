@@ -29,7 +29,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * @version 
  */
 public class MainTest extends Assert {
     private static final Logger LOG = LoggerFactory.getLogger(MainTest.class);

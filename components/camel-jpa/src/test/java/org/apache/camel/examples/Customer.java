@@ -25,7 +25,6 @@ import javax.persistence.OneToOne;
 import javax.persistence.Version;
 
 /**
- * @version 
  */
 @Entity
 @NamedQuery(name = "findAllCustomersWithName",

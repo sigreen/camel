@@ -24,8 +24,6 @@ import org.restlet.data.MediaType;
 import org.restlet.data.Method;
 
 /**
- *
- * @version 
  */
 @Converter
 public final class RestletConverter {

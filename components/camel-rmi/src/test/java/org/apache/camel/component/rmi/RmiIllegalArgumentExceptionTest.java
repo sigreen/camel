@@ -25,7 +25,6 @@ import org.apache.camel.impl.JndiRegistry;
 import org.junit.Test;
 
 /**
- * @version 
  */
 public class RmiIllegalArgumentExceptionTest extends RmiRouteTestSupport {
     private boolean created;

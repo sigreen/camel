@@ -24,7 +24,6 @@ import org.junit.Test;
 import static org.apache.camel.processor.ExchangeAwareDelayCalcBean.BEAN_DELAYER_HEADER;
 
 /**
- * @version 
  */
 public class DelayerTest extends ContextTestSupport {
 

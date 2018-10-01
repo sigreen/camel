@@ -24,7 +24,6 @@ import org.apache.cxf.phase.Phase;
 /**
  * This interface configures the flag {@link DocLiteralInInterceptor#KEEP_PARAMETERS_WRAPPER}.
  * 
- * @version 
  */
 public class ConfigureDocLitWrapperInterceptor extends AbstractInDatabindingInterceptor {
 

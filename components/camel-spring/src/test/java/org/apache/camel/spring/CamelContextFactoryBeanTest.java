@@ -33,7 +33,6 @@ import org.xmlunit.builder.Input;
 import org.xmlunit.diff.Diff;
 
 /**
- * @version 
  */
 public class CamelContextFactoryBeanTest extends Assert {
     

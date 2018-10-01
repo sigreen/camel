@@ -21,7 +21,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 /**
- * @version 
  */
 @Entity
 public class Address {

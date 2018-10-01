@@ -24,7 +24,6 @@ import org.apache.camel.component.properties.PropertiesComponent;
 import org.junit.Test;
 
 /**
- * @version 
  */
 public class RouteAutoStartupTest extends ContextTestSupport {
 

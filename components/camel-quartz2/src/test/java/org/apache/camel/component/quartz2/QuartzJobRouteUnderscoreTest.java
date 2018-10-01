@@ -22,7 +22,6 @@ import org.junit.Test;
 import org.quartz.JobDetail;
 
 /**
- * @version 
  */
 public class QuartzJobRouteUnderscoreTest extends BaseQuartzTest {
 

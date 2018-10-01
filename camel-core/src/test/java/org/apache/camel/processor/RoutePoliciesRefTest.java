@@ -26,7 +26,6 @@ import org.apache.camel.support.RoutePolicySupport;
 import org.junit.Test;
 
 /**
- * @version 
  */
 public class RoutePoliciesRefTest extends ContextTestSupport {
 

@@ -38,7 +38,6 @@ import org.springframework.orm.jpa.LocalEntityManagerFactoryBean;
 import static org.hamcrest.CoreMatchers.equalTo;
 
 /**
- * @version 
  */
 public class JpaRouteSharedEntityManagerTest extends AbstractJpaTest {
     protected static final String SELECT_ALL_STRING = "select x from " + SendEmail.class.getName() + " x";

@@ -22,7 +22,6 @@ import org.apache.camel.impl.JndiRegistry;
 import org.junit.Test;
 
 /**
- * @version 
  */
 public class BeanLanguageOGNLWithDotInParameterTest extends ContextTestSupport {
 

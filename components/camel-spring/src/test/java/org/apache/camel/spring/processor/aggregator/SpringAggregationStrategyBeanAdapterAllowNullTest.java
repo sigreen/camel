@@ -22,7 +22,6 @@ import org.apache.camel.processor.aggregator.AggregationStrategyBeanAdapterAllow
 import static org.apache.camel.spring.processor.SpringTestHelper.createSpringCamelContext;
 
 /**
- * @version 
  */
 public class SpringAggregationStrategyBeanAdapterAllowNullTest extends AggregationStrategyBeanAdapterAllowNullTest {
 

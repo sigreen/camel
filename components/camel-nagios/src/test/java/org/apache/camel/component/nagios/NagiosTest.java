@@ -37,7 +37,6 @@ import static org.mockito.Mockito.verify;
 
 
 /**
- * @version 
  */
 public class NagiosTest extends CamelTestSupport {
     @Mock

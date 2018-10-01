@@ -24,7 +24,6 @@ import org.apache.camel.processor.aggregate.TimeoutAwareAggregationStrategy;
 import org.junit.Test;
 
 /**
- * @version 
  */
 public class MulticastParallelAllTimeoutAwareTest extends ContextTestSupport {
 

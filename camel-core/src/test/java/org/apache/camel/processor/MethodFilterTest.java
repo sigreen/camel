@@ -25,7 +25,6 @@ import org.apache.camel.builder.RouteBuilder;
 import org.junit.Test;
 
 /**
- * @version 
  */
 public class MethodFilterTest extends ContextTestSupport {
     @Test

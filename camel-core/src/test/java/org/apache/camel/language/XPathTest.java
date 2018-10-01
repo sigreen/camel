@@ -24,7 +24,6 @@ import org.apache.camel.spi.Language;
 import org.junit.Test;
 
 /**
- * @version 
  */
 public class XPathTest extends LanguageTestSupport {
 

@@ -22,7 +22,6 @@ import org.apache.camel.util.toolbox.AggregationStrategies;
 import org.junit.Test;
 
 /**
- * @version 
  */
 public class MulticastKeepOriginalMessageUnchangedTest extends ContextTestSupport {
 

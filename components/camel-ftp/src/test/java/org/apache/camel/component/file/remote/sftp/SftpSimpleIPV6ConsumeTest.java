@@ -23,7 +23,6 @@ import org.junit.Ignore;
 import org.junit.Test;
 
 /**
- * @version 
  */
 @Ignore
 public class SftpSimpleIPV6ConsumeTest extends SftpServerTestSupport {

@@ -34,7 +34,6 @@ import org.slf4j.LoggerFactory;
 /**
  * The default CXF header filter strategy.
  * 
- * @version 
  */
 public class CxfHeaderFilterStrategy extends DefaultHeaderFilterStrategy {
     private static final Logger LOG = LoggerFactory.getLogger(CxfHeaderFilterStrategy.class);

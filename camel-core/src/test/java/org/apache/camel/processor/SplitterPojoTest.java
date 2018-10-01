@@ -32,7 +32,6 @@ import org.apache.camel.impl.JndiRegistry;
 import org.junit.Test;
 
 /**
- * @version 
  */
 public class SplitterPojoTest extends ContextTestSupport {
 

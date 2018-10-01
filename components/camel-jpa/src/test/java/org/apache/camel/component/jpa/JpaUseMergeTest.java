@@ -25,7 +25,6 @@ import org.springframework.transaction.TransactionStatus;
 import org.springframework.transaction.support.TransactionCallback;
 
 /**
- * @version 
  */
 public class JpaUseMergeTest extends AbstractJpaMethodTest {
     

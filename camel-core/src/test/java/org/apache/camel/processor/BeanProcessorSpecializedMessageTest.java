@@ -27,7 +27,6 @@ import org.apache.camel.impl.DefaultMessage;
 import org.junit.Test;
 
 /**
- * @version 
  */
 public class BeanProcessorSpecializedMessageTest extends ContextTestSupport {
 

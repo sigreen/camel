@@ -25,7 +25,6 @@ import org.apache.camel.Message;
 import org.junit.Test;
 
 /**
- * @version 
  */
 public class MessageSupportTest extends ContextTestSupport {
 

@@ -24,7 +24,6 @@ import org.apache.camel.model.RouteDefinition;
 import org.junit.Test;
 
 /**
- * @version 
  */
 public class AdviceWithTwoRoutesOnExceptionTest extends ContextTestSupport {
 

@@ -36,7 +36,6 @@ import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseBuilder;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType;
 
 /**
- * @version 
  */
 public class SqlProducerConcurrentTest extends CamelTestSupport {
     

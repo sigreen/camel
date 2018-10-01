@@ -24,7 +24,6 @@ import org.apache.camel.util.IOHelper;
 import org.junit.Test;
 
 /**
- * @version 
  */
 public class ByteArrayInputStreamCacheTest extends ContextTestSupport {
 

@@ -35,7 +35,6 @@ import org.junit.Before;
 import org.junit.Test;
 
 /**
- * @version 
  */
 public class AggregateProcessorTest extends ContextTestSupport {
 

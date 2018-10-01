@@ -20,7 +20,6 @@ import org.apache.camel.test.blueprint.CamelBlueprintTestSupport;
 import org.junit.Test;
 
 /**
- * @version 
  */
 public class BlueprintJasyptPropertiesTest extends CamelBlueprintTestSupport {
 

@@ -23,7 +23,6 @@ import org.junit.Before;
 import org.junit.Test;
 
 /**
- * @version 
  */
 public class FtpProducerFileExistAppendTest extends FtpServerTestSupport {
     private static final boolean ON_WINDOWS = System.getProperty("os.name").startsWith("Windows");

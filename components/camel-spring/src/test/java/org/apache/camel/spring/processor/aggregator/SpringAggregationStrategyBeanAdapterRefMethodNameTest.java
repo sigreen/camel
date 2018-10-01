@@ -22,7 +22,6 @@ import org.apache.camel.processor.aggregator.AggregationStrategyBeanAdapterRefMe
 import static org.apache.camel.spring.processor.SpringTestHelper.createSpringCamelContext;
 
 /**
- * @version 
  */
 public class SpringAggregationStrategyBeanAdapterRefMethodNameTest extends AggregationStrategyBeanAdapterRefMethodNameTest {
 

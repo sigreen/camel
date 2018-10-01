@@ -37,7 +37,6 @@ import org.springframework.test.context.junit4.AbstractJUnit4SpringContextTests;
  * We use Spring Testing for unit test, eg we extend AbstractJUnit4SpringContextTests
  * that is a Spring class.
  * 
- * @version 
  */
 @ContextConfiguration
 @DirtiesContext(classMode = DirtiesContext.ClassMode.AFTER_EACH_TEST_METHOD)

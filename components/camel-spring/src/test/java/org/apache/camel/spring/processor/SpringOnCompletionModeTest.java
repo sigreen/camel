@@ -22,7 +22,6 @@ import org.apache.camel.processor.OnCompletionModeTest;
 import static org.apache.camel.spring.processor.SpringTestHelper.createSpringCamelContext;
 
 /**
- * @version 
  */
 public class SpringOnCompletionModeTest extends OnCompletionModeTest {
 

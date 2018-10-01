@@ -25,7 +25,6 @@ import org.apache.camel.util.ResourceHelper;
 import org.apache.velocity.app.VelocityEngine;
 
 /**
- * @version 
  */
 public class VelocityComponent extends DefaultComponent {
 

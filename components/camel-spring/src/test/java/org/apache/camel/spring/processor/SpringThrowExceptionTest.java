@@ -22,7 +22,6 @@ import org.apache.camel.processor.ThrowExceptionTest;
 import static org.apache.camel.spring.processor.SpringTestHelper.createSpringCamelContext;
                                   
 /**
- * @version 
  */
 public class SpringThrowExceptionTest extends ThrowExceptionTest {
 

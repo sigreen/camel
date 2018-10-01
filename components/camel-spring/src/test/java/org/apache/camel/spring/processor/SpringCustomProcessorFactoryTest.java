@@ -22,7 +22,6 @@ import org.apache.camel.processor.CustomProcessorFactoryTest;
 import static org.apache.camel.spring.processor.SpringTestHelper.createSpringCamelContext;
 
 /**
- * @version 
  */
 public class SpringCustomProcessorFactoryTest extends CustomProcessorFactoryTest {
 

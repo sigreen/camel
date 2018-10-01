@@ -26,7 +26,6 @@ import org.apache.camel.impl.DefaultMessage;
 import org.apache.camel.util.ObjectHelper;
 
 /**
- * @version 
  */
 public class HttpMessage extends DefaultMessage {
 

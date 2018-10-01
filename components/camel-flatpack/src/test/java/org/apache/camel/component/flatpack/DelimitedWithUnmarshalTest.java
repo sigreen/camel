@@ -35,7 +35,6 @@ import static org.junit.Assert.assertNotNull;
 
 
 /**
- * @version 
  */
 @ContextConfiguration
 public class DelimitedWithUnmarshalTest extends AbstractJUnit4SpringContextTests {

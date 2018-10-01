@@ -38,7 +38,6 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  * <br/>
  * A SMSC for test is available here: http://www.seleniumsoftware.com/downloads.html
  * 
- * @version 
  */
 @Ignore("Must be manually tested")
 public class SmppComponentSpringIntegrationTest extends CamelSpringTestSupport {

@@ -28,7 +28,6 @@ import org.apache.camel.builder.RouteBuilder;
 import org.junit.Test;
 
 /**
- * @version 
  */
 public class ManagedRouteRemoveWireTapExplicitThreadPoolTest extends ManagementTestSupport {
 

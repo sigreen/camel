@@ -25,7 +25,6 @@ import org.junit.Test;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
- * @version 
  */
 public class TransactedAsyncUsingThreadsTest extends CamelSpringTestSupport {
 

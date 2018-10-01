@@ -27,7 +27,6 @@ import org.apache.camel.spi.InterceptStrategy;
 import org.junit.Test;
 
 /**
- * @version 
  */
 public class InterceptorStrategyOrderedTest extends ContextTestSupport {
 

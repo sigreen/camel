@@ -28,7 +28,6 @@ import org.junit.Before;
 import org.junit.Test;
 
 /**
- * @version 
  */
 public class IdempotentConsumerTest extends ContextTestSupport {
     protected Endpoint startEndpoint;

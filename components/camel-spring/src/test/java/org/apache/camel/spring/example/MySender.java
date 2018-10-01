@@ -24,7 +24,6 @@ import static org.apache.camel.util.ObjectHelper.notNull;
 /**
  * An example POJO which is injected with a CamelTemplate
  * 
- * @version 
  */
 public class MySender {
     @EndpointInject(uri = "mock:a")

@@ -25,8 +25,6 @@ import org.apache.http.HttpStatus;
 import org.apache.http.protocol.HttpContext;
 
 /**
- *
- * @version 
  */
 public class ProxyAuthenticationValidationHandler extends BasicValidationHandler {
 

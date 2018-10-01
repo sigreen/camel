@@ -22,7 +22,6 @@ import org.junit.Test;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
- * @version 
  */
 public class BeanShellFilterTest extends XPathFilterTest {
 

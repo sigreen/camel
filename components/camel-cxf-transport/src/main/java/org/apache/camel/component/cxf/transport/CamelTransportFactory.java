@@ -40,7 +40,6 @@ import org.apache.cxf.transport.DestinationFactoryManager;
 import org.apache.cxf.ws.addressing.EndpointReferenceType;
 
 /**
- * @version 
  */
 @NoJSR250Annotations
 public class CamelTransportFactory extends AbstractTransportFactory implements ConduitInitiator, DestinationFactory, CamelContextAware {

@@ -38,7 +38,6 @@ import org.eclipse.jetty.client.HttpClient;
 import org.eclipse.jetty.server.Handler;
 
 /**
- * @version 
  */
 public abstract class JettyHttpEndpoint extends HttpCommonEndpoint {
 

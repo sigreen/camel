@@ -23,7 +23,6 @@ import org.apache.camel.spi.RoutePolicy;
 import org.junit.Test;
 
 /**
- * @version 
  */
 public class FlipRoutePolicyTest extends ContextTestSupport {
 

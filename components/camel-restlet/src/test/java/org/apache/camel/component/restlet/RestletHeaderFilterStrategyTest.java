@@ -26,7 +26,6 @@ import org.apache.camel.impl.DefaultHeaderFilterStrategy;
 import org.junit.Test;
 
 /**
- * @version 
  */
 public class RestletHeaderFilterStrategyTest extends RestletTestSupport {
 

@@ -36,7 +36,6 @@ import org.apache.camel.util.ObjectHelper;
 import org.apache.camel.util.URISupport;
 
 /**
- * @version 
  */
 @ManagedResource(description = "Managed RoutingSlip")
 public class ManagedRoutingSlip extends ManagedProcessor implements ManagedRoutingSlipMBean {

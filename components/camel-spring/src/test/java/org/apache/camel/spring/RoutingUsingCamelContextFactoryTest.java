@@ -31,7 +31,6 @@ import org.springframework.context.support.AbstractXmlApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
- * @version 
  */
 public class RoutingUsingCamelContextFactoryTest extends TestSupport {
     protected String body = "<hello>world!</hello>";

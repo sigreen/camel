@@ -23,7 +23,6 @@ import org.apache.camel.processor.BodyInAggregatingStrategy;
 import org.junit.Test;
 
 /**
- * @version 
  */
 public class AggregateForceCompletionOnStopTest extends ContextTestSupport {
 

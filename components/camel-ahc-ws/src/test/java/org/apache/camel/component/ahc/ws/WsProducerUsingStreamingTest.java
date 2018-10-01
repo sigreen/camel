@@ -22,7 +22,6 @@ import org.eclipse.jetty.server.Connector;
 import org.eclipse.jetty.server.ServerConnector;
 
 /**
- * @version 
  */
 public class WsProducerUsingStreamingTest extends WsProducerTestBase {
     

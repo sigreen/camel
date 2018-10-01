@@ -31,7 +31,6 @@ import org.apache.commons.net.ftp.FTPFile;
  * <p/>
  * If desired, the JVM property <tt>-Djavax.net.debug=all</tt> can be used to see wire-level SSL details.
  * 
- * @version 
  */
 public class FtpsComponent extends FtpComponent implements SSLContextParametersAware {
 

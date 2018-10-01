@@ -17,7 +17,6 @@
 package org.apache.camel.spring.remoting;
 
 /**
- * @version 
  */
 public class MyEchoRuntimeException extends RuntimeException {
 

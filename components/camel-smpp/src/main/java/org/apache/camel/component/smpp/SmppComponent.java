@@ -25,7 +25,6 @@ import org.apache.camel.impl.DefaultComponent;
 import org.apache.camel.spi.Metadata;
 
 /**
- * @version 
  */
 public class SmppComponent extends DefaultComponent {
 

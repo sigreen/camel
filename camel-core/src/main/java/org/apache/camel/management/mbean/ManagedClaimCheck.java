@@ -23,7 +23,6 @@ import org.apache.camel.model.ProcessorDefinition;
 import org.apache.camel.processor.ClaimCheckProcessor;
 
 /**
- * @version 
  */
 @ManagedResource(description = "Managed Claim Check")
 public class ManagedClaimCheck extends ManagedProcessor implements ManagedClaimCheckMBean {

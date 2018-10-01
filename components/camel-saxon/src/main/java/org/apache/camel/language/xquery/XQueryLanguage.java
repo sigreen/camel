@@ -22,7 +22,6 @@ import org.apache.camel.component.xquery.XQueryBuilder;
 import org.apache.camel.support.LanguageSupport;
 
 /**
- * @version 
  */
 public class XQueryLanguage extends LanguageSupport {
 

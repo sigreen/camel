@@ -34,7 +34,6 @@ import org.junit.Test;
 
 
 /**
- * @version 
  */
 public class DebugSingleStepConditionTest extends ContextTestSupport {
 

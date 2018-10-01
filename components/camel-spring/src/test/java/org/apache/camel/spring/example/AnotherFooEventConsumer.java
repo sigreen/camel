@@ -21,7 +21,6 @@ import org.apache.camel.EndpointInject;
 import org.apache.camel.ProducerTemplate;
 
 /**
- * @version 
  */
 public class AnotherFooEventConsumer {
 

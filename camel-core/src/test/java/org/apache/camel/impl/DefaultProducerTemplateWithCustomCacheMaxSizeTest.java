@@ -24,7 +24,6 @@ import org.apache.camel.ProducerTemplate;
 import org.junit.Test;
 
 /**
- * @version 
  */
 public class DefaultProducerTemplateWithCustomCacheMaxSizeTest extends ContextTestSupport {
 

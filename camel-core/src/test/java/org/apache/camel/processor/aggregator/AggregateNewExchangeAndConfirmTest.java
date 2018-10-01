@@ -32,7 +32,6 @@ import static org.awaitility.Awaitility.await;
 /**
  * Testing CAMEL-3139
  * 
- * @version 
  */
 public class AggregateNewExchangeAndConfirmTest extends ContextTestSupport {
 

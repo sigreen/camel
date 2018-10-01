@@ -22,7 +22,6 @@ import org.apache.camel.processor.SplitterOnPrepareTest;
 import static org.apache.camel.spring.processor.SpringTestHelper.createSpringCamelContext;
 
 /**
- * @version 
  */
 public class SpringSplitterOnPrepareTest extends SplitterOnPrepareTest {
 

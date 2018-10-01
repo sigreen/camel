@@ -35,7 +35,6 @@ import static org.apache.camel.component.jms.JmsComponent.jmsComponentAutoAcknow
 import static org.apache.camel.component.jms.JmsConstants.JMS_MESSAGE_TYPE;
 
 /**
- * @version 
  */
 public class JmsMessageTypeTest extends CamelTestSupport {
 

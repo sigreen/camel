@@ -29,7 +29,6 @@ import static org.apache.camel.builder.PredicateBuilder.and;
 import static org.apache.camel.builder.PredicateBuilder.or;
 
 /**
- * @version 
  */
 public class ChoiceCompoundPredicateTest extends ContextTestSupport {
 

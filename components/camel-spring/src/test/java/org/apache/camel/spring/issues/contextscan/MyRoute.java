@@ -20,7 +20,6 @@ import org.apache.camel.spring.SpringRouteBuilder;
 import org.springframework.stereotype.Component;
 
 /**
- * @version 
  */
 @Component
 public class MyRoute extends SpringRouteBuilder {

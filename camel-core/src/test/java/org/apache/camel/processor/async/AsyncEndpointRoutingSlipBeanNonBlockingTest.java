@@ -37,7 +37,6 @@ import org.junit.Assert;
 import org.junit.Test;
 
 /**
- * @version 
  */
 public class AsyncEndpointRoutingSlipBeanNonBlockingTest extends ContextTestSupport {
     private AsyncCallback innerCallback;

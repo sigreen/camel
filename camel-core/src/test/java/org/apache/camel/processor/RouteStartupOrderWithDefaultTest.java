@@ -26,7 +26,6 @@ import org.apache.camel.spi.RouteStartupOrder;
 import org.junit.Test;
 
 /**
- * @version 
  */
 public class RouteStartupOrderWithDefaultTest extends ContextTestSupport {
 

@@ -28,7 +28,6 @@ import org.apache.camel.util.URISupport;
 import org.jivesoftware.smack.ReconnectionManager;
 
 /**
- * @version 
  */
 public class XmppComponent extends DefaultComponent {
 

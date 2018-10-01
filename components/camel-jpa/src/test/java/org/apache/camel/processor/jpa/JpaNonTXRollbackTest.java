@@ -25,7 +25,6 @@ import org.apache.camel.examples.SendEmail;
 import org.junit.Test;
 
 /**
- * @version 
  */
 public class JpaNonTXRollbackTest extends AbstractJpaTest {
 

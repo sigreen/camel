@@ -25,7 +25,6 @@ import java.util.concurrent.ConcurrentHashMap;
 import org.apache.camel.language.XPath;
 
 /**
- * @version 
  */
 public class StockService {
 

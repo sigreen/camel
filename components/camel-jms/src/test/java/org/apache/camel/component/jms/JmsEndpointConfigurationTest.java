@@ -42,7 +42,6 @@ import org.springframework.jms.support.converter.SimpleMessageConverter;
 import org.springframework.util.ErrorHandler;
 
 /**
- * @version 
  */
 public class JmsEndpointConfigurationTest extends CamelTestSupport {
 

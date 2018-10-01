@@ -22,7 +22,6 @@ import org.apache.camel.processor.OnCompletionRouteScopeOverrideGlobalScopeTest;
 import static org.apache.camel.spring.processor.SpringTestHelper.createSpringCamelContext;
 
 /**
- * @version 
  */
 public class SpringOnCompletionRouteScopeOverrideGlobalScopeTest extends OnCompletionRouteScopeOverrideGlobalScopeTest {
 

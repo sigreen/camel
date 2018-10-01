@@ -38,7 +38,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * @version 
  */
 public class CamelConduit extends AbstractConduit implements Configurable {
     protected static final String BASE_BEAN_NAME_SUFFIX = ".camel-conduit";

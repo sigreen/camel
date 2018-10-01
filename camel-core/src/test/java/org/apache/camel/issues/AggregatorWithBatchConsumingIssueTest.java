@@ -25,7 +25,6 @@ import org.apache.camel.processor.BodyInAggregatingStrategy;
 import org.junit.Test;
 
 /**
- * @version 
  */
 public class AggregatorWithBatchConsumingIssueTest extends ContextTestSupport {
 

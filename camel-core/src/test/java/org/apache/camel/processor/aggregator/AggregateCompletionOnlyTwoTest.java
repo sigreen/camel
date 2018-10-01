@@ -28,7 +28,6 @@ import org.apache.camel.processor.aggregate.MemoryAggregationRepository;
 import org.junit.Test;
 
 /**
- * @version 
  */
 public class AggregateCompletionOnlyTwoTest extends ContextTestSupport {
 

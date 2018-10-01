@@ -36,7 +36,6 @@ import org.springframework.context.support.GenericApplicationContext;
 import org.springframework.core.io.ClassPathResource;
 
 /**
- * @version 
  */
 public class CamelContextFactoryBeanTest extends XmlConfigTestSupport {
 

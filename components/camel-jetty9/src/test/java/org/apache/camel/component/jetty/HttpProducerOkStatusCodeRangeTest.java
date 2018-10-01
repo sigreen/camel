@@ -23,7 +23,6 @@ import org.apache.camel.http.common.HttpOperationFailedException;
 import org.junit.Test;
 
 /**
- * @version 
  */
 public class HttpProducerOkStatusCodeRangeTest extends BaseJettyTest {
 

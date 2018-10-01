@@ -36,7 +36,6 @@ import static org.mockito.Mockito.when;
 /**
  * JUnit test class for <code>org.apache.camel.component.smpp.SmppProducer</code>
  * 
- * @version 
  */
 public class SmppProducerLazySessionCreationTest {
     

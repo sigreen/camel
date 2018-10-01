@@ -30,7 +30,6 @@ import org.apache.camel.impl.DefaultProducer;
 import org.junit.Test;
 
 /**
- * @version 
  */
 public class EndpointMustBeStartedBeforeSendProcessorTest extends ContextTestSupport {
 

@@ -27,7 +27,6 @@ import org.junit.Test;
 /**
  * Tests filtering using Camel Test
  * 
- * @version 
  */
 // START SNIPPET: example
 // tag::example[]

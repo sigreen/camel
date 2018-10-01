@@ -26,7 +26,6 @@ import org.junit.Before;
 import org.junit.Test;
 
 /**
- * @version 
  */
 public class MulticastTest extends ContextTestSupport {
     protected Endpoint startEndpoint;

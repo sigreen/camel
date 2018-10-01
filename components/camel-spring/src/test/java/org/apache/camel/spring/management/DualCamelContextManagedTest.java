@@ -27,7 +27,6 @@ import org.springframework.context.support.AbstractXmlApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
- * @version 
  */
 public class DualCamelContextManagedTest extends SpringTestSupport {
 

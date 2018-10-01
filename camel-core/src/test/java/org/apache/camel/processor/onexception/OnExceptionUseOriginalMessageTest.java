@@ -25,7 +25,6 @@ import org.apache.camel.converter.stream.InputStreamCache;
 import org.junit.Test;
 
 /**
- * @version 
  */
 public class OnExceptionUseOriginalMessageTest extends ContextTestSupport {
     

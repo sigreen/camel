@@ -46,7 +46,6 @@ import org.junit.Test;
 /**
  * Unit test to verify CxfConsumer to generate SOAP fault in PAYLOAD mode
  * 
- * @version 
  */
 public class CxfConsumerPayloadFaultTest extends CamelTestSupport {
     protected static final String PORT_NAME_PROP = "portName={http://camel.apache.org/wsdl-first}soap";

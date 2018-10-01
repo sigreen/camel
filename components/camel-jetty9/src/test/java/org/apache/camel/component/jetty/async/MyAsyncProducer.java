@@ -27,7 +27,6 @@ import org.apache.camel.Exchange;
 import org.apache.camel.impl.DefaultAsyncProducer;
 
 /**
- * @version 
  */
 public class MyAsyncProducer extends DefaultAsyncProducer {
 

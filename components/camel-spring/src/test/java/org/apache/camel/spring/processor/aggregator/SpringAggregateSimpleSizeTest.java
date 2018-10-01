@@ -22,7 +22,6 @@ import org.apache.camel.processor.aggregator.AggregateSimpleSizeTest;
 import static org.apache.camel.spring.processor.SpringTestHelper.createSpringCamelContext;
 
 /**
- * @version 
  */
 public class SpringAggregateSimpleSizeTest extends AggregateSimpleSizeTest {
 

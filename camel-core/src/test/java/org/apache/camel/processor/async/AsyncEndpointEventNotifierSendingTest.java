@@ -30,7 +30,6 @@ import org.apache.camel.support.EventNotifierSupport;
 import org.junit.Test;
 
 /**
- * @version 
  */
 public class AsyncEndpointEventNotifierSendingTest extends ContextTestSupport {
 

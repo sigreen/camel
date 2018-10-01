@@ -35,7 +35,6 @@ import org.junit.After;
 import org.junit.Before;
 
 /**
- * @version 
  */
 public class SftpServerTestSupport extends BaseServerTestSupport {
 

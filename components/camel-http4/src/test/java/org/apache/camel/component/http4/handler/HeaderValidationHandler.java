@@ -28,8 +28,6 @@ import org.apache.http.HttpStatus;
 import org.apache.http.protocol.HttpContext;
 
 /**
- *
- * @version 
  */
 public class HeaderValidationHandler extends BasicValidationHandler {
 

@@ -51,7 +51,6 @@ import static org.apache.camel.component.jms.JmsMessageHelper.isTopicPrefix;
 import static org.apache.camel.component.jms.JmsMessageHelper.normalizeDestinationName;
 
 /**
- * @version 
  */
 public class JmsProducer extends DefaultAsyncProducer {
 

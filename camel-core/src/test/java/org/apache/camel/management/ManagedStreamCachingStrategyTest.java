@@ -30,7 +30,6 @@ import org.junit.Test;
 import static org.apache.camel.util.FileUtil.normalizePath;
 
 /**
- * @version 
  */
 public class ManagedStreamCachingStrategyTest extends ManagementTestSupport {
 

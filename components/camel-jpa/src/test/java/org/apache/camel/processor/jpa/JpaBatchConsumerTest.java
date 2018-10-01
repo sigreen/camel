@@ -23,7 +23,6 @@ import org.apache.camel.examples.SendEmail;
 import org.junit.Test;
 
 /**
- * @version 
  */
 public class JpaBatchConsumerTest extends AbstractJpaTest {
 

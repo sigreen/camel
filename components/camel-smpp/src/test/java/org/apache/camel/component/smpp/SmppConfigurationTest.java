@@ -36,7 +36,6 @@ import static org.junit.Assert.assertNotNull;
 /**
  * JUnit test class for <code>org.apache.camel.component.smpp.SmppConfiguration</code>
  * 
- * @version 
  */
 public class SmppConfigurationTest {
     

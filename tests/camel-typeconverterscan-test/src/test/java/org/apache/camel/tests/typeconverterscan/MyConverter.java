@@ -20,7 +20,6 @@ import org.apache.camel.Converter;
 import org.apache.camel.util.StringHelper;
 
 /**
- * @version 
  */
 @Converter
 public class MyConverter {

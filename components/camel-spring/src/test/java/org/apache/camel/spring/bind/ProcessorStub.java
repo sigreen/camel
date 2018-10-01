@@ -23,7 +23,6 @@ import org.apache.camel.Exchange;
 import org.apache.camel.Processor;
 
 /**
- * @version 
  */
 public class ProcessorStub implements Processor {
     private List<Exchange> exchanges = new CopyOnWriteArrayList<>();

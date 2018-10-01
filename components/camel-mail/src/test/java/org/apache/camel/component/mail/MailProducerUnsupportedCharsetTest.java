@@ -28,7 +28,6 @@ import org.junit.Test;
 import org.jvnet.mock_javamail.Mailbox;
 
 /**
- * @version 
  */
 public class MailProducerUnsupportedCharsetTest extends CamelTestSupport {
 

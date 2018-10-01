@@ -23,7 +23,6 @@ import org.apache.camel.component.seda.SedaEndpoint;
 import org.junit.Test;
 
 /**
- * @version 
  */
 public class AdviceWithMockMultipleEndpointsWithSkipTest extends ContextTestSupport {
 

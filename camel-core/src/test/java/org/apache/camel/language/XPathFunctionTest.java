@@ -27,7 +27,6 @@ import org.junit.Test;
 import static org.apache.camel.component.mock.MockEndpoint.expectsMessageCount;
 
 /**
- * @version 
  */
 public class XPathFunctionTest extends ContextTestSupport {
 

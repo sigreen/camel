@@ -25,8 +25,6 @@ import javax.ws.rs.PathParam;
 import javax.xml.bind.annotation.XmlRootElement;
 
 /**
- *
- * @version 
  */
 @XmlRootElement(name = "Order")
 public class Order {

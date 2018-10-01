@@ -24,7 +24,6 @@ import org.apache.camel.component.file.GenericFileOperationFailedException;
 import org.junit.Test;
 
 /**
- * @version 
  */
 public class FtpProducerTempFileExistIssueTest extends FtpServerTestSupport {
 

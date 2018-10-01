@@ -31,7 +31,6 @@ import org.junit.Test;
 /**
  * This unit test verifies a single route can service multiple templates.
  * 
- * @version 
  */
 public class RestletMultiUriTemplatesEndpointTest extends RestletTestSupport {
 

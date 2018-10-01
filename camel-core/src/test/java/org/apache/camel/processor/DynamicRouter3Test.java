@@ -23,7 +23,6 @@ import org.apache.camel.builder.RouteBuilder;
 import org.junit.Test;
 
 /**
- * @version 
  */
 public class DynamicRouter3Test extends ContextTestSupport {
 

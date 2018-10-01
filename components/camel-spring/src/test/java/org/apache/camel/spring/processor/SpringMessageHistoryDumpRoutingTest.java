@@ -22,7 +22,6 @@ import org.apache.camel.processor.MessageHistoryDumpRoutingTest;
 import static org.apache.camel.spring.processor.SpringTestHelper.createSpringCamelContext;
 
 /**
- * @version 
  */
 public class SpringMessageHistoryDumpRoutingTest extends MessageHistoryDumpRoutingTest {
 

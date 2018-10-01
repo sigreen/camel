@@ -30,7 +30,6 @@ import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
 
 /**
- * @version 
  */
 public class SpringLoadRouteFromXmlTest extends CamelSpringTestSupport {
 

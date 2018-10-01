@@ -27,7 +27,6 @@ import org.apache.camel.processor.aggregate.MemoryAggregationRepository;
 import org.junit.Test;
 
 /**
- * @version 
  */
 public class BeanBeforeAggregateIssueTest extends ContextTestSupport {
 

@@ -37,7 +37,6 @@ import org.junit.Ignore;
 import org.junit.Test;
 
 /**
- * @version 
  */
 public class CaseInsensitiveMapTest extends Assert {
 

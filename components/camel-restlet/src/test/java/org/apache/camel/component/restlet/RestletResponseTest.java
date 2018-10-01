@@ -33,8 +33,6 @@ import org.restlet.data.CacheDirective;
 import org.restlet.engine.header.HeaderConstants;
 
 /**
- *
- * @version 
  */
 public class RestletResponseTest extends RestletTestSupport {
 

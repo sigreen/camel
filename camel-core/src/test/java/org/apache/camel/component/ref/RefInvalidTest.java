@@ -26,7 +26,6 @@ import org.apache.camel.impl.SimpleRegistry;
 import org.junit.Test;
 
 /**
- * @version 
  */
 public class RefInvalidTest extends ContextTestSupport {
 

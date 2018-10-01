@@ -22,7 +22,6 @@ import org.junit.Before;
 import org.junit.Test;
 
 /**
- * @version 
  */
 public class ScriptExternalTest extends ContextTestSupport {
     protected MockEndpoint resultEndpoint;

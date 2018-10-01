@@ -25,7 +25,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * @version 
  */
 // START SNIPPET: e1
 public class ContainerWideInterceptor implements InterceptStrategy {

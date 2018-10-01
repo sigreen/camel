@@ -35,7 +35,6 @@ import org.springframework.transaction.support.TransactionCallback;
 import org.springframework.transaction.support.TransactionTemplate;
 
 /**
- * @version 
  */
 public abstract class AbstractJpaMethodTest extends CamelTestSupport {
     

@@ -30,7 +30,6 @@ import org.junit.Before;
 import org.junit.Test;
 
 /**
- * @version 
  */
 public class IdempotentConsumerUsingCustomRepositoryTest extends ContextTestSupport {
     protected Endpoint startEndpoint;

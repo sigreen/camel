@@ -30,7 +30,6 @@ import org.junit.Test;
 
 
 /**
- * @version 
  */
 public class TidyMarkupDataFormatAsStringTest extends CamelTestSupport {
    

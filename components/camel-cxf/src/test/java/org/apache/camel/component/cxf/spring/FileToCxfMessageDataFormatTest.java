@@ -30,7 +30,6 @@ import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
- * @version 
  */
 public class FileToCxfMessageDataFormatTest extends CamelSpringTestSupport {
     private static int port1 = CXFTestSupport.getPort1(); 

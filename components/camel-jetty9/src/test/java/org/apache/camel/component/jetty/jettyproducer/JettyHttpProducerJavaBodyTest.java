@@ -25,7 +25,6 @@ import org.apache.camel.http.common.HttpConstants;
 import org.junit.Test;
 
 /**
- * @version 
  */
 public class JettyHttpProducerJavaBodyTest extends BaseJettyTest {
 

@@ -25,7 +25,6 @@ import org.junit.Test;
 import org.slf4j.MDC;
 
 /**
- * @version 
  */
 public class MDCTest extends ContextTestSupport {
 

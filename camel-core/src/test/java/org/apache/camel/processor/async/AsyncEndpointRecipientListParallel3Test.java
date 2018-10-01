@@ -23,7 +23,6 @@ import org.apache.camel.builder.RouteBuilder;
 import org.junit.Test;
 
 /**
- * @version 
  */
 public class AsyncEndpointRecipientListParallel3Test extends ContextTestSupport {
 

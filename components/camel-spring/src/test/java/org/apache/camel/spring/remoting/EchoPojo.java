@@ -21,7 +21,6 @@ import org.apache.camel.Produce;
 import org.apache.camel.ProducerTemplate;
 
 /**
- * @version 
  */
 public class EchoPojo {
 

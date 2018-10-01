@@ -32,7 +32,6 @@ import org.apache.camel.util.StringHelper;
 import org.junit.Test;
 
 /**
- * @version 
  */
 public class ManagedCamelContextTest extends ManagementTestSupport {
 

@@ -22,7 +22,6 @@ import org.apache.camel.component.mock.MockEndpoint;
 import org.junit.Test;
 
 /**
- * @version 
  */
 public class Issue170Test extends ContextTestSupport {
     protected String qOne = "seda:Q1";

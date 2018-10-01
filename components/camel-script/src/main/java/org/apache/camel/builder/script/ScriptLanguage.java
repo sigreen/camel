@@ -21,7 +21,6 @@ import org.apache.camel.Predicate;
 import org.apache.camel.support.LanguageSupport;
 
 /**
- * @version 
  */
 public class ScriptLanguage extends LanguageSupport {
     private final String language;

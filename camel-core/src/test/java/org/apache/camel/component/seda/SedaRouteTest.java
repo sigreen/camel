@@ -31,7 +31,6 @@ import org.junit.Before;
 import org.junit.Test;
 
 /**
- * @version 
  */
 public class SedaRouteTest extends TestSupport {
 

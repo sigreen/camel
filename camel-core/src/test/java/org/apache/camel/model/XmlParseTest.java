@@ -29,7 +29,6 @@ import org.apache.camel.model.loadbalancer.TopicLoadBalancerDefinition;
 import org.junit.Test;
 
 /**
- * @version 
  */
 public class XmlParseTest extends XmlTestSupport {
 

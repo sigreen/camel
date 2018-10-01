@@ -24,7 +24,6 @@ import org.apache.camel.ExpressionIllegalSyntaxException;
 import org.junit.Test;
 
 /**
- * @version 
  */
 public class FtpProducerDoneFileNameTest extends FtpServerTestSupport {
 

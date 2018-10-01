@@ -44,7 +44,6 @@ import org.springframework.transaction.support.TransactionCallback;
 import org.springframework.transaction.support.TransactionTemplate;
 
 /**
- * @version 
  */
 public class JpaConsumer extends ScheduledBatchPollingConsumer {
 

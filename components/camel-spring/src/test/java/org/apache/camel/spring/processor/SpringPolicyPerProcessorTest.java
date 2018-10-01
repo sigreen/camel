@@ -22,7 +22,6 @@ import org.apache.camel.processor.PolicyPerProcessorTest;
 import static org.apache.camel.spring.processor.SpringTestHelper.createSpringCamelContext;
 
 /**
- * @version 
  */
 public class SpringPolicyPerProcessorTest extends PolicyPerProcessorTest {
 

@@ -22,7 +22,6 @@ import org.apache.camel.processor.aggregator.AggregateExpressionTimeoutFallbackT
 import static org.apache.camel.spring.processor.SpringTestHelper.createSpringCamelContext;
 
 /**
- * @version 
  */
 public class SpringAggregateExpressionTimeoutFallbackTest extends AggregateExpressionTimeoutFallbackTest {
 

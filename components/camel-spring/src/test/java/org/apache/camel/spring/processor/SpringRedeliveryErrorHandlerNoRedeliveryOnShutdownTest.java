@@ -22,7 +22,6 @@ import org.apache.camel.processor.RedeliveryErrorHandlerNoRedeliveryOnShutdownTe
 import static org.apache.camel.spring.processor.SpringTestHelper.createSpringCamelContext;
 
 /**
- * @version 
  */
 public class SpringRedeliveryErrorHandlerNoRedeliveryOnShutdownTest extends RedeliveryErrorHandlerNoRedeliveryOnShutdownTest {
 

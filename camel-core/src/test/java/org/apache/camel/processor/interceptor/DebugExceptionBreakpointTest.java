@@ -34,7 +34,6 @@ import org.junit.Test;
 
 
 /**
- * @version 
  */
 public class DebugExceptionBreakpointTest extends ContextTestSupport {
 

@@ -21,8 +21,6 @@ import java.util.List;
 import javax.xml.bind.annotation.XmlRootElement;
 
 /**
- *
- * @version 
  */
 @XmlRootElement(name = "CustomerList")
 public class CustomerList {

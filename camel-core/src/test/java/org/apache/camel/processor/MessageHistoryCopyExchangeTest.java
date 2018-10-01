@@ -25,7 +25,6 @@ import org.apache.camel.component.mock.MockEndpoint;
 import org.junit.Test;
 
 /**
- * @version 
  */
 public class MessageHistoryCopyExchangeTest extends ContextTestSupport {
 

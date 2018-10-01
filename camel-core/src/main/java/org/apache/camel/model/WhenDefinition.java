@@ -28,7 +28,6 @@ import org.apache.camel.spi.RouteContext;
 /**
  * Triggers a route when an expression evaluates to <tt>true</tt>
  * 
- * @version 
  */
 @Metadata(label = "eip,routing") @AsPredicate
 @XmlRootElement(name = "when")

@@ -23,7 +23,6 @@ import org.apache.camel.processor.aggregate.CompletionAwareAggregationStrategy;
 import org.junit.Test;
 
 /**
- * @version 
  */
 public class SplitterShareUnitOfWorkCompletionAwareTest extends ContextTestSupport {
 

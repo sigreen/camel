@@ -28,7 +28,6 @@ import org.apache.camel.spi.IdAware;
 import org.junit.Test;
 
 /**
- * @version 
  */
 public class SimpleProcessorIdAwareTest extends ContextTestSupport {
 

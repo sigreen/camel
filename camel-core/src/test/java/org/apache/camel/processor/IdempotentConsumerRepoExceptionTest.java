@@ -23,7 +23,6 @@ import org.apache.camel.spi.IdempotentRepository;
 import org.junit.Test;
 
 /**
- * @version 
  */
 public class IdempotentConsumerRepoExceptionTest extends ContextTestSupport {
 

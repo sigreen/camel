@@ -25,7 +25,6 @@ import org.junit.Test;
 import org.jvnet.mock_javamail.Mailbox;
 
 /**
- * @version 
  */
 public class FromFileSendMailTest extends CamelTestSupport {
 

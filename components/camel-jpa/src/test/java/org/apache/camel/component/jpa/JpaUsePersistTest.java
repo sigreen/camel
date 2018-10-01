@@ -25,7 +25,6 @@ import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
 /**
- * @version 
  */
 public class JpaUsePersistTest extends AbstractJpaMethodTest {
 

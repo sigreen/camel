@@ -23,7 +23,6 @@ import org.apache.camel.component.file.remote.SftpEndpoint;
 import org.junit.Test;
 
 /**
- * @version 
  */
 public class SftpSetCipherTest extends SftpServerTestSupport {
 

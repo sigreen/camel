@@ -23,7 +23,6 @@ import org.apache.camel.language.simple.types.SimpleIllegalSyntaxException;
 import org.junit.Test;
 
 /**
- * @version 
  */
 public class SimpleOperatorTest extends LanguageTestSupport {
 

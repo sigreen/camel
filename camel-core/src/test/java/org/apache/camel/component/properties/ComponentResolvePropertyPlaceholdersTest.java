@@ -23,7 +23,6 @@ import org.apache.camel.component.seda.SedaComponent;
 import org.junit.Test;
 
 /**
- * @version 
  */
 public class ComponentResolvePropertyPlaceholdersTest extends ContextTestSupport {
 

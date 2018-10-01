@@ -22,7 +22,6 @@ import org.apache.camel.processor.RecipientListSubUnitOfWorkTest;
 import static org.apache.camel.spring.processor.SpringTestHelper.createSpringCamelContext;
 
 /**
- * @version 
  */
 public class SpringRecipientListSubUnitOfWorkTest extends RecipientListSubUnitOfWorkTest {
 

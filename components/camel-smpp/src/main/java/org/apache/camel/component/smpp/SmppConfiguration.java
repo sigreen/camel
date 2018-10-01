@@ -36,7 +36,6 @@ import org.slf4j.LoggerFactory;
 /**
  * Contains the SMPP component configuration properties</a>
  * 
- * @version 
  */
 @UriParams
 public class SmppConfiguration implements Cloneable {

@@ -23,7 +23,6 @@ import org.apache.camel.model.rest.RestBindingMode;
 import org.junit.Test;
 
 /**
- * @version 
  */
 public class RestRestletPostXmlJaxbPojoTest extends RestletTestSupport {
 

@@ -24,7 +24,6 @@ import org.apache.camel.builder.RouteBuilder;
 import org.junit.Ignore;
 
 /**
- * @version 
  */
 @Ignore("Manual test")
 public class FileAsyncStressReadLockNoneTest extends FileAsyncStressTest {

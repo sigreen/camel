@@ -42,7 +42,6 @@ import org.springframework.transaction.support.TransactionCallback;
 import org.springframework.transaction.support.TransactionTemplate;
 
 /**
- * @version 
  */
 public class JpaWithNamedQueryTest extends Assert {
     

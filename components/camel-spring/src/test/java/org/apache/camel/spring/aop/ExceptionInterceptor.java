@@ -17,7 +17,6 @@
 package org.apache.camel.spring.aop;
 
 /**
- * @version 
  */
 public class ExceptionInterceptor {
 

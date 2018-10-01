@@ -37,7 +37,6 @@ import org.eclipse.jetty.util.security.Constraint;
 import org.junit.Test;
 
 /**
- * @version 
  */
 public class HttpBasicAuthComponentConfiguredTest extends BaseJettyTest {
 

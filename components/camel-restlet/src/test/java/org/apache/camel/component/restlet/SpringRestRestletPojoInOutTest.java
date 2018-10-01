@@ -24,7 +24,6 @@ import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
- * @version 
  */
 public class SpringRestRestletPojoInOutTest extends CamelSpringTestSupport {
 

@@ -25,7 +25,6 @@ import org.junit.Ignore;
 import org.junit.Test;
 
 /**
- * @version 
  */
 public class RssToHttpIssueTest extends CamelTestSupport {
 

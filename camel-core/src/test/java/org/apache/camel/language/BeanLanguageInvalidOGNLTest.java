@@ -28,7 +28,6 @@ import org.apache.camel.component.bean.MethodNotFoundException;
 import org.junit.Test;
 
 /**
- * @version 
  */
 public class BeanLanguageInvalidOGNLTest extends ContextTestSupport {
 

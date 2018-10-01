@@ -24,7 +24,6 @@ import org.apache.camel.spi.ThreadPoolProfile;
 import org.junit.Test;
 
 /**
- * @version 
  */
 public class AggregateThreadPoolProfileTest extends ContextTestSupport {
 

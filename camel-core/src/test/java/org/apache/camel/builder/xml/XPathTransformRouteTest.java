@@ -26,7 +26,6 @@ import org.junit.Test;
 
 
 /**
- * @version 
  */
 public class XPathTransformRouteTest extends ContextTestSupport {
 

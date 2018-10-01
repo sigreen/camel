@@ -27,7 +27,6 @@ import org.apache.camel.impl.DefaultExchange;
 import org.junit.Test;
 
 /**
- * @version 
  */
 public class FutureConverterTest extends ContextTestSupport {
 

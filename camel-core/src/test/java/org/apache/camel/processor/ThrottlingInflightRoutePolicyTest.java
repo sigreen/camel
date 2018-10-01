@@ -22,7 +22,6 @@ import org.apache.camel.impl.ThrottlingInflightRoutePolicy;
 import org.junit.Test;
 
 /**
- * @version 
  */
 public class ThrottlingInflightRoutePolicyTest extends ContextTestSupport {
 

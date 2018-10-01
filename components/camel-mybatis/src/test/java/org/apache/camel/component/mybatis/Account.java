@@ -17,7 +17,6 @@
 package org.apache.camel.component.mybatis;
 
 /**
- * @version 
  */
 public class Account {
     private int id;

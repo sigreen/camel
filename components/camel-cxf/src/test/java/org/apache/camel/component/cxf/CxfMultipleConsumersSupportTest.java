@@ -22,7 +22,6 @@ import org.apache.camel.test.junit4.CamelTestSupport;
 import org.junit.Test;
 
 /**
- * @version 
  */
 public class CxfMultipleConsumersSupportTest extends CamelTestSupport {
     protected static int port1 = CXFTestSupport.getPort1(); 

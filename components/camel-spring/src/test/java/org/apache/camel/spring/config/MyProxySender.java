@@ -20,7 +20,6 @@ import org.apache.camel.ExchangePattern;
 import org.apache.camel.Pattern;
 
 /**
- * @version 
  */
 public interface MyProxySender {
 

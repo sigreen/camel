@@ -28,7 +28,6 @@ import org.junit.Assert;
 import org.junit.Test;
 
 /**
- * @version 
  */
 public class CollectionHelperTest extends Assert {
 

@@ -23,7 +23,6 @@ import java.util.List;
 import org.apache.camel.support.EventNotifierSupport;
 
 /**
- * @version 
  */
 public class MyEventNotifier extends EventNotifierSupport {
 

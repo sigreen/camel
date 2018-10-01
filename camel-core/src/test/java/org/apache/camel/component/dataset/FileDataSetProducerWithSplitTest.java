@@ -32,7 +32,6 @@ import org.junit.Test;
 import org.junit.rules.TemporaryFolder;
 
 /**
- * @version 
  */
 public class FileDataSetProducerWithSplitTest extends ContextTestSupport {
 

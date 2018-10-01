@@ -43,7 +43,6 @@ import org.apache.camel.util.JsonSchemaHelper;
 import org.apache.camel.util.ObjectHelper;
 
 /**
- * @version 
  */
 @ManagedResource(description = "Managed Component")
 public class ManagedComponent implements ManagedInstance, ManagedComponentMBean {

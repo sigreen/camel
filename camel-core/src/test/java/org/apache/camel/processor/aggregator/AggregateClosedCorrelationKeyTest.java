@@ -24,7 +24,6 @@ import org.apache.camel.processor.aggregate.ClosedCorrelationKeyException;
 import org.junit.Test;
 
 /**
- * @version 
  */
 public class AggregateClosedCorrelationKeyTest extends ContextTestSupport {
 

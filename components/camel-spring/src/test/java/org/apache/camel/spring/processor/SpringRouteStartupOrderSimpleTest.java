@@ -22,7 +22,6 @@ import org.apache.camel.processor.RouteStartupOrderSimpleTest;
 import static org.apache.camel.spring.processor.SpringTestHelper.createSpringCamelContext;
 
 /**
- * @version 
  */
 public class SpringRouteStartupOrderSimpleTest extends RouteStartupOrderSimpleTest {
 

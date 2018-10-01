@@ -28,7 +28,6 @@ import org.apache.camel.support.SynchronizationAdapter;
 import org.junit.Test;
 
 /**
- * @version 
  */
 public class HttpAsyncCallbackTest extends HttpAsyncTestSupport {
 

@@ -23,8 +23,6 @@ import org.junit.After;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
- *
- * @version 
  */
 public class JmsHeaderFilteringWithSpringTest extends JmsHeaderFilteringTest {
     

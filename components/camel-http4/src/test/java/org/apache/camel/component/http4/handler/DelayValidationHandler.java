@@ -24,8 +24,6 @@ import org.apache.http.HttpResponse;
 import org.apache.http.protocol.HttpContext;
 
 /**
- *
- * @version 
  */
 public class DelayValidationHandler extends BasicValidationHandler {
 
