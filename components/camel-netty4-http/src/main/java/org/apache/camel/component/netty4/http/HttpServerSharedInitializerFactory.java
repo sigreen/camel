@@ -27,12 +27,10 @@ import io.netty.handler.codec.http.HttpRequestDecoder;
 import io.netty.handler.codec.http.HttpResponseEncoder;
 import io.netty.handler.ssl.SslHandler;
 import org.apache.camel.CamelContext;
+import org.apache.camel.RuntimeCamelException;
 import org.apache.camel.component.netty4.NettyConsumer;
 import org.apache.camel.component.netty4.ServerInitializerFactory;
 import org.apache.camel.component.netty4.ssl.SSLEngineFactory;
-import org.apache.camel.impl.DefaultClassResolver;
-import org.apache.camel.spi.ClassResolver;
-import org.apache.camel.util.ObjectHelper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -59,7 +57,7 @@ public class HttpServerSharedInitializerFactory extends HttpServerInitializerFac
         try {
             this.sslContext = createSSLContext();
         } catch (Exception e) {
-            throw ObjectHelper.wrapRuntimeCamelException(e);
+            throw RuntimeCamelException.wrapRuntimeCamelException(e);
         }
 
         if (sslContext != null) {

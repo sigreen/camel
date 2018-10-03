@@ -16,13 +16,8 @@
  */
 package org.apache.camel.support;
 
-import java.util.List;
-import java.util.concurrent.CopyOnWriteArrayList;
-
-import org.apache.camel.Service;
 import org.apache.camel.ServiceStatus;
 import org.apache.camel.StatefulService;
-import org.apache.camel.util.ServiceHelper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

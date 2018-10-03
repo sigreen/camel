@@ -44,14 +44,12 @@ import org.apache.camel.Processor;
 import org.apache.camel.Traceable;
 import org.apache.camel.spi.ExceptionHandler;
 import org.apache.camel.spi.IdAware;
+import org.apache.camel.support.AsyncProcessorHelper;
+import org.apache.camel.support.ExpressionComparator;
 import org.apache.camel.support.LoggingExceptionHandler;
+import org.apache.camel.support.ServiceHelper;
 import org.apache.camel.support.ServiceSupport;
-import org.apache.camel.util.AsyncProcessorHelper;
-import org.apache.camel.util.ExpressionComparator;
 import org.apache.camel.util.ObjectHelper;
-import org.apache.camel.util.ServiceHelper;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 /**
  * An implementation of the <a href="http://camel.apache.org/resequencer.html">Resequencer</a>

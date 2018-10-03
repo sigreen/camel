@@ -37,8 +37,9 @@ import org.apache.camel.dataformat.bindy.BindyCsvFactory;
 import org.apache.camel.dataformat.bindy.FormatFactory;
 import org.apache.camel.dataformat.bindy.util.ConverterUtils;
 import org.apache.camel.spi.DataFormat;
+import org.apache.camel.support.ExchangeHelper;
 import org.apache.camel.util.IOHelper;
-import org.apache.camel.util.ObjectHelper;
+import org.apache.camel.support.ObjectHelper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -65,7 +66,7 @@ public class BindyCsvDataFormat extends BindyAbstractDataFormat {
     public void marshal(Exchange exchange, Object body, OutputStream outputStream) throws Exception {
 
         BindyCsvFactory factory = (BindyCsvFactory)getFactory();
-        ObjectHelper.notNull(factory, "not instantiated");
+        org.apache.camel.util.ObjectHelper.notNull(factory, "not instantiated");
 
         // Get CRLF
         byte[] bytesCRLF = ConverterUtils.getByteReturn(factory.getCarriageReturn());
@@ -84,9 +85,7 @@ public class BindyCsvDataFormat extends BindyAbstractDataFormat {
 
         // the body is not a prepared list of map that bindy expects so help a
         // bit here and create one for us
-        Iterator<Object> it = ObjectHelper.createIterator(body);
-        while (it.hasNext()) {
-            Object model = it.next();
+        for (Object model : ObjectHelper.createIterable(body)) {
             if (model instanceof Map) {
                 models.add((Map<String, Object>)model);
             } else {
@@ -134,7 +133,7 @@ public class BindyCsvDataFormat extends BindyAbstractDataFormat {
 
     public Object unmarshal(Exchange exchange, InputStream inputStream) throws Exception {
         BindyCsvFactory factory = (BindyCsvFactory)getFactory();
-        ObjectHelper.notNull(factory, "not instantiated");
+        org.apache.camel.util.ObjectHelper.notNull(factory, "not instantiated");
 
         // List of Pojos
         List<Map<String, Object>> models = new ArrayList<>();
@@ -148,7 +147,7 @@ public class BindyCsvDataFormat extends BindyAbstractDataFormat {
                 return models;
             }
 
-            in = new InputStreamReader(inputStream, IOHelper.getCharsetName(exchange));
+            in = new InputStreamReader(inputStream, ExchangeHelper.getCharsetName(exchange));
 
             // Scanner is used to read big file
             scanner = new Scanner(in);
@@ -157,7 +156,7 @@ public class BindyCsvDataFormat extends BindyAbstractDataFormat {
             String separator = factory.getSeparator();
             String quote = factory.getQuote();
             Boolean removeQuotes = factory.getRemoveQuotes();
-            ObjectHelper.notNull(separator, "The separator has not been defined in the annotation @CsvRecord or not instantiated during initModel.");
+            org.apache.camel.util.ObjectHelper.notNull(separator, "The separator has not been defined in the annotation @CsvRecord or not instantiated during initModel.");
 
             int count = 0;
 
@@ -175,7 +174,7 @@ public class BindyCsvDataFormat extends BindyAbstractDataFormat {
                 // Read the line
                 String line = scanner.nextLine().trim();
 
-                if (ObjectHelper.isEmpty(line)) {
+                if (org.apache.camel.util.ObjectHelper.isEmpty(line)) {
                     // skip if line is empty
                     continue;
                 }

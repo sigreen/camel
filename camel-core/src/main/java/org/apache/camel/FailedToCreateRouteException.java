@@ -16,8 +16,6 @@
  */
 package org.apache.camel;
 
-import org.apache.camel.util.URISupport;
-
 /**
  * Exception when failing to create a {@link org.apache.camel.Route}.
  */
@@ -26,12 +24,12 @@ public class FailedToCreateRouteException extends CamelException {
     private final String routeId;
 
     public FailedToCreateRouteException(String routeId, String route, Throwable cause) {
-        super("Failed to create route " + routeId + ": " + getRouteMessage(route) + " because of " + getExceptionMessage(cause), cause);
+        super("Failed to create route " + routeId + ": " + route + " because of " + getExceptionMessage(cause), cause);
         this.routeId = routeId;
     }
 
     public FailedToCreateRouteException(String routeId, String route, String at, Throwable cause) {
-        super("Failed to create route " + routeId + " at: >>> " + at + " <<< in route: " + getRouteMessage(route) + " because of " + cause.getMessage(), cause);
+        super("Failed to create route " + routeId + " at: >>> " + at + " <<< in route: " + route + " because of " + getExceptionMessage(cause), cause);
         this.routeId = routeId;
     }
 
@@ -40,23 +38,7 @@ public class FailedToCreateRouteException extends CamelException {
     }
     
     protected static String getExceptionMessage(Throwable cause) {
-        if (cause.getMessage() != null) {
-            return cause.getMessage();
-        } else {
-            return cause.getClass().getSimpleName();
-        }
+        return cause.getMessage() != null ? cause.getMessage() : cause.getClass().getSimpleName();
     }
 
-    protected static String getRouteMessage(String route) {
-        // ensure to sanitize uri's in the route so we do not show sensitive information such as passwords
-        route = URISupport.sanitizeUri(route);
-
-        // cut the route after 60 chars so it won't be too big in the message
-        // users just need to be able to identify the route so they know where to look
-        if (route.length() > 60) {
-            return route.substring(0, 60) + "...";
-        } else {
-            return route;
-        }
-    }
 }

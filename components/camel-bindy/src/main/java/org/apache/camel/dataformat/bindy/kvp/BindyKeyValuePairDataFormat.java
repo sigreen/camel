@@ -23,7 +23,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
@@ -36,8 +35,9 @@ import org.apache.camel.dataformat.bindy.BindyKeyValuePairFactory;
 import org.apache.camel.dataformat.bindy.FormatFactory;
 import org.apache.camel.dataformat.bindy.util.ConverterUtils;
 import org.apache.camel.spi.DataFormat;
+import org.apache.camel.support.ExchangeHelper;
 import org.apache.camel.util.IOHelper;
-import org.apache.camel.util.ObjectHelper;
+import org.apache.camel.support.ObjectHelper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -69,9 +69,7 @@ public class BindyKeyValuePairDataFormat extends BindyAbstractDataFormat {
 
         // the body may not be a prepared list of map that bindy expects so help
         // a bit here and create one if needed
-        final Iterator<Object> it = ObjectHelper.createIterator(body);
-        while (it.hasNext()) {
-            Object model = it.next();
+        for (Object model : ObjectHelper.createIterable(body)) {
 
             Map<String, Object> row;
             if (model instanceof Map) {
@@ -99,13 +97,13 @@ public class BindyKeyValuePairDataFormat extends BindyAbstractDataFormat {
         // Map to hold the model @OneToMany classes while binding
         Map<String, List<Object>> lists = new HashMap<>();
 
-        InputStreamReader in = new InputStreamReader(inputStream, IOHelper.getCharsetName(exchange));
+        InputStreamReader in = new InputStreamReader(inputStream, ExchangeHelper.getCharsetName(exchange));
 
         // Scanner is used to read big file
         Scanner scanner = new Scanner(in);
 
         // Retrieve the pair separator defined to split the record
-        ObjectHelper.notNull(factory.getPairSeparator(), "The pair separator property of the annotation @Message");
+        org.apache.camel.util.ObjectHelper.notNull(factory.getPairSeparator(), "The pair separator property of the annotation @Message");
         String separator = factory.getPairSeparator();
 
         int count = 0;
@@ -114,7 +112,7 @@ public class BindyKeyValuePairDataFormat extends BindyAbstractDataFormat {
                 // Read the line
                 String line = scanner.nextLine().trim();
 
-                if (ObjectHelper.isEmpty(line)) {
+                if (org.apache.camel.util.ObjectHelper.isEmpty(line)) {
                     // skip if line is empty
                     continue;
                 }

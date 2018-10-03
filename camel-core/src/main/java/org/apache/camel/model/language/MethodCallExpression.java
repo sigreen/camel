@@ -26,6 +26,7 @@ import org.apache.camel.CamelContext;
 import org.apache.camel.Expression;
 import org.apache.camel.ExpressionIllegalSyntaxException;
 import org.apache.camel.Predicate;
+import org.apache.camel.RuntimeCamelException;
 import org.apache.camel.component.bean.BeanHolder;
 import org.apache.camel.component.bean.BeanInfo;
 import org.apache.camel.component.bean.ConstantBeanHolder;
@@ -159,7 +160,7 @@ public class MethodCallExpression extends ExpressionDefinition {
             try {
                 beanType = camelContext.getClassResolver().resolveMandatoryClass(beanTypeName);
             } catch (ClassNotFoundException e) {
-                throw ObjectHelper.wrapRuntimeCamelException(e);
+                throw RuntimeCamelException.wrapRuntimeCamelException(e);
             }
         }
 
@@ -224,19 +225,19 @@ public class MethodCallExpression extends ExpressionDefinition {
         // if invalid OGNL then fail
         if (OgnlHelper.isInvalidValidOgnlExpression(method)) {
             ExpressionIllegalSyntaxException cause = new ExpressionIllegalSyntaxException(method);
-            throw ObjectHelper.wrapRuntimeCamelException(new MethodNotFoundException(bean != null ? bean : type, method, cause));
+            throw RuntimeCamelException.wrapRuntimeCamelException(new MethodNotFoundException(bean != null ? bean : type, method, cause));
         }
 
         if (bean != null) {
             BeanInfo info = new BeanInfo(context, bean.getClass());
             if (!info.hasMethod(method)) {
-                throw ObjectHelper.wrapRuntimeCamelException(new MethodNotFoundException(null, bean, method));
+                throw RuntimeCamelException.wrapRuntimeCamelException(new MethodNotFoundException(null, bean, method));
             }
         } else {
             BeanInfo info = new BeanInfo(context, type);
             // must be a static method as we do not have a bean instance to invoke
             if (!info.hasStaticMethod(method)) {
-                throw ObjectHelper.wrapRuntimeCamelException(new MethodNotFoundException(null, type, method, true));
+                throw RuntimeCamelException.wrapRuntimeCamelException(new MethodNotFoundException(null, type, method, true));
             }
         }
     }

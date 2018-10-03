@@ -46,11 +46,12 @@ import org.apache.camel.RuntimeCamelException;
 import org.apache.camel.StreamCache;
 import org.apache.camel.converter.stream.CachedOutputStream;
 import org.apache.camel.spi.HeaderFilterStrategy;
+import org.apache.camel.support.ExchangeHelper;
 import org.apache.camel.util.FileUtil;
-import org.apache.camel.util.GZIPHelper;
+import org.apache.camel.support.GZIPHelper;
 import org.apache.camel.util.IOHelper;
-import org.apache.camel.util.MessageHelper;
-import org.apache.camel.util.ObjectHelper;
+import org.apache.camel.support.MessageHelper;
+import org.apache.camel.support.ObjectHelper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -244,7 +245,7 @@ public class DefaultHttpBinding implements HttpBinding {
 
                 // Push POST form params into the headers to retain compatibility with DefaultHttpBinding
                 String text = message.getBody(String.class);
-                if (ObjectHelper.isNotEmpty(text)) {
+                if (org.apache.camel.util.ObjectHelper.isNotEmpty(text)) {
                     for (String param : text.split("&")) {
                         String[] pair = param.split("=", 2);
                         if (pair.length == 2) {
@@ -504,7 +505,7 @@ public class DefaultHttpBinding implements HttpBinding {
             String data = message.getBody(String.class);
             if (data != null) {
                 // set content length and encoding before we write data
-                String charset = IOHelper.getCharsetName(exchange, true);
+                String charset = ExchangeHelper.getCharsetName(exchange, true);
                 final int dataByteLength = data.getBytes(charset).length;
                 response.setCharacterEncoding(charset);
                 response.setContentLength(dataByteLength);
@@ -539,7 +540,7 @@ public class DefaultHttpBinding implements HttpBinding {
         try {
             bytes = message.getMandatoryBody(byte[].class);
         } catch (InvalidPayloadException e) {
-            throw ObjectHelper.wrapRuntimeCamelException(e);
+            throw RuntimeCamelException.wrapRuntimeCamelException(e);
         }
 
         byte[] data = GZIPHelper.compressGZIP(bytes);

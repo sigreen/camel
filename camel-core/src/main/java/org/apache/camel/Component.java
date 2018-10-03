@@ -73,4 +73,16 @@ public interface Component extends CamelContextAware {
     default <T extends ComponentExtension> Optional<T> getExtension(Class<T> extensionType) {
         return Optional.empty();
     }
+
+    /**
+     * Set the {@link Component} context if the component is an instance of {@link ComponentAware}.
+     */
+    static <T> T trySetComponent(T object, Component component) {
+        if (object instanceof ComponentAware) {
+            ((ComponentAware) object).setComponent(component);
+        }
+
+        return object;
+    }
+
 }

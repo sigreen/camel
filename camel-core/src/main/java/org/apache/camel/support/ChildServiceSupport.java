@@ -20,7 +20,6 @@ import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 import org.apache.camel.Service;
-import org.apache.camel.util.ServiceHelper;
 
 /**
  * Base class to control lifecycle for a set of child {@link org.apache.camel.Service}s.

@@ -25,7 +25,8 @@ import org.apache.camel.CamelContextAware;
 import org.apache.camel.EndpointInject;
 import org.apache.camel.Produce;
 import org.apache.camel.PropertyInject;
-import org.apache.camel.util.ObjectHelper;
+import org.apache.camel.support.DefaultEndpoint;
+import org.apache.camel.support.ObjectHelper;
 import org.apache.camel.util.ReflectionHelper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -249,7 +250,7 @@ public class DefaultCamelBeanPostProcessor {
             if (parameterTypes.length != 1) {
                 LOG.warn("Ignoring badly annotated method for injection due to incorrect number of parameters: {}", method);
             } else {
-                String propertyName = ObjectHelper.getPropertyName(method);
+                String propertyName = org.apache.camel.util.ObjectHelper.getPropertyName(method);
                 Object value = getPostProcessorHelper().getInjectionValue(parameterTypes[0], endpointUri, endpointRef, endpointProperty,
                         propertyName, bean, beanName);
                 ObjectHelper.invokeMethod(method, bean, value);
@@ -264,7 +265,7 @@ public class DefaultCamelBeanPostProcessor {
             if (parameterTypes.length != 1) {
                 LOG.warn("Ignoring badly annotated method for injection due to incorrect number of parameters: {}", method);
             } else {
-                String propertyName = ObjectHelper.getPropertyName(method);
+                String propertyName = org.apache.camel.util.ObjectHelper.getPropertyName(method);
                 Object value = getPostProcessorHelper().getInjectionPropertyValue(parameterTypes[0], propertyValue, propertyDefaultValue, propertyName, bean, beanName);
                 ObjectHelper.invokeMethod(method, bean, value);
             }

@@ -23,7 +23,7 @@ import javax.annotation.Generated;
 import com.orbitz.consul.Consul;
 import com.orbitz.consul.option.ConsistencyMode;
 import org.apache.camel.spring.boot.ComponentConfigurationPropertiesCommon;
-import org.apache.camel.util.jsse.SSLContextParameters;
+import org.apache.camel.support.jsse.SSLContextParameters;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
 /**
@@ -54,8 +54,8 @@ public class ConsulComponentConfiguration
     private String datacenter;
     /**
      * SSL configuration using an
-     * org.apache.camel.util.jsse.SSLContextParameters instance. The option is a
-     * org.apache.camel.util.jsse.SSLContextParameters type.
+     * org.apache.camel.support.jsse.SSLContextParameters instance. The option
+     * is a org.apache.camel.support.jsse.SSLContextParameters type.
      */
     private String sslContextParameters;
     /**
@@ -205,7 +205,7 @@ public class ConsulComponentConfiguration
         private Set tags;
         /**
          * SSL configuration using an
-         * org.apache.camel.util.jsse.SSLContextParameters instance.
+         * org.apache.camel.support.jsse.SSLContextParameters instance.
          */
         private SSLContextParameters sslContextParameters;
         /**
